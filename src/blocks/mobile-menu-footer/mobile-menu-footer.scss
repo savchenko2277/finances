@@ -1,0 +1,46 @@
+@use 'lib' as *;
+
+.mobile-menu-footer {
+	display: flex;
+	gap: 8px;
+	max-width: 762px;
+	font-size: 1rem;
+
+	@include media("<=lg") {
+		flex-wrap: wrap;
+	}
+	
+	&__address {
+		font-size: 18px;
+		line-height: 26px;
+		color: #ffffff;
+	}
+
+	&__flex {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 0;
+		gap: 28px;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__link {
+		font-family: "Google Sans";
+		font-size: 18px;
+		line-height: 26px;
+		color: #5db7f3;
+	}
+
+	&__title {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 18px;
+		color: #6e7c89;
+	}
+}

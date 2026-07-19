@@ -1,0 +1,83 @@
+@use 'lib' as *;
+
+.special {
+	padding-top: 48px;
+	padding-bottom: 96px;
+	background: rgba(30, 37, 44, 1);
+	border-radius: 0 0 24px 24px;
+
+	@include media("<=sm") {
+		padding: 40px 0;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__logos-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 16px;
+
+		img {
+			font-size: 96px;
+			flex: 0 0 1em;
+			width: 1em;
+			height: 1em;
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 36px;
+
+		line-height: 40px;
+		text-align: center;
+		letter-spacing: -0.01em;
+		color: #ffffff;
+		margin-bottom: 20px;
+		max-width: 550px;
+	}
+
+	&__sub-title {
+		font-size: 16px;
+
+		line-height: 22px;
+		text-align: center;
+		color: #e9f0f5;
+		margin-bottom: 28px;
+		max-width: 250px;
+	}
+
+	&__button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px 32px;
+		gap: 8px;
+		min-width: 266px;
+		min-height: 60px;
+		background: #005fa8;
+		border-radius: 999px;
+		position: relative;
+		z-index: 10;
+
+		@include media("<=xs") {
+			min-width: 0;
+			width: 100%;
+		}
+
+		span {
+			font-weight: 500;
+			font-size: 18px;
+
+			line-height: 20px;
+			color: #ffffff;
+		}
+	}
+}

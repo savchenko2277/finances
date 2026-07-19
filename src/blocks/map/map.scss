@@ -1,0 +1,62 @@
+@use 'lib' as *;
+
+.map {
+
+	&__body {}
+
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: 48px;
+		gap: 16px;
+
+		@include media("<=sm") {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 36px;
+
+		line-height: 40px;
+		letter-spacing: -0.01em;
+		color: #ffffff;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		padding: 4px;
+		background: #1e252c;
+		border-radius: 999px;
+		max-width: 564px;
+		flex: 1 1 auto;
+
+		@include media("<=sm") {}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1 1 auto;
+		padding: 12px 20px;
+		gap: 8px;
+		max-width: 278px;
+		width: 100%;
+		min-height: 46px;
+		background: #1e252c;
+		border-radius: 999px;
+		color: #6e7c89;
+		transition: background 0.3s, color 0.3s;
+
+		&.active {
+			background: #e6f4ff;
+			color: #0e1216;
+		}
+	}
+}

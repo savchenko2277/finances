@@ -1,0 +1,71 @@
+@use 'lib' as *;
+
+.advantages {
+	
+	&__body {}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 32px;
+		max-width: 1160px;
+
+		@include media("<=xlg") {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
+		}
+	}
+
+	&__grid-item {
+		font-size: 1rem;
+		max-width: 365px;
+		min-height: 160px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		padding: 16px 12px 12px 16px;
+		gap: 24px;
+		background: #1e252c;
+		border-radius: 12px;
+
+		&>p {
+			font-size: 16px;
+
+			line-height: 22px;
+
+			color: #ffffff;
+		}
+	}
+
+	&__grid-item_last {
+		grid-row: span 2;
+
+		@include media("<=sm") {
+			grid-row: span 1;
+			grid-column: span 2;
+			order: 10;
+		}
+	}
+
+	&__hero {
+		h2 {
+			margin-bottom: 48px;
+			font-weight: 600;
+			font-size: 36px;
+
+			line-height: 40px;
+			letter-spacing: -0.01em;
+
+			color: #ffffff;
+		}
+	}
+
+	&__item {
+		align-self: flex-end;
+	}
+}

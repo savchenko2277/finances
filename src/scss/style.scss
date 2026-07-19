@@ -1,0 +1,46 @@
+@use 'lib' as * with(
+	$breakpoints: (
+		'xxxs': 360px,
+		'xxs': 480px,
+		'xs': 640px,
+		'sm': 780px,
+		'md': 960px,
+		'lg': 1100px,
+		'xlg': 1280px,
+		'xxlg': 1440px,
+		'xxxlg': 1680px,
+		'xxxxlg': 1928px
+	)
+);
+
+@use "../blocks/**/*.scss";
+
+// Подключение шрифтов
+@include font-face("GoogleSans-Regular", "Google Sans", 400);
+@include font-face("GoogleSans-Medium", "Google Sans", 500);
+@include font-face("GoogleSans-SemiBold", "Google Sans", 600);
+@include font-face("GoogleSans-Bold", "Google Sans", 700);
+
+body, html {
+	background-color: $colorNeutral7;
+	font-size: 16px;
+	color: $colorNeutral0;
+	font-family: "Google Sans";
+	line-height: 1.2;
+	font-weight: 400;
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+}
+
+.footer {
+	flex: 0 0 auto; 
+	margin-top: auto; 
+}
+
+.sprite {
+	display: none;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }

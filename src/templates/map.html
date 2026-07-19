@@ -1,0 +1,82 @@
+<section class="map">
+  <div class="map__body container">
+    <div class="map__head">
+      <h2 class="map__title">ВФП на карте</h2>
+      <div class="map__buttons">
+        <button type="button" class="map__button active" data-map-tab="office"><span>В офисе</span></button>
+        <button type="button" class="map__button" data-map-tab="visit">
+          <span>Выезд менеджера</span>
+        </button>
+      </div>
+    </div>
+    <div class="map-box" data-map-content="office">
+      <div class="map-box__info">
+        <div class="map-box__top">
+          <div class="map-box__item">
+            <h4 class="map-box__title">Офис в Москве (ЮВАО)</h4>
+            <a href="" class="map-box__address">г. Москва, проспект Рязанский, дом 10, строение 18, этаж 10,
+              кабинет 6</a>
+            <div class="map-box__flex">
+              <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
+              <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+            </div>
+          </div>
+
+          <div class="map-box__item">
+            <h4 class="map-box__title">Офис в Химках</h4>
+            <a href="" class="map-box__address">г. Химки, ул. Панфилова, д. 37, этаж 4, офис 14</a>
+            <div class="map-box__flex">
+              <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
+              <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+            </div>
+          </div>
+        </div>
+        <div class="map-box__buttons">
+          <a href="#" class="map-box__icon-button">
+            <span>MAX</span>
+            <img loading="lazy" src="img/footer/max.svg" alt="" />
+          </a>
+          <a href="#" class="map-box__icon-button">
+            <span>TG</span>
+            <img loading="lazy" src="img/footer/tg.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="map-box__canvas"></div>
+    </div>
+    <div class="form-section modal-callback" data-map-content="visit" style="display: none;">
+      <h2 class="form-section__title">
+        Закажите услугу выездное обслуживание
+      </h2>
+      <p class="form-section__desc">
+        Наш менеджер свяжется с вами в ближайшее время
+      </p>
+      <form class="modal-callback__form">
+        <label class="modal-callback__label">
+          <h4 class="modal-callback__label-title">Номер телефона <span>*</span></h4>
+          <input placeholder="+7" type="tel" class="modal-callback__input">
+        </label>
+        <label class="modal-callback__label">
+          <h4 class="modal-callback__label-title">Как к вам обращаться</h4>
+          <input type="text" placeholder="Иван Иванов" class="modal-callback__input">
+        </label>
+        <button class="modal-callback__button">Оставить заявку</button>
+        <div class="modal-callback__agrees">
+          <label class="modal-callback__agree">
+            <input type="checkbox" class="modal-callback__agree-input">
+            <p class="modal-callback__agree-text">
+              Я даю согласие на обработку персональных данных. Подтверждаю ознакомление с пользовательским соглашением
+            </p>
+          </label>
+          <label class="modal-callback__agree">
+            <input type="checkbox" class="modal-callback__agree-input" checked>
+            <p class="modal-callback__agree-text">
+              Я согласен(на) на информирование о продуктах, сервисах, услугах и акциях и передачу соответствующих данных
+              лицам, указанным в перечне
+            </p>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

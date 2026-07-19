@@ -1,0 +1,80 @@
+<div class="calc">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с вами в ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <p>Сумма займа</p>
+                        <div class="calc__item">
+                            <button type="button" data-calc="amount-minus">
+                                <img loading="lazy" src="img/icons/minus.svg" alt="" />
+                            </button>
+                            <p data-calc="amount">50 000 ₽</p>
+                            <button type="button" data-calc="amount-plus">
+                                <img loading="lazy" src="img/icons/plus.svg" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calc__grid-item">
+                        <p>Срок займа</p>
+                        <div class="calc__item">
+                            <button type="button" data-calc="term-minus">
+                                <img loading="lazy" src="img/icons/minus.svg" alt="" />
+                            </button>
+                            <p data-calc="term">3 месяца</p>
+                            <button type="button" data-calc="term-plus">
+                                <img loading="lazy" src="img/icons/plus.svg" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calc__grid-item">
+                        <p>Ежемесячный платеж</p>
+                        <div class="calc__item-summary">
+                            <p data-calc="payment">16 666,67</p>
+                            <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="calc__grid-item">
+                        <p>Номер телефона</p>
+
+                        <input class="calc__item-input" type="tel" name="phone" placeholder="+7" required />
+
+                        <span class="calc__item-error">Текст с ошибкой</span>
+                    </div>
+                    <div class="calc__grid-item">
+                        <p>Как к Вам обращаться?</p>
+
+                        <input class="calc__item-input" type="text" name="name" placeholder="Имя" required />
+                    </div>
+                    <div class="calc__grid-item">
+                        <button type="submit">
+                            Оставить заявку
+                            <img loading="lazy" src="img/icons/arrowforbtn.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я даю согласие на обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я даю согласие на обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

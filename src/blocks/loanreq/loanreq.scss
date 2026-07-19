@@ -1,0 +1,215 @@
+@use 'lib' as *;
+
+.loanreq {
+	overflow: hidden;
+
+	&__hero-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 16px;
+
+		@include media("<=md") {
+			flex-direction: column;
+		}
+	}
+
+	&__tabs {
+		display: inline-flex;
+		justify-content: space-between;
+		gap: 8px;
+
+		background: rgba(30, 37, 44, 1);
+		border-radius: 999px;
+		padding: 4px;
+		min-width: 564px;
+		margin-bottom: 48px;
+
+		@include media("<=sm") {
+			min-width: 0;
+			width: 100%;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			margin-bottom: 0;
+		}
+	}
+
+	&__tabs::-webkit-scrollbar {
+		display: none;
+	}
+
+	&__tab-btn {
+		padding: 12px 20px;
+		min-width: 185px;
+		font-family: "Google Sans";
+		font-size: 16px;
+		line-height: 20px;
+
+		line-height: 22px;
+
+		color: #ffffff;
+
+		border-radius: 999px;
+		cursor: pointer;
+		transition: color 0.2s ease,
+		background 0.2s ease,
+		border-color 0.2s ease;
+
+		&:hover {
+			color: #e9f0f5;
+			background: rgba(255, 255, 255, 0.12);
+		}
+
+		&.is-active {
+			color: rgba(14, 18, 22, 1);
+			background: rgba(230, 244, 255, 1);
+
+			line-height: 22px;
+
+			color: #0e1216;
+		}
+	}
+
+	&__panels {
+		width: 100%;
+	}
+
+	&__panel {
+		display: none;
+		opacity: 0;
+		transform: translateY(10px);
+		transition:
+			opacity 0.25s ease,
+			transform 0.25s ease;
+
+		&.is-active {
+			display: block;
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	&__body {
+		box-sizing: border-box;
+	}
+
+	&__grid-text {
+		flex: 1 1 auto;
+		margin-bottom: 32px;
+
+		@include media("<=sm") {}
+	}
+
+	&__grid-sidebar {
+		p {
+			position: relative;
+			font-size: 18px;
+			padding-left: 16px;
+
+			line-height: 26px;
+
+			color: #e9f0f5;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				background: #fff;
+			}
+		}
+
+		padding: 28px 0;
+		display: flex;
+		flex-direction: column;
+
+		gap: 4px;
+
+		@include media("<=sm") {
+			padding: 24px 16px;
+		}
+
+		button {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			justify-self: end;
+			width: 100%;
+			max-width: 266px;
+			padding: 20px 40px;
+			gap: 8px;
+			background: #005fa8;
+			border-radius: 999px;
+
+			font-weight: 500;
+			font-size: 18px;
+
+			line-height: 20px;
+
+			color: #ffffff;
+
+			@include media("<=xs") {
+				max-width: none;
+			}
+		}
+	}
+
+	&__hero {
+		@include media("<=sm") {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+		}
+
+		h2 {
+			font-weight: 600;
+			font-size: 36px;
+
+			margin-bottom: 20px;
+			line-height: 40px;
+			letter-spacing: -0.01em;
+
+			color: #ffffff;
+
+			@include media("<=sm") {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__panel-item {
+		/* Loan Requirements Content */
+
+		/* Auto layout */
+		display: flex;
+		flex-direction: row;
+		gap: 32px;
+		background: rgba(30, 37, 44, 1);
+		border-radius: 12px;
+
+		@include media("<=md") {
+			flex-direction: column;
+			gap: 0;
+		}
+
+		img {
+			max-height: 420px;
+
+			background: #3b4650;
+			border-radius: 12px;
+			object-fit: cover;
+
+			@include media("<=md") {
+				max-height: none;
+				max-width: 100%;
+				height: auto;
+				height: 264px;
+			}
+		}
+	}
+}

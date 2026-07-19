@@ -1,0 +1,11 @@
+@use 'lib' as *;
+
+.title {
+	$self: &;
+
+	font-weight: 600;
+
+	&-36 {
+		font-size: 36px;
+	}
+}

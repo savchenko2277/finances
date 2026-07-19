@@ -1,0 +1,201 @@
+@use 'lib' as *;
+
+.header {
+	padding: 24px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 116;
+	width: 100%;
+
+	@include media("<=md") {
+		border-radius: 20px;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 15px;
+		justify-content: space-between;
+		height: 48px;
+		flex: none;
+		order: 1;
+		flex-grow: 0;
+		z-index: 1;
+	}
+
+	&__logo {
+		width: 154px;
+		height: auto;
+		object-fit: contain;
+	}
+
+	&__down {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 15px;
+	}
+
+	&__down-button {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		width: 48px;
+		height: 48px;
+
+		background:
+			linear-gradient(135deg,
+				rgba(255, 255, 255, 0) 30%,
+				rgba(200, 220, 255, 0.15) 50%,
+				rgba(255, 220, 200, 0.1) 70%,
+				rgba(255, 255, 255, 0) 100%),
+			linear-gradient(-45deg,
+				rgba(255, 255, 255, 0.8) 0%,
+				rgba(255, 255, 255, 0.25) 25%,
+				rgba(255, 255, 255, 0.04) 50%,
+				rgba(255, 255, 255, 0.08) 75%,
+				rgba(255, 255, 255, 0.18) 100%);
+
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.45);
+
+		box-shadow:
+			0 8px 32px 0 rgba(0, 0, 0, 0.12),
+			0 2px 8px 0 rgba(0, 0, 0, 0.08),
+			inset 0 1px 2px 0 rgba(255, 255, 255, 0.35),
+			inset 0 -1px 2px 0 rgba(0, 0, 0, 0.08);
+
+		border-radius: 50%;
+		transition: all 0.35s ease-in-out;
+
+		&:hover {
+			background:
+				linear-gradient(135deg,
+					rgba(255, 255, 255, 0) 30%,
+					rgba(200, 220, 255, 0.2) 50%,
+					rgba(255, 220, 200, 0.15) 70%,
+					rgba(255, 255, 255, 0) 100%),
+				linear-gradient(-45deg,
+					rgba(255, 255, 255, 0.9) 0%,
+					rgba(255, 255, 255, 0.35) 25%,
+					rgba(255, 255, 255, 0.06) 50%,
+					rgba(255, 255, 255, 0.12) 75%,
+					rgba(255, 255, 255, 0.25) 100%);
+			border-color: rgba(255, 255, 255, 0.6);
+			box-shadow:
+				0 12px 40px 0 rgba(0, 0, 0, 0.15),
+				0 4px 12px 0 rgba(0, 0, 0, 0.1),
+				inset 0 1px 2px 0 rgba(255, 255, 255, 0.5),
+				inset 0 -1px 2px 0 rgba(0, 0, 0, 0.06);
+		}
+	}
+
+	&__close-btn {
+		display: none;
+		position: relative;
+		cursor: pointer;
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 18px;
+			height: 2px;
+			background: #e9f0f5;
+			border-radius: 1px;
+
+			&:first-child {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+
+			&:last-child {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		}
+	}
+
+	.burger.burger--active {
+		display: none;
+	}
+
+	.burger--active~.header__close-btn {
+		display: flex;
+	}
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		font-family: "Google Sans";
+		font-size: 16px;
+		color: #e9f0f5;
+	}
+
+	&__navigation {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 32px;
+
+		@include media("<=lg") {
+			display: none;
+		}
+	}
+
+	&__item-parent {
+		position: relative;
+		flex-shrink: 0;
+	}
+
+	&__item-dropdown {
+		position: absolute;
+		top: calc(100% + 8px);
+		left: 50%;
+		transform: translateX(-50%) translateY(-8px);
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding: 8px 0;
+		min-width: 220px;
+		background: rgba(30, 30, 35, 0.95);
+		backdrop-filter: blur(12px);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 12px;
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+		opacity: 0;
+		visibility: hidden;
+		transition:
+			opacity 0.25s ease,
+			visibility 0.25s ease,
+			transform 0.25s ease;
+		z-index: 10;
+
+		&.is-active {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
+
+	&__dropdown-link {
+		padding: 6px 16px;
+		font-family: "Google Sans";
+		font-size: 14px;
+		color: #e9f0f5;
+		white-space: nowrap;
+		transition:
+			background 0.2s ease,
+			color 0.2s ease;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.1);
+			color: #fff;
+		}
+	}
+}

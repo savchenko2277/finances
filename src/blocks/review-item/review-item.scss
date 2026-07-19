@@ -1,0 +1,75 @@
+@use 'lib' as *;
+
+.review-item {
+
+	&,
+	&.swiper-slide {
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 20px 16px;
+		gap: 20px;
+		background: #1e252c;
+		border-radius: 12px;
+	}
+
+	&__rating {
+		display: flex;
+		gap: 3px;
+
+		img {
+			font-size: 16px;
+			width: 1em;
+			height: 1em;
+			flex: 0 0 1em;
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		p {
+			font-size: 14px;
+
+			line-height: 20px;
+			color: #e9f0f5;
+		}
+	}
+
+	&__user {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+
+		img {
+			font-size: 44px;
+			width: 1em;
+			height: 1em;
+			flex: 0 0 1em;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	&__user-info {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	&__user-name {
+		font-size: 16px;
+
+		line-height: 22px;
+		color: #ffffff;
+	}
+
+	&__user-date {
+		font-size: 12px;
+
+		line-height: 18px;
+		color: #6e7c89;
+	}
+}
