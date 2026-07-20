@@ -1,0 +1,56 @@
+@use 'lib' as *;
+
+.custom-input {
+	$self: &;
+
+	position: relative;
+
+	.button-calc_minus {
+		position: absolute;
+		top: 8px; left: 8px;
+	}
+
+	.button-calc_plus {
+		position: absolute;
+		top: 8px; right: 8px;
+	}
+
+	&_calc {
+		input {
+			pointer-events: none;
+		}
+	}
+
+	input,
+	&__value {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		min-height: 60px;
+		background: $colorNeutral6;
+		box-shadow: inset 0 0 0 1px $colorNeutral4;
+		border-radius: 999px;
+		padding: 0 24px;
+		width: 100%;
+		transition: all $transition;
+
+		&::placeholder {
+			color: $colorNeutral4;
+			opacity: 1;
+		}
+
+		&:focus {
+			box-shadow: inset 0 0 0 1px $colorBrand3;
+		}
+
+	}
+
+	&__value {
+		flex-direction: row;
+		align-items: center;
+		gap: 4px;
+		font-size: 28px;
+		font-weight: 600;
+	}
+}

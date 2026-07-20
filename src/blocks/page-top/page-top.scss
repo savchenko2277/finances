@@ -1,0 +1,29 @@
+@use 'lib' as *;
+
+.page-top {
+	$self: &;
+	
+	margin-bottom: -48px;
+
+	&__container {
+
+	}
+
+	&__link {
+		@include flex-center;
+		flex-direction: row;
+		gap: 4px;
+		font-size: 18px;
+		font-weight: 500;
+		width: fit-content;
+
+		&::before {
+			content: '';
+			width: 24px;
+			height: 24px;
+			background: url("../img/icons/arrow-left.svg");
+			background-size: cover;
+		}
+	}
+
+}

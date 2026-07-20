@@ -10,37 +10,37 @@ import { Navigation, Pagination } from "swiper/modules";
 
 // Анимация slideUp / slideDown для аккордеона
 const _slide = {
-  up(element, duration = 300) {
-    element.style.display = "block";
-    element.style.overflow = "hidden";
-    const height = element.scrollHeight;
-    element.style.transition = `height ${duration}ms ease`;
-    element.style.height = height + "px";
-    element.getBoundingClientRect();
-    element.style.height = "0px";
-    element.addEventListener("transitionend", function handler() {
-      element.removeEventListener("transitionend", handler);
-      element.style.display = "none";
-      element.style.height = "";
-      element.style.overflow = "";
-      element.style.transition = "";
-    });
-  },
-  down(element, duration = 300) {
-    element.style.display = "block";
-    element.style.overflow = "hidden";
-    element.style.height = "0px";
-    element.getBoundingClientRect();
-    const height = element.scrollHeight;
-    element.style.transition = `height ${duration}ms ease`;
-    element.style.height = height + "px";
-    element.addEventListener("transitionend", function handler() {
-      element.removeEventListener("transitionend", handler);
-      element.style.height = "";
-      element.style.overflow = "";
-      element.style.transition = "";
-    });
-  },
+	up(element, duration = 300) {
+		element.style.display = "block";
+		element.style.overflow = "hidden";
+		const height = element.scrollHeight;
+		element.style.transition = `height ${duration}ms ease`;
+		element.style.height = height + "px";
+		element.getBoundingClientRect();
+		element.style.height = "0px";
+		element.addEventListener("transitionend", function handler() {
+			element.removeEventListener("transitionend", handler);
+			element.style.display = "none";
+			element.style.height = "";
+			element.style.overflow = "";
+			element.style.transition = "";
+		});
+	},
+	down(element, duration = 300) {
+		element.style.display = "block";
+		element.style.overflow = "hidden";
+		element.style.height = "0px";
+		element.getBoundingClientRect();
+		const height = element.scrollHeight;
+		element.style.transition = `height ${duration}ms ease`;
+		element.style.height = height + "px";
+		element.addEventListener("transitionend", function handler() {
+			element.removeEventListener("transitionend", handler);
+			element.style.height = "";
+			element.style.overflow = "";
+			element.style.transition = "";
+		});
+	},
 };
 
 const setScrollbarWidth = () => {
@@ -71,7 +71,8 @@ function initSwiper() {
 		servicesSwiper = null;
 	}
 
-	new Swiper(".swiper-articles", {
+	new Swiper(".articles__swiper", {
+		modules: [Navigation],
 		loop: false,
 		spaceBetween: 32,
 		navigation: {
@@ -100,6 +101,7 @@ function initSwiper() {
 	});
 
 	new Swiper(".swiper-reviews", {
+		modules: [Navigation],
 		loop: false,
 		spaceBetween: 32,
 		navigation: {
@@ -130,6 +132,7 @@ function initSwiper() {
 
 
 	new Swiper(".swiper-client", {
+		modules: [Navigation],
 		loop: false,
 		spaceBetween: 32,
 		navigation: {
@@ -157,51 +160,66 @@ function initSwiper() {
 		},
 	});
 
-	new Swiper(".swiper-hero", {
+	new Swiper(".hero__swiper", {
+		modules: [Navigation, Pagination],
 		loop: true,
 		pagination: {
-			el: ".swiper-pagination",
+			el: ".hero__pagination",
 		},
 		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
+			nextEl: ".custom-navigation__btn_next",
+			prevEl: ".custom-navigation__btn_prev",
 		},
 	});
 }
 
-// Запуск функций
+const setHeader = () => {
+	const header = document.querySelector(".header");
+	if(!header) return;
+
+	const burger = header.querySelector(".header__burger");
+	const mobileMenu = header.querySelector(".mobile-menu");
+
+	burger.addEventListener("click", () => {
+		header.classList.toggle("is-active");
+		burger.classList.toggle("is-active");
+		mobileMenu.classList.toggle("is-active");
+	})
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	setScrollbarWidth();
 	initSwiper();
+	setHeader();
+
+	document
+		.querySelectorAll(".faq-spoilers__item")
+		.forEach((item) => (item.lastElementChild.style.display = "none"));
+
+	addEventListener("click", (event) => {
+		const item = event.target.closest(".faq-spoilers__item");
+		if (!item) return;
+
+		const button = item.firstElementChild;
+		const content = item.lastElementChild;
+
+		if (content.classList.contains("slide")) return;
+
+		if (item.classList.contains("faq-spoilers__item_active")) {
+			item.parentElement._openedSpoiler = null;
+			item.classList.remove("faq-spoilers__item_active");
+			_slide.up(content);
+		} else {
+			if (item.parentElement._openedSpoiler) {
+				item.parentElement._openedSpoiler.classList.remove(
+					"faq-spoilers__item_active",
+				);
+				_slide.up(item.parentElement._openedSpoiler.lastElementChild);
+			}
+
+			item.classList.add("faq-spoilers__item_active");
+			item.parentElement._openedSpoiler = item;
+			_slide.down(content);
+		}
+	});
 })
-
-document
-  .querySelectorAll(".faq-spoilers__item")
-  .forEach((item) => (item.lastElementChild.style.display = "none"));
-
-addEventListener("click", (event) => {
-  const item = event.target.closest(".faq-spoilers__item");
-  if (!item) return;
-
-  const button = item.firstElementChild;
-  const content = item.lastElementChild;
-
-  if (content.classList.contains("slide")) return;
-
-  if (item.classList.contains("faq-spoilers__item_active")) {
-    item.parentElement._openedSpoiler = null;
-    item.classList.remove("faq-spoilers__item_active");
-    _slide.up(content);
-  } else {
-    if (item.parentElement._openedSpoiler) {
-      item.parentElement._openedSpoiler.classList.remove(
-        "faq-spoilers__item_active",
-      );
-      _slide.up(item.parentElement._openedSpoiler.lastElementChild);
-    }
-
-    item.classList.add("faq-spoilers__item_active");
-    item.parentElement._openedSpoiler = item;
-    _slide.down(content);
-  }
-});

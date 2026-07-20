@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/style.css?v=1784434672666">
+    <link rel="stylesheet" href="css/style.css?v=1784541861357">
+    <link rel="stylesheet" href="css/swiper.css?v=1784541861357">
     <title></title>
 </head>
 <body id="home">
@@ -46,15 +47,17 @@
             <a href="#" class="header__item">Оплата онлайн</a>
         </div>
         <div class="header__down">
-            <button class="header__down-button header__down-button_chat">
+            <button class="header__down-button header__button-chat">
                 <img src="./img/icons/ask.svg" alt="" />
             </button>
-            <button class="header__down-button burger" data-burger>
-                <img src="./img/icons/menu.svg" alt="" />
-            </button>
-            <button class="header__down-button header__close-btn" data-menu-close>
-                <span></span>
-                <span></span>
+            <button class="header__down-button header__burger">
+                <div class="header__burger-icon">
+                    <img src="./img/icons/menu.svg" alt="" />
+                </div>
+                <div class="header__burger-icon">
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
         </div>
     </div>
@@ -307,74 +310,70 @@
 <main class="main main_main">
 
     <div class="hero">
-    <div class="swiper swiper-hero">
+    <div class="hero__swiper swiper">
 
         <div class="swiper-wrapper">
             <div class="hero__slide swiper-slide">
                 <div class="hero__body container">
-                    <div class="hero__text">
-                        <span>выезд менеджера по&#160;всей РФ&#160;</span>
-                        <h2>
+                    <div class="hero__slide-info">
+                        <p class="hero__slide-desc">выезд менеджера по&#160;всей РФ&#160;</p>
+                        <h2 class="hero__slide-title">
                             Деньги <br />
                             под&#160;залог авто
                         </h2>
-                        <div class="hero__text-cont">
-                            <p>До&#160;5 000 000 руб</p>
-                            <p>Решение за&#160;15 минут</p>
-                            <p>Любая кредитная история</p>
-                        </div>
+                        <ul class="hero__slide-list">
+                            <li class="hero__slide-list-item">До&#160;5 000 000 руб</li>
+                            <li class="hero__slide-list-item">Решение за&#160;15 минут</li>
+                            <li class="hero__slide-list-item">Любая кредитная история</li>
+                        </ul>
                     </div>
-                    <button data-modal-open="modal_callback" class="hero__text-btn">Получить деньги</button>
+                    <button type="button" data-modal-open="modal_callback" class="hero__button button button-blue"><span>Получить деньги</span></button>
                 </div>
                 <video class="hero__video" src="./img/camry.webm" autoplay muted loop playsinline />
             </div>
             <div class="hero__slide swiper-slide">
                 <div class="hero__body container">
-                    <div class="hero__text">
-                        <span>выезд менеджера по&#160;всей РФ&#160;</span>
-                        <h2>
+                    <div class="hero__slide-info">
+                        <p class="hero__slide-desc">выезд менеджера по&#160;всей РФ&#160;</p>
+                        <h2 class="hero__slide-title">
                             Деньги <br />
                             под&#160;залог авто
                         </h2>
-                        <div class="hero__text-cont">
-                            <p>До&#160;5 000 000 руб</p>
-                            <p>Решение за&#160;15 минут</p>
-                            <p>Любая кредитная история</p>
-                        </div>
+                        <ul class="hero__slide-list">
+                            <li class="hero__slide-list-item">До&#160;5 000 000 руб</li>
+                            <li class="hero__slide-list-item">Решение за&#160;15 минут</li>
+                            <li class="hero__slide-list-item">Любая кредитная история</li>
+                        </ul>
                     </div>
-                    <button data-modal-open="modal_callback" class="hero__text-btn">Получить деньги</button>
+                    <button type="button" data-modal-open="modal_callback" class="hero__button button button-blue"><span>Получить деньги</span></button>
                 </div>
                 <video class="hero__video" src="./img/camry.webm" autoplay muted loop playsinline />
             </div>
             <div class="hero__slide swiper-slide">
                 <div class="hero__body container">
-                    <div class="hero__text">
-                        <span>выезд менеджера по&#160;всей РФ&#160;</span>
-                        <h2>
+                    <div class="hero__slide-info">
+                        <p class="hero__slide-desc">выезд менеджера по&#160;всей РФ&#160;</p>
+                        <h2 class="hero__slide-title">
                             Деньги <br />
                             под&#160;залог авто
                         </h2>
-                        <div class="hero__text-cont">
-                            <p>До&#160;5 000 000 руб</p>
-                            <p>Решение за&#160;15 минут</p>
-                            <p>Любая кредитная история</p>
-                        </div>
+                        <ul class="hero__slide-list">
+                            <li class="hero__slide-list-item">До&#160;5 000 000 руб</li>
+                            <li class="hero__slide-list-item">Решение за&#160;15 минут</li>
+                            <li class="hero__slide-list-item">Любая кредитная история</li>
+                        </ul>
                     </div>
-                    <button data-modal-open="modal_callback" class="hero__text-btn">Получить деньги</button>
+                    <button type="button" data-modal-open="modal_callback" class="hero__button button button-blue"><span>Получить деньги</span></button>
                 </div>
                 <video class="hero__video" src="./img/camry.webm" autoplay muted loop playsinline />
             </div>
         </div>
 
-        <div class="hero__pagination custom-pagination swiper-pagination"></div>
+        <div class="hero__pagination custom-pagination"></div>
 
-        <div class="hero__navigation">
-            <div class="hero__navigation-btn swiper-button-prev">
-                <img loading="lazy" src="./img/icons/arrowleft.svg" alt="" />
-            </div>
-            <div class="hero__navigation-btn swiper-button-next">
-                <img loading="lazy" src="./img/icons/arrowright.svg" alt="" />
-            </div>
+        <div class="hero__navigation custom-navigation">
+            <button type="button" class="hero__navigation-btn custom-navigation__btn custom-navigation__btn_prev"></button>
+            <button type="button" class="hero__navigation-btn custom-navigation__btn custom-navigation__btn_next"></button>
         </div>
     </div>
 </div>
@@ -390,52 +389,70 @@
                 <h2>Рассчитайте платеж</h2>
                 <div class="calc__grid">
                     <div class="calc__grid-item">
-                        <p>Сумма займа</p>
-                        <div class="calc__item">
-                            <button type="button" data-calc="amount-minus">
-                                <img loading="lazy" src="img/icons/minus.svg" alt="" />
-                            </button>
-                            <p data-calc="amount">50 000 ₽</p>
-                            <button type="button" data-calc="amount-plus">
-                                <img loading="lazy" src="img/icons/plus.svg" alt="" />
-                            </button>
-                        </div>
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
                     </div>
                     <div class="calc__grid-item">
-                        <p>Срок займа</p>
-                        <div class="calc__item">
-                            <button type="button" data-calc="term-minus">
-                                <img loading="lazy" src="img/icons/minus.svg" alt="" />
-                            </button>
-                            <p data-calc="term">3 месяца</p>
-                            <button type="button" data-calc="term-plus">
-                                <img loading="lazy" src="img/icons/plus.svg" alt="" />
-                            </button>
-                        </div>
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
                     </div>
                     <div class="calc__grid-item">
-                        <p>Ежемесячный платеж</p>
-                        <div class="calc__item-summary">
-                            <p data-calc="payment">16 666,67</p>
-                            <img loading="lazy" src="img/icons/ruble.svg" alt="" />
-                        </div>
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
                     </div>
                     <div class="calc__grid-item">
-                        <p>Номер телефона</p>
-
-                        <input class="calc__item-input" type="tel" name="phone" placeholder="+7" required />
-
-                        <span class="calc__item-error">Текст с&#160;ошибкой</span>
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
                     </div>
                     <div class="calc__grid-item">
-                        <p>Как&#160;к&#160;Вам обращаться?</p>
-
-                        <input class="calc__item-input" type="text" name="name" placeholder="Имя" required />
-                    </div>
-                    <div class="calc__grid-item">
-                        <button type="submit">
-                            Оставить заявку
-                            <img loading="lazy" src="img/icons/arrowforbtn.svg" alt="" />
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
                         </button>
                     </div>
                 </div>
@@ -1222,7 +1239,7 @@
         </button>
       </div>
     </div>
-    <div class="swiper swiper-articles">
+    <div class="articles__swiper swiper">
       <div class="swiper-wrapper">
         <a href="" class="swiper-slide articles-item">
           <span class="articles-item__image">
@@ -1617,7 +1634,7 @@
     </div>
 </div>
 
-<script src="js/common.js?v=1784434672666"></script>
+<script src="js/common.js?v=1784541861357"></script>
 </body>
 
 </html>

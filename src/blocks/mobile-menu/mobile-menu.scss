@@ -13,7 +13,7 @@
 		opacity 0.35s ease,
 		visibility 0.35s ease;
 
-	&.menu--active {
+	&.is-active {
 		opacity: 1;
 		visibility: visible;
 
@@ -46,12 +46,9 @@
 
 		border: 1px solid #3b4650;
 		border-radius: 16px;
-		max-width: calc(var(--container-width) + 82px - (var(--container-offset) * 2));
-		width: calc(100% - 16px);
-		margin: 8px;
+		width: min(1240px, calc(100% - 16px * 2));
+		margin: 0 auto;
 		margin-top: 96px;
-		margin-left: auto;
-		margin-right: auto;
 
 		@include media("<=lg") {
 			grid-template-columns: 1fr;
@@ -116,7 +113,7 @@
 		width: fit-content;
 
 		@include media("<=lg") {
-			max-width: calc(100vw - (var(--container-offset) * 2));
+			max-width: calc(100vw - (16px * 2));
 		}
 	}
 

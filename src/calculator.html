@@ -1,0 +1,29 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+    @@include("page-top.html")
+
+    <section class="calculator">
+        <div class="calculator__top container">
+            <h1 class="calculator__title title">Калькулятор кредита под залог автомобиля</h1>
+            <div class="calculator__navigation tabs-navigation">
+                <div class="tabs-navigation__buttons">
+                    <button type="button" class="tabs-navigation__button">Деньги под ПТС</button>
+                    <button type="button" class="tabs-navigation__button">Займ под авто</button>
+                    <button type="button" class="tabs-navigation__button">Займ под залог ПТС</button>
+                    <button type="button" class="tabs-navigation__button">Рефинансирование</button>
+                    <button type="button" class="tabs-navigation__button">Лизинг</button>
+                    <button type="button" class="tabs-navigation__button">Автокредитование</button>
+                </div>
+            </div>
+        </div>
+        @@include("calc.html")
+    </section>
+
+    @@include("map.html")
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})

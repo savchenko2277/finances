@@ -1,0 +1,105 @@
+@use 'lib' as *;
+
+.button {
+	$self: &;
+
+	@include flex-center;
+
+	padding: 20px 0;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius: 999px;
+	transition: all $transition;
+	max-width: 266px;
+	width: 100%;
+
+	@include media("<=xs") {
+		max-width: 100%;
+	}
+
+	&:disabled {
+		pointer-events: none;
+	}
+}
+
+.button-blue {
+	background: $colorBrand5;
+
+	&:hover {
+		background: $colorBrand3;
+	}
+
+	&:disabled {
+		background: $colorNeutral5;
+		color: $colorNeutral4;
+	}
+
+	&.button-arrow {
+
+		span {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 8px;
+		}
+
+		span::after {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: url("../img/icons/arrow-right.svg");
+			background-size: contain;
+		}
+
+		&:disabled {
+			span::after {
+				opacity: 0.3;
+			}
+		}
+	}
+}
+
+.button-calc {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: $colorBrand5;
+	position: relative;
+	transition: all $transition;
+
+	&:hover {
+		background: $colorBrand3;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		width: 28px; height: 28px;
+	}
+
+	&:disabled {
+		background: $colorNeutral5;
+		pointer-events: none;
+
+		&::after {
+			opacity: 0.4;
+		}
+	}
+
+	&_minus {
+		&::after {
+			background: url("../img/icons/icon-minus.svg");
+			background-size: cover;
+		}
+	}
+
+	&_plus {
+		&::after {
+			background: url("../img/icons/icon-plus.svg");
+			background-size: cover;
+		}
+	}
+}

@@ -1,15 +1,80 @@
 @use 'lib' as *;
 
 .header {
+	$self: &;
+
 	padding: 24px 0;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 116;
+	z-index: 200;
 	width: 100%;
 
 	@include media("<=md") {
 		border-radius: 20px;
+	}
+
+	&.is-active {
+		#{$self}__button-chat {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+
+	&__button-chat {
+		transition: all $transition;
+	}
+
+	&__burger {
+		@include flex-center;
+
+		&.is-active {
+			#{$self}__burger-icon {
+				&:nth-child(1) {
+					display: none;
+				}
+				&:nth-child(2) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__burger-icon {
+		&:nth-child(1) {
+			display: block;
+
+			width: 24px;
+			height: 24px;
+
+			img {
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&:nth-child(2) {
+			display: none;
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 18px;
+				height: 2px;
+				background: #e9f0f5;
+				border-radius: 1px;
+
+				&:first-child {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+
+				&:last-child {
+					transform: translate(-50%, -50%) rotate(-45deg);
+				}
+			}
+		}
 	}
 
 	&__body {
@@ -22,7 +87,8 @@
 		flex: none;
 		order: 1;
 		flex-grow: 0;
-		z-index: 1;
+		z-index: 117;
+		position: relative;
 	}
 
 	&__logo {
@@ -94,38 +160,6 @@
 				inset 0 1px 2px 0 rgba(255, 255, 255, 0.5),
 				inset 0 -1px 2px 0 rgba(0, 0, 0, 0.06);
 		}
-	}
-
-	&__close-btn {
-		display: none;
-		position: relative;
-		cursor: pointer;
-
-		span {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 18px;
-			height: 2px;
-			background: #e9f0f5;
-			border-radius: 1px;
-
-			&:first-child {
-				transform: translate(-50%, -50%) rotate(45deg);
-			}
-
-			&:last-child {
-				transform: translate(-50%, -50%) rotate(-45deg);
-			}
-		}
-	}
-
-	.burger.burger--active {
-		display: none;
-	}
-
-	.burger--active~.header__close-btn {
-		display: flex;
 	}
 
 	&__item {

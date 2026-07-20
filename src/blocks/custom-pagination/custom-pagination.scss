@@ -3,4 +3,20 @@
 .custom-pagination {
 	$self: &;
 
+	@include flex-center;
+
+	gap: 4px;
+
+	.swiper-pagination-bullet {
+		height: 4px;
+		width: 13px;
+		background: $colorNeutral4;
+		transition: all $transition;
+		border-radius: 8px;
+
+		&.swiper-pagination-bullet-active {
+			background: $colorNeutral0;
+			width: 44px;
+		}
+	}
 }

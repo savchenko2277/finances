@@ -1,0 +1,51 @@
+@use 'lib' as *;
+
+.custom-navigation {
+	$self: &;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+
+	&__btn {
+
+		@include flex-center;
+
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: $colorNeutral5;
+		transition: all $transition;
+		position: relative;
+
+		&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 24px;
+				height: 24px;
+		}
+
+		&:hover {
+			background: $colorNeutral4;
+		}
+
+		&_prev {
+			&::after {
+				background: url("../img/icons/arrow-left.svg");
+				background-size: cover;
+			}
+		}
+
+		&_next {
+			&::after {
+				background: url("../img/icons/arrow-right.svg");
+				background-size: cover;
+			}
+		}
+	}
+
+}

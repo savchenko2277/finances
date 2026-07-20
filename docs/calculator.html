@@ -308,20 +308,208 @@
 </header>
 
 <main class="main main_page">
+    <section class="page-top">
+    <div class="page-top__container container">
+        <a href="main.html" class="page-top__link">Назад</a>
+    </div>
+</section>
 
-    <section class="pages">
-        <div class="pages__container container">
-            <h1 class="pages__title title title-36">Список страниц</h1>
-            <ul class="pages__list">
-                <li class="pages__list-item is-active"><a href="main.html">Главная</a></li>
-                <li class="pages__list-item"><a href="load.html">Займ под&#160;залог автомобиля и&#160;ПТС</a></li>
-                <li class="pages__list-item is-active"><a href="contacts.html">Контакты</a></li>
-                <li class="pages__list-item is-active"><a href="about.html">О&#160;компании</a></li>
-                <li class="pages__list-item is-active"><a href="calculator.html">Калькулятор</a></li>
-            </ul>
+    <section class="calculator">
+        <div class="calculator__top container">
+            <h1 class="calculator__title title">Калькулятор кредита под&#160;залог автомобиля</h1>
+            <div class="calculator__navigation tabs-navigation">
+                <div class="tabs-navigation__buttons">
+                    <button type="button" class="tabs-navigation__button">Деньги под&#160;ПТС</button>
+                    <button type="button" class="tabs-navigation__button">Займ под&#160;авто</button>
+                    <button type="button" class="tabs-navigation__button">Займ под&#160;залог ПТС</button>
+                    <button type="button" class="tabs-navigation__button">Рефинансирование</button>
+                    <button type="button" class="tabs-navigation__button">Лизинг</button>
+                    <button type="button" class="tabs-navigation__button">Автокредитование</button>
+                </div>
+            </div>
         </div>
+        <div class="calc">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с&#160;вами в&#160;ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     </section>
 
+    <section class="map">
+  <div class="map__body container">
+    <div class="map__head">
+      <h2 class="map__title">ВФП на&#160;карте</h2>
+      <div class="map__buttons">
+        <button type="button" class="map__button active" data-map-tab="office"><span>В&#160;офисе</span></button>
+        <button type="button" class="map__button" data-map-tab="visit">
+          <span>Выезд менеджера</span>
+        </button>
+      </div>
+    </div>
+    <div class="map-box" data-map-content="office">
+      <div class="map-box__info">
+        <div class="map-box__top">
+          <div class="map-box__item">
+            <h4 class="map-box__title">Офис в&#160;Москве (ЮВАО)</h4>
+            <a href="" class="map-box__address">г. Москва, проспект Рязанский, дом&#160;10, строение 18, этаж 10,
+              кабинет 6</a>
+            <div class="map-box__flex">
+              <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
+              <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+            </div>
+          </div>
+
+          <div class="map-box__item">
+            <h4 class="map-box__title">Офис в&#160;Химках</h4>
+            <a href="" class="map-box__address">г. Химки, ул.&#160;Панфилова, д.&#160;37, этаж 4, офис 14</a>
+            <div class="map-box__flex">
+              <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
+              <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+            </div>
+          </div>
+        </div>
+        <div class="map-box__buttons">
+          <a href="#" class="map-box__icon-button">
+            <span>MAX</span>
+            <img loading="lazy" src="img/footer/max.svg" alt="" />
+          </a>
+          <a href="#" class="map-box__icon-button">
+            <span>TG</span>
+            <img loading="lazy" src="img/footer/tg.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="map-box__canvas"></div>
+    </div>
+    <div class="form-section modal-callback" data-map-content="visit" style="display: none;">
+      <h2 class="form-section__title">
+        Закажите услугу выездное обслуживание
+      </h2>
+      <p class="form-section__desc">
+        Наш менеджер свяжется с&#160;вами в&#160;ближайшее время
+      </p>
+      <form class="modal-callback__form">
+        <label class="modal-callback__label">
+          <h4 class="modal-callback__label-title">Номер телефона <span>*</span></h4>
+          <input placeholder="+7" type="tel" class="modal-callback__input">
+        </label>
+        <label class="modal-callback__label">
+          <h4 class="modal-callback__label-title">Как&#160;к&#160;вам обращаться</h4>
+          <input type="text" placeholder="Иван Иванов" class="modal-callback__input">
+        </label>
+        <button class="modal-callback__button">Оставить заявку</button>
+        <div class="modal-callback__agrees">
+          <label class="modal-callback__agree">
+            <input type="checkbox" class="modal-callback__agree-input">
+            <p class="modal-callback__agree-text">
+              Я&#160;даю согласие на&#160;обработку персональных данных. Подтверждаю ознакомление с&#160;пользовательским соглашением
+            </p>
+          </label>
+          <label class="modal-callback__agree">
+            <input type="checkbox" class="modal-callback__agree-input" checked>
+            <p class="modal-callback__agree-text">
+              Я&#160;согласен (на)&#160;на&#160;информирование о&#160;продуктах, сервисах, услугах и&#160;акциях и&#160;передачу соответствующих данных
+              лицам, указанным в&#160;перечне
+            </p>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="footer footer_main">

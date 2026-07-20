@@ -1,0 +1,38 @@
+@use 'lib' as *;
+
+.custom-label {
+	$self: &;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	&:has(input.is-error) {
+		#{$self}__error {
+			display: block;
+		}
+	}
+
+	&:has(input:required) {
+		#{$self}__title {
+			&::after {
+				content: ' *';
+				color: $colorError2;
+			}
+		}
+	}
+
+	&__title {
+		color: $colorNeutral4;
+	}
+
+	&__error {
+		display: none;
+		color: $colorError2;
+	}
+
+	&__title, &__error {
+		font-size: 14px;
+	}
+
+}

@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const $ = require('gulp-load-plugins')({ pattern: ['*', '!sass'] });
+const ttf2woff = require('gulp-ttf2woff').default || require('gulp-ttf2woff');
 
 const isRemote = process.argv.indexOf('--remote') !== -1;
 const isSync = process.argv.indexOf('--sync') !== -1;
@@ -227,7 +228,7 @@ function fonts() {
 	return gulp
 		.src(pth.src.fnts)
 		.pipe($.newer(pth.pbl.fnts))
-		// .pipe($.fonter({ formats: ['woff', 'ttf'], compound2simple: true }))
+		.pipe(ttf2woff())
 		.pipe(gulp.dest(pth.pbl.fnts))
 		.pipe($.ttf2woff2())
 		.pipe(gulp.dest(pth.pbl.fnts))

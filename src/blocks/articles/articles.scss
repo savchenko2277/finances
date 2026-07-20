@@ -82,8 +82,10 @@
 		}
 	}
 
-	.swiper {
+	&__swiper.swiper {
 		margin-bottom: 24px;
+		max-width: 100%;
+		width: 100%;
 
 		@include media("<=xs") {
 			margin-bottom: 36px;
