@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/style.css?v=1784541861357">
-    <link rel="stylesheet" href="css/swiper.css?v=1784541861357">
+    <link rel="stylesheet" href="css/style.css?v=1784579838603">
+    <link rel="stylesheet" href="css/swiper.css?v=1784579838603">
     <title></title>
 </head>
 <body id="home">
@@ -308,18 +308,18 @@
 </header>
 
 <main class="main main_page">
-    <section class="page-top">
+    <section class="page-top ">
     <div class="page-top__container container">
         <a href="main.html" class="page-top__link">Назад</a>
     </div>
 </section>
 
-    <section class="calculator">
+    <section class="calculator tabs">
         <div class="calculator__top container">
             <h1 class="calculator__title title">Калькулятор кредита под&#160;залог автомобиля</h1>
-            <div class="calculator__navigation tabs-navigation">
+            <div class="calculator__navigation tabs__navigation tabs-navigation">
                 <div class="tabs-navigation__buttons">
-                    <button type="button" class="tabs-navigation__button">Деньги под&#160;ПТС</button>
+                    <button type="button" class="tabs-navigation__button active">Деньги под&#160;ПТС</button>
                     <button type="button" class="tabs-navigation__button">Займ под&#160;авто</button>
                     <button type="button" class="tabs-navigation__button">Займ под&#160;залог ПТС</button>
                     <button type="button" class="tabs-navigation__button">Рефинансирование</button>
@@ -328,7 +328,8 @@
                 </div>
             </div>
         </div>
-        <div class="calc">
+        <div class="calculator__tabs">
+            <div class="calc tabs__tab active">
     <div class="calc__body container">
         <div class="calc__success">
             <h3>Спасибо! Данные успешно отправлены</h3>
@@ -426,9 +427,753 @@
         </form>
     </div>
 </div>
+            <div class="calc tabs__tab">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с&#160;вами в&#160;ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+            <div class="calc tabs__tab">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с&#160;вами в&#160;ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+            <div class="calc tabs__tab">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с&#160;вами в&#160;ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+            <div class="calc tabs__tab">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с&#160;вами в&#160;ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+            <div class="calc tabs__tab">
+    <div class="calc__body container">
+        <div class="calc__success">
+            <h3>Спасибо! Данные успешно отправлены</h3>
+            <p>Наш менеджер свяжется с&#160;вами в&#160;ближайшее время</p>
+        </div>
+        <form class="calc__form" action="send.php" method="POST">
+            <div class="calc__hero">
+                <h2>Рассчитайте платеж</h2>
+                <div class="calc__grid">
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Сумма займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>50 000</span>₽</p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Срок займа</h4>
+                            <div class="custom-input custom-input_calc">
+                                <p class="custom-input__value"><span>3 месяца</span></p>
+                                <button disabled type="button" class="button-calc button-calc_minus"></button>
+                                <button type="button" class="button-calc button-calc_plus"></button>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item calc__grid-item_sum">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Ежемесячный платеж</h4>
+                            <div class="custom-input custom-input_calc">
+                                <div class="calc__item-summary">
+                                    <p data-calc="payment">16 666,67</p>
+                                    <img loading="lazy" src="img/icons/ruble.svg" alt="" />
+                                </div>
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <div class="custom-input">
+                                <input required placeholder="+7" type="tel">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <label class="custom-label">
+                            <h4 class="custom-label__title">Как&#160;к&#160;вам обращаться?</h4>
+                            <div class="custom-input">
+                                <input placeholder="Имя" type="text">
+                            </div>
+                            <p class="custom-label__error">
+                                Пример текста ошибки
+                            </p>
+                        </label>
+                    </div>
+                    <div class="calc__grid-item">
+                        <button disabled class="calc__submit button button-blue button-arrow" type="submit">
+                            <span>Оставить заявку</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__footer">
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_personal" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+                <div class="calc__footer-item">
+                    <input type="checkbox" name="consent_agreement" required />
+                    <div>
+                        <p>Я&#160;даю согласие на&#160;обработку персональных данных.</p>
+                        <p>Подтверждаю ознакомление с&#160;пользовательским соглашением</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+        </div>
     </section>
 
-    <section class="map">
+    <section class="account">
+        <div class="account__container container">
+            <h2 class="account__title title">Онлайн расчет для&#160;кредита за&#160;1 день</h2>
+            <div class="account__text text-more">
+                <div class="text-more__content">
+                    <div class="text-more__main">
+                        <p>
+                            Калькулятор кредита под&#160;залог автомобиля решает сразу несколько задач. С&#160;его помощью быстро
+                            рассчитывается сумма займа, период, размер ежемесячных платежей. Достаточно ввести несколько
+                            значений, и&#160;у&#160;вас готовые данные. Без&#160;лишних слов и&#160;потери времени. Вы&#160;самостоятельно можете
+                            вычислить подходящие размеры выплат, изменить период займа или&#160;скорректировать любые данные.
+                            Это легко и&#160;понятно.
+                        </p>
+                    </div>
+                    <div class="text-more__other">
+                        <p>
+                            Рассчитать займ под&#160;ПТС можно прямо сейчас, не&#160;теряя времени. Это позволит определить
+                            примерный период кредитования и&#160;суммы ежемесячных платежей. Онлайн расчет занимает меньше
+                            минуты. Калькулятор автоломбарда поможет узнать ключевые моменты.
+                        </p>
+                    </div>
+                </div>
+                <button class="text-more__button">
+                    <span>Читать больше</span>
+                    <span>Скрыть больше</span>
+                </button>
+            </div>
+            <div class="account__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в&#160;соответствующие ячейки данные и&#160;нажмите &#171;Получить деньги&#187;
+                        </p>
+                    </div>
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-calendar.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Подобрать оптимальный срок <br> кредитования
+                        </h4>
+                        <p class="a-card__text">
+                            Чем больше период, тем меньше ежемесячный платеж. Найдите подходящий вариант
+                        </p>
+                    </div>
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-wallet.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Скорректировать размер займа
+                        </h4>
+                        <p class="a-card__text">
+                            Попробуйте выставить среднее число, скорректируйте под&#160;свои возможности, исходя
+                            из&#160;полученного ежемесячного платежа
+                        </p>
+                    </div>
+                </div>
+                <div class="account__pagination custom-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="loanreq ">
+    <div class="loanreq__body container">
+        <div class="loanreq__hero">
+            <div class="loanreq__hero-header">
+                <h2>Условия получения займа</h2>
+                <div class="loanreq__tabs" data-tabs>
+                    <button class="loanreq__tab-btn is-active" data-tab-btn="0">
+                        Транспорт
+                    </button>
+                    <button class="loanreq__tab-btn" data-tab-btn="1">Заемщик</button>
+                    <button class="loanreq__tab-btn" data-tab-btn="2">Документы</button>
+                </div>
+            </div>
+            <div class="loanreq__panels">
+                <div class="loanreq__panel is-active" data-tab-panel="0">
+                    <div class="loanreq__panel-item">
+                        <img loading="lazy" src="img/calc.webp" alt="" />
+                        <div class="loanreq__grid-sidebar">
+                            <div class="loanreq__grid-text">
+                                <h2>Документы для&#160;займа под&#160;залог</h2>
+                                <p>Автомобили / мотоциклы категории А, B, С, Д</p>
+                                <p>Авто в&#160;собственности</p>
+                                <p>C&#160;арестами и&#160;ограничениями</p>
+                                <p>Машина остаётся у&#160;вас</p>
+                            </div>
+                            <button>Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="loanreq__panel" data-tab-panel="1">
+                    <div class="loanreq__panel-item">
+                        <img loading="lazy" src="img/money.webp" alt="" />
+                        <div class="loanreq__grid-sidebar">
+                            <div class="loanreq__grid-text">
+                                <h2>Документы для&#160;займа под&#160;залог</h2>
+                                <p>Автомобили / мотоциклы категории А, B, С, Д</p>
+                                <p>Авто в&#160;собственности</p>
+                                <p>C&#160;арестами и&#160;ограничениями</p>
+                                <p>Машина остаётся у&#160;вас</p>
+                            </div>
+                            <button>Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="loanreq__panel" data-tab-panel="2">
+                    <div class="loanreq__panel-item">
+                        <img loading="lazy" src="img/calc.webp" alt="" />
+                        <div class="loanreq__grid-sidebar">
+                            <div class="loanreq__grid-text">
+                                <h2>Документы для&#160;займа под&#160;залог</h2>
+                                <p>Автомобили / мотоциклы категории А, B, С, Д</p>
+                                <p>Авто в&#160;собственности</p>
+                                <p>C&#160;арестами и&#160;ограничениями</p>
+                                <p>Машина остаётся у&#160;вас</p>
+                            </div>
+                            <button>Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="programs">
+        <div class="programs__container container">
+            <div class="programs__top">
+                <h2 class="programs__title title">Другие наши программы</h2>
+                <div class="programs__navigation custom-navigation">
+                    <button type="button" class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_prev"></button>
+                    <button type="button" class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_next"></button>
+                </div>
+            </div>
+            <div class="programs__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title"></h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/2.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title">Займ под&#160;авто</h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/3.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title">Займ под&#160;залог ПТС</h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/4.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title">Рефинансирование</h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title"></h4>
+                    </div>
+                </div>
+            </div>
+            <p class="programs__desc">
+                Работаем с&#160;физическими и&#160;юридическими лицами. Возможен кредит без&#160;залога и&#160;без&#160;сдачи авто. Машина остается у&#160;вас или&#160;стоит на&#160;стоянке.
+            </p>
+        </div>
+    </section>
+
+    <section class="articles ">
+  <div class="articles__body container">
+    <div class="articles__top">
+      <h2 class="articles__title">Полезные статьи</h2>
+      <div class="articles__buttons">
+        <button class="articles__button articles__button_prev">
+          <img loading="lazy" src="img/icons/arrowleft.svg" alt="" />
+        </button>
+        <button class="articles__button articles__button_next">
+          <img loading="lazy" src="img/icons/arrowright.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="articles__swiper swiper">
+      <div class="swiper-wrapper">
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+        <a href="" class="swiper-slide articles-item">
+          <span class="articles-item__image">
+            <img loading="lazy" src="img/articles/picture.webp" alt="" />
+          </span>
+          <span class="articles-item__text">
+            <span class="articles-item__title">Как&#160;купить автомобиль в&#160;залоге?</span>
+            <span class="articles-item__info">Полное руководство для&#160;безопасной сделки</span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <a href="#" class="articles__button-down">
+      <span>Перейти в&#160;блог</span>
+      <img loading="lazy" src="img/icons/arrow-btn-blue.svg" alt="" />
+    </a>
+  </div>
+</section>
+
+    <section class="map ">
   <div class="map__body container">
     <div class="map__head">
       <h2 class="map__title">ВФП на&#160;карте</h2>
@@ -813,7 +1558,7 @@
     </div>
 </div>
 
-<script src="js/common.js?v=1784541861357"></script>
+<script src="js/common.js?v=1784579838603"></script>
 </body>
 
 </html>

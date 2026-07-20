@@ -3,12 +3,33 @@
 .tabs-navigation {
 	$self: &;
 
-	&__buttons {
+	border-radius: 999px;
+	max-width: 100%;
+	width: fit-content;
+	overflow-x: auto;
 
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: fit-content;
+		background: $colorNeutral6;
+		border-radius: 999px;
 	}
 
 	&__button {
+		@include flex-center;
 
+		text-wrap: nowrap;
+		padding: 12px 20px;
+		border-radius: 999px;
+		transition: all $transition;
+		line-height: 150%;
+
+		&.active {
+			background: $colorBrand0;
+			color: $colorNeutral7;
+		}
 	}
 
 }

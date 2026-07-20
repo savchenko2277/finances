@@ -1,0 +1,26 @@
+@use 'lib' as *;
+
+.a-card {
+	$self: &;
+
+	background: $colorNeutral6;
+	padding: 16px 16px 20px 16px;
+	border-radius: 12px;
+
+	&__icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 12px;
+		object-fit: cover;
+		margin-bottom: 24px;
+	}
+
+	&__title {
+		margin-bottom: 8px;
+	}
+
+	&__text {
+		color: $colorNeutral3;
+	}
+
+}

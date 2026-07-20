@@ -4,12 +4,12 @@
 <main class="main main_page">
     @@include("page-top.html")
 
-    <section class="calculator">
+    <section class="calculator tabs">
         <div class="calculator__top container">
             <h1 class="calculator__title title">Калькулятор кредита под залог автомобиля</h1>
-            <div class="calculator__navigation tabs-navigation">
+            <div class="calculator__navigation tabs__navigation tabs-navigation">
                 <div class="tabs-navigation__buttons">
-                    <button type="button" class="tabs-navigation__button">Деньги под ПТС</button>
+                    <button type="button" class="tabs-navigation__button active">Деньги под ПТС</button>
                     <button type="button" class="tabs-navigation__button">Займ под авто</button>
                     <button type="button" class="tabs-navigation__button">Займ под залог ПТС</button>
                     <button type="button" class="tabs-navigation__button">Рефинансирование</button>
@@ -18,8 +18,133 @@
                 </div>
             </div>
         </div>
-        @@include("calc.html")
+        <div class="calculator__tabs">
+            @@include("calc.html", {
+            class: "tabs__tab active"
+            })
+            @@include("calc.html", {
+            class: "tabs__tab"
+            })
+            @@include("calc.html", {
+            class: "tabs__tab"
+            })
+            @@include("calc.html", {
+            class: "tabs__tab"
+            })
+            @@include("calc.html", {
+            class: "tabs__tab"
+            })
+            @@include("calc.html", {
+            class: "tabs__tab"
+            })
+        </div>
     </section>
+
+    <section class="account">
+        <div class="account__container container">
+            <h2 class="account__title title">Онлайн расчет для кредита за 1 день</h2>
+            <div class="account__text text-more">
+                <div class="text-more__content">
+                    <div class="text-more__main">
+                        <p>
+                            Калькулятор кредита под залог автомобиля решает сразу несколько задач. С его помощью быстро
+                            рассчитывается сумма займа, период, размер ежемесячных платежей. Достаточно ввести несколько
+                            значений, и у вас готовые данные. Без лишних слов и потери времени. Вы самостоятельно можете
+                            вычислить подходящие размеры выплат, изменить период займа или скорректировать любые данные.
+                            Это легко и понятно.
+                        </p>
+                    </div>
+                    <div class="text-more__other">
+                        <p>
+                            Рассчитать займ под ПТС можно прямо сейчас, не теряя времени. Это позволит определить
+                            примерный период кредитования и суммы ежемесячных платежей. Онлайн расчет занимает меньше
+                            минуты. Калькулятор автоломбарда поможет узнать ключевые моменты.
+                        </p>
+                    </div>
+                </div>
+                <button class="text-more__button">
+                    <span>Читать больше</span>
+                    <span>Скрыть больше</span>
+                </button>
+            </div>
+            <div class="account__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-calendar.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Подобрать оптимальный срок <br> кредитования
+                        </h4>
+                        <p class="a-card__text">
+                            Чем больше период, тем меньше ежемесячный платеж. Найдите подходящий вариант
+                        </p>
+                    </div>
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-wallet.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Скорректировать размер займа
+                        </h4>
+                        <p class="a-card__text">
+                            Попробуйте выставить среднее число, скорректируйте под свои возможности, исходя
+                            из полученного ежемесячного платежа
+                        </p>
+                    </div>
+                </div>
+                <div class="account__pagination custom-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    @@include("loanreq.html")
+
+    <section class="programs">
+        <div class="programs__container container">
+            <div class="programs__top">
+                <h2 class="programs__title title">Другие наши программы</h2>
+                <div class="programs__navigation custom-navigation">
+                    <button type="button" class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_prev"></button>
+                    <button type="button" class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_next"></button>
+                </div>
+            </div>
+            <div class="programs__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title"></h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/2.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title">Займ под авто</h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/3.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title">Займ под залог ПТС</h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/4.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title">Рефинансирование</h4>
+                    </div>
+                    <div class="programs__slide swiper-slide p-card">
+                        <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
+                        <h4 class="p-card__title"></h4>
+                    </div>
+                </div>
+            </div>
+            <p class="programs__desc">
+                Работаем с физическими и юридическими лицами. Возможен кредит без залога и без сдачи авто. Машина остается у вас или стоит на стоянке.
+            </p>
+        </div>
+    </section>
+
+    @@include("articles.html")
 
     @@include("map.html")
 </main>

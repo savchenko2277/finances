@@ -1,0 +1,112 @@
+@use 'lib' as *;
+
+.text-more {
+	$self: &;
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 79px;
+		width: 100%;
+		background: linear-gradient(0deg, #0E1216 26.53%, rgba(14, 18, 22, 0) 100%);
+		transition: all $transition;
+	}
+
+	&.active {
+		&::after {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+		#{$self}__content {
+			grid-template-rows: max-content 1fr;
+		}
+
+		@include media("<=xs") {
+			#{$self}__main p {
+				-webkit-line-clamp: unset;
+				display: block;
+			}
+		}
+
+		#{$self}__button {
+			grid-template-rows: max-content 1fr;
+
+			&::after {
+				transform: rotate(180deg);
+			}
+
+			span {
+				&:nth-child(1) {
+					display: none;
+				}
+
+				&:nth-child(2) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__content {
+		display: grid;
+		grid-template-rows: max-content 0fr;
+		margin-bottom: 8px;
+		color: $colorNeutral3;
+		transition: grid-template-rows $transition;
+	}
+
+	&__main {
+		@include media("<=xs") {
+			p {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 5;
+				overflow: hidden;
+			}
+		}
+	}
+
+	&__other {
+		overflow: hidden;
+	}
+
+	&__button {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 4px;
+		padding: 4px 8px;
+		align-self: flex-end;
+		color: $colorNeutral3;
+		position: relative;
+		z-index: 2;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			background: url("../img/icons/arrow-down.svg");
+			background-size: cover;
+			transition: all $transition;
+		}
+
+		span {
+			&:nth-child(1) {
+				display: block;
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+
+}

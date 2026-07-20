@@ -6,6 +6,8 @@ import "./blocks.js";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 
+import { driveTabs } from "../js/libs/driveTabs";
+
 // Функции
 
 // Анимация slideUp / slideDown для аккордеона
@@ -52,24 +54,68 @@ function initSwiper() {
 	const buttonsReviews = document.querySelectorAll(".reviews__button");
 	const buttonsArticles = document.querySelectorAll(".articles__button");
 	const isMobile = window.innerWidth <= 992;
+
 	let servicesSwiper = null;
+	let accountSwiper = null;
 
 	// Если мобилка И слайдер еще не создан
-	if (isMobile && !servicesSwiper) {
+	if (isMobile && !servicesSwiper && !accountSwiper) {
 		servicesSwiper = new Swiper(".services-section__grid", {
-			slidesPerView:
-				"auto" /* Карточки займут столько места, сколько указано в их CSS (например, 240px) */,
-			spaceBetween: 15 /* Отступ между слайдами на мобилке */,
-			centeredSlides: false /* Слайды прижаты к левому краю */,
-			grabCursor: true /* Курсор-ручка при наведении */,
+			slidesPerView: "auto",
+			spaceBetween: 15,
+			centeredSlides: false,
+			grabCursor: true
+		});
+		accountSwiper = new Swiper(".account__swiper", {
+			modules: [Pagination],
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 16,
+
+			pagination: {
+				el: ".account__pagination",
+			},
 		});
 	}
-	// Если десктоп И слайдер сейчас запущен — уничтожаем его
+
 	else if (!isMobile && servicesSwiper) {
-		// Передаем (true, true), чтобы Swiper удалил все свои инлайн-стили и служебные классы
+
 		servicesSwiper.destroy(true, true);
 		servicesSwiper = null;
+
+		accountSwiper.destroy(true, true);
+		accountSwiper = null;
 	}
+
+	const programsSwiper = new Swiper(".programs__swiper", {
+		modules: [Navigation],
+		loop: true,
+		spaceBetween: 32,
+		navigation: {
+			prevEl: document.querySelector(".programs .custom-navigation__btn_prev"),
+			nextEl: document.querySelector(".programs .custom-navigation__btn_next"),
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.3,
+				slidesPerGroup: 1,
+				spaceBetween: 16
+			},
+			480: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+			},
+			768: {
+				slidesPerView: 3,
+				slidesPerGroup: 2,
+			},
+			1024: {
+				slidesPerView: 4,
+				slidesPerGroup: 2,
+			},
+		},
+	});
+
 
 	new Swiper(".articles__swiper", {
 		modules: [Navigation],
@@ -175,7 +221,7 @@ function initSwiper() {
 
 const setHeader = () => {
 	const header = document.querySelector(".header");
-	if(!header) return;
+	if (!header) return;
 
 	const burger = header.querySelector(".header__burger");
 	const mobileMenu = header.querySelector(".mobile-menu");
@@ -187,10 +233,51 @@ const setHeader = () => {
 	})
 }
 
+const initTabs = () => {
+	const containers = document.querySelectorAll(".tabs");
+	if (!containers) return;
+
+	containers.forEach(el => {
+		const tabs = driveTabs({
+			container: el,
+			controls: ".tabs__navigation .tabs-navigation__button",
+			selects: ".tabs__tab",
+			cls: 'active',
+			onInit() {
+				console.log(this);
+			},
+			onClick(i) {
+				console.log(this, i);
+			},
+			onTab(set, i) {
+				console.log(this, set, i);
+			},
+			onTick(i) {
+				console.log(this, i);
+			},
+		});
+	})
+}
+
+const setTextMore = () => {
+	const containers = document.querySelectorAll(".text-more")
+
+	containers.forEach(el => {
+		const button = el.querySelector(".text-more__button");
+		if (!button) return;
+
+		button.addEventListener("click", () => {
+			el.classList.toggle("active");
+		})
+	})
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	setScrollbarWidth();
 	initSwiper();
 	setHeader();
+	initTabs();
+	setTextMore();
 
 	document
 		.querySelectorAll(".faq-spoilers__item")

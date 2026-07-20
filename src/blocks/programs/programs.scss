@@ -1,0 +1,72 @@
+@use 'lib' as *;
+
+.programs {
+	$self: &;
+
+	&__container {
+
+	}
+
+	&__top {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-bottom: fluid(48px, 24px);
+	}
+
+	&__title {
+		font-size: 36px;
+		font-weight: 600;
+
+		@include media("<=xs") {
+			font-size: 12px;
+			font-weight: 500;
+			color: $colorNeutral4;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+			width: 100%;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+
+			&::after {
+				content: '';
+				width: 20px;
+				height: 20px;
+				background: url("../img/icons/hot.svg");
+				background-size: contain;
+			}
+		}
+	}
+
+	&__navigation.custom-navigation {
+		@include media("<=xs") {
+			display: none;
+		}
+	}
+
+	&__navigation-btn {
+
+	}
+
+	&__swiper.swiper {
+		margin-bottom: fluid(48px, 24px);
+
+		@include media("<=xs") {
+			overflow: visible;
+		}
+	}
+
+	&__slide {
+
+	}
+
+	&__desc {
+		font-size: 14px;
+	}
+
+}
