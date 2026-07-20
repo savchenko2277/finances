@@ -1,0 +1,27 @@
+@use 'lib' as *;
+
+.social-item {
+	$self: &;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	border-radius: 999px;
+	background: $colorNeutral6;
+
+	span {
+		font-size: 12px;
+		font-weight: 500;
+		color: $colorBrand0;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	img {
+		width: 28px;
+		height: 28px;
+		object-fit: cover;
+	}
+}

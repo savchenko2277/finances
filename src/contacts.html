@@ -1,0 +1,66 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+    @@include("page-top.html")
+
+    <section class="contacts">
+        <h2 class="contacts__title title container">
+            Контакты
+        </h2>
+        <div class="contacts__columns container">
+            <div class="contacts__side">
+                <div class="contacts__items">
+                    <div class="contacts__item">
+                        <img src="./img/contacts/item-1.webp" alt="" class="contacts__item-image">
+                        <div class="contacts__item-info">
+                            <p class="contacts__item-desc">
+                                Офис в Москве (ЮВАО)
+                            </p>
+                            <p class="contacts__item-text">
+                                г. Москва, проспект Рязанский, дом 10, строение 18, этаж 10, кабинет 6
+                            </p>
+                        </div>
+                        <div class="contacts__item-contacts">
+                            <a href="#" class="contacts__item-contact">8 (800) 351 22 95</a>
+                            <a href="#" class="contacts__item-contact">info@mail.ru</a>
+                        </div>
+                    </div>
+                    <div class="contacts__item">
+                        <img src="./img/contacts/item-2.webp" alt="" class="contacts__item-image">
+                        <div class="contacts__item-info">
+                            <p class="contacts__item-desc">
+                                Офис в Химках
+                            </p>
+                            <p class="contacts__item-text">
+                                г. Химки, ул. Панфилова, д. 37, этаж 4, офис 14
+                            </p>
+                        </div>
+                        <div class="contacts__item-contacts">
+                            <a href="#" class="contacts__item-contact">8 (800) 351 22 95</a>
+                            <a href="#" class="contacts__item-contact">info@mail.ru</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__socials">
+                    <a href="#" class="social-item">
+                        <span>MAX</span>
+                        <img src="./img/icons/max.svg" alt="">
+                    </a>
+                    <a href="#" class="social-item">
+                        <span>Telegram</span>
+                        <img src="./img/icons/telegram.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="contacts__map">
+                <img loading="lazy" src="./img/map.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})
