@@ -1,0 +1,100 @@
+@use 'lib' as *;
+
+.about-hero {
+	$self: &;
+
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		left: 10%;
+		width: 100%;
+		height: 720px;
+		background-image: url("data:image/svg+xml,%3Csvg width='1728' height='1047' viewBox='0 0 1728 1047' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_9_981)'%3E%3Cg clip-path='url(%23clip0_9_981)'%3E%3Cellipse cx='1615' cy='431.5' rx='693' ry='328.5' fill='url(%23paint0_linear_9_981)'/%3E%3Cellipse cx='1615' cy='432.346' rx='481.59' ry='231.818' fill='%230171C7'/%3E%3Cellipse cx='1625' cy='405' rx='441' ry='414' fill='url(%23paint1_linear_9_981)'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_9_981' x='-300' y='0' width='2328' height='1047' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_9_981'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_9_981' x1='1615' y1='470.636' x2='1615' y2='760' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23B8E0FF'/%3E%3Cstop offset='0.481427' stop-color='%23005FA8'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_9_981' x1='1625' y1='454.322' x2='1625' y2='819' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%230E1216'/%3E%3Cstop offset='1' stop-color='%230E1216'/%3E%3C/linearGradient%3E%3CclipPath id='clip0_9_981'%3E%3Crect width='1728' height='447' fill='white' transform='translate(0 300)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		pointer-events: none;
+
+		@include media("<=xs") {
+			height: 100%;
+			width: 100%;
+			top: -5%;
+			background-image: url("data:image/svg+xml,%3Csvg width='1728' height='1047' viewBox='0 0 1728 1047' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_9_981)'%3E%3Cg clip-path='url(%23clip0_9_981)'%3E%3Cellipse cx='1615' cy='431.5' rx='693' ry='328.5' fill='url(%23paint0_linear_9_981)'/%3E%3Cellipse cx='1615' cy='432.346' rx='481.59' ry='231.818' fill='%230171C7'/%3E%3Cellipse cx='1625' cy='405' rx='441' ry='414' fill='url(%23paint1_linear_9_981)'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_9_981' x='-300' y='0' width='2328' height='1047' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_9_981'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_9_981' x1='1615' y1='470.636' x2='1615' y2='760' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23B8E0FF'/%3E%3Cstop offset='0.481427' stop-color='%23005FA8'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_9_981' x1='1625' y1='454.322' x2='1625' y2='819' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%230E1216'/%3E%3Cstop offset='1' stop-color='%230E1216'/%3E%3C/linearGradient%3E%3CclipPath id='clip0_9_981'%3E%3Crect width='1728' height='447' fill='white' transform='translate(0 300)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+			background-size: cover;
+		} 
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: minmax(auto, 564px) 366px;
+		justify-content: space-between;
+		align-items: center;
+		gap: 24px;
+
+		@include media("<=sm") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__info {}
+
+	&__title {
+		font-weight: 600;
+		font-size: fluid(46px, 36px);
+		margin-bottom: 20px;
+
+		@include media("<=xs") {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__text {
+		font-size: fluid(18px, 14px);
+	}
+
+	&__swiper.swiper {
+		width: 100%;
+		position: relative;
+		padding-bottom: 20px;
+
+
+	}
+
+	&__navigation {
+		position: absolute;
+		bottom: 32px;
+		right: 12px;
+		z-index: 2;
+
+		@include media("<=xs") {
+			display: none;
+		}
+	}
+
+	&__pagination {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__slide.swiper-slide {
+		aspect-ratio: 366 / 427;
+		position: relative;
+		border-radius: 16px;
+		overflow: hidden;
+		width: 100%;
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+}

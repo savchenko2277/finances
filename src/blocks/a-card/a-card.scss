@@ -3,9 +3,35 @@
 .a-card {
 	$self: &;
 
+	&_alt {
+		padding: 12px;
+
+		#{$self}__text {
+			margin-bottom: 6px;
+			color: $colorNeutral0;
+
+			@include media("<=xs") {
+				max-width: 240px;
+			}
+		}
+
+		#{$self}__icon {
+			margin-bottom: 0;
+			align-self: flex-end;
+			margin-top: auto;
+		}
+	}
+
 	background: $colorNeutral6;
 	padding: 16px 16px 20px 16px;
 	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+
+	&.swiper-slide {
+		display: flex;
+		flex-direction: column;
+	}
 
 	&__icon {
 		width: 40px;

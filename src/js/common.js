@@ -217,6 +217,19 @@ function initSwiper() {
 			prevEl: ".custom-navigation__btn_prev",
 		},
 	});
+
+	new Swiper(".about-hero__swiper", {
+		modules: [Navigation, Pagination],
+		loop: true,
+		spaceBetween: 16,
+		pagination: {
+			el: ".about-hero__pagination",
+		},
+		navigation: {
+			nextEl: ".custom-navigation__btn_next",
+			prevEl: ".custom-navigation__btn_prev",
+		},
+	});
 }
 
 const setHeader = () => {

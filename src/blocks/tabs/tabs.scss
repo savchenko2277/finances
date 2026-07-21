@@ -7,4 +7,12 @@
 
 	}
 
+	&__tab {
+		display: none;
+
+		&.active {
+			animation: 0.5s fadeIn forwards;
+		}
+	}
+
 }

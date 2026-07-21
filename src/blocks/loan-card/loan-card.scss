@@ -1,0 +1,132 @@
+@use 'lib' as *;
+
+.loan-card {
+	$self: &;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border-radius: 12px;
+	background: $colorNeutral6;
+	gap: 32px;
+
+	&_insurance {
+		grid-template-columns: 473px 1fr;
+
+		#{$self}__list {
+			margin-bottom: fluid(48px, 24px);
+		}
+		#{$self}__button{
+			margin-top: auto;
+		}
+	}
+
+	@include media("<=xs") {
+		grid-template-columns: 100%;
+		gap: 0;
+	}
+
+	&__desc {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+		font-weight: 500;
+		font-size: 12px;
+		letter-spacing: 2px;
+		color: $colorNeutral4;
+		text-transform: uppercase;
+		margin-bottom: 24px;
+
+		@include media("<=xs") {
+			display: none;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 24px;
+			height: 24px;
+			background: url("../img/icons/hot.svg");
+			background-size: contain;
+		}
+	}
+
+	&__comment {
+		margin-bottom: fluid(48px, 24px);
+		font-size: 12px;
+		padding: 16px;
+		background: $colorNeutral5;
+		border-radius: 12px;
+		color: $colorNeutral3;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		font-size: fluid(18px, 16px);
+		margin-bottom: 24px;
+
+		@include media("<=xs") {
+			gap: 12px;
+		}
+	}
+
+	&__image {
+		border-radius: 12px;
+		overflow: hidden;
+		position: relative;
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		@include media("<=xs") {
+			width: 100%;
+			aspect-ratio: 343 / 264;
+		}
+	}
+
+	&__content {
+		padding: 28px 0px;
+		padding-right: 24px;
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+
+		@include media("<=xs") {
+			padding: 24px 16px;
+		}
+	}
+
+	&__title {
+		font-size: fluid(28px, 20px);
+		line-height: 1.2;
+		margin-bottom: 20px;
+		font-weight: 600;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		color: $colorNeutral2;
+		padding-left: 24px;
+		
+		li {
+			list-style-type: disc;
+		}
+
+		@include media("<=xs") {
+			gap: 12px;
+		}
+	}
+
+	&__button {
+		margin-top: 24px;
+	}
+
+}

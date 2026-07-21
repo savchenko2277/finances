@@ -1,0 +1,25 @@
+@use 'lib' as *;
+
+.insurance {
+	$self: &;
+	
+
+	&__container {
+
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 36px;
+		margin-bottom: fluid(48px, 32px);
+	}
+
+	&__card {
+		margin-bottom: fluid(48px, 32px);
+	}
+
+	&__text {
+
+	}
+
+}

@@ -3,7 +3,24 @@
 .account {
 	$self: &;
 
+	&_about {
+		#{$self}__swiper {
+			.swiper-wrapper {
+				@include media(">xs") {
+					display: grid;
+					grid-template-columns: repeat(4, 1fr) !important;
+					gap: 32px;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
 	&__container {}
+
+	&__desc {
+		margin-bottom: fluid(32px, 24px);
+	}
 
 	&__title {
 		font-size: 36px;
@@ -25,6 +42,7 @@
 				height: auto;
 			}
 		}
+
 		.swiper-wrapper {
 			margin-bottom: 16px;
 
