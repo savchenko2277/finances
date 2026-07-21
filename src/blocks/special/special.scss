@@ -6,8 +6,16 @@
 	background: rgba(30, 37, 44, 1);
 	border-radius: 0 0 24px 24px;
 
+	&_in-container {
+		padding: 0;
+	}
+
 	@include media("<=sm") {
 		padding: 40px 0;
+
+		&_in-container {
+			padding: 0;
+		}
 	}
 
 	&__body {

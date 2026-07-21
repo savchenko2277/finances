@@ -3,6 +3,48 @@
 .insurance {
 	$self: &;
 	
+	&_loan {
+		#{$self}__tabs {
+			margin-bottom: fluid(48px, 32px);
+		}
+		#{$self}__title {
+			margin-bottom: 0;
+		}
+	}
+
+	&__navigation {
+		height: fit-content;
+	}
+
+	&__top {
+		display: grid;
+		grid-template-columns: minmax(auto, 508px) minmax(622px, 1fr);
+		gap: 32px;
+		margin-bottom: fluid(48px, 32px);
+
+		@include media("<=lg") {
+			grid-template-columns: 100%;
+
+		}
+	}
+
+	&__tab {
+		display: none;
+		min-height: 571px;
+
+		.loan-card {
+			&__content {
+				justify-content: center;
+			}
+			&__button {
+				margin-top: 0;
+			}
+		}
+
+		&.active {
+			display: grid;
+		}
+	}
 
 	&__container {
 

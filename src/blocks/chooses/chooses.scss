@@ -1,0 +1,49 @@
+@use 'lib' as *;
+
+.chooses {
+	$self: &;
+
+	&__container {
+
+	}
+
+	&__title {
+		font-size: 36px;
+		font-weight: 600;
+		margin-bottom: fluid(48px, 24px);
+	}
+
+	&__swiper.swiper {
+		.swiper-slide {
+			@include media("<=xs") {
+				height: auto;
+			}
+		}
+
+		.swiper-wrapper {
+			margin-bottom: 16px;
+
+			@include media(">xs") {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 32px;
+				margin-bottom: 0;
+			}
+
+			@include media("<=md") {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	&__card {
+		min-height: 326px;
+		@include media("<=xs") {
+			min-height: auto;
+		}
+		&:last-child {
+			grid-column: auto / span 2;
+		}
+	}
+
+}

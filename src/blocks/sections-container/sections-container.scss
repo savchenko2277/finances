@@ -1,0 +1,12 @@
+@use 'lib' as *;
+
+.sections-container {
+	$self: &;
+
+	padding: fluid(96px, 30px) 0;
+	background: $colorNeutral6;
+	border-radius: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: fluid(96px, 48px);
+}

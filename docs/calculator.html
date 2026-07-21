@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/style.css?v=1784599649310">
-    <link rel="stylesheet" href="css/swiper.css?v=1784599649310">
+    <link rel="stylesheet" href="css/style.css?v=1784656254100">
+    <link rel="stylesheet" href="css/swiper.css?v=1784656254100">
     <title></title>
 </head>
 <body id="home">
@@ -1045,44 +1045,47 @@
     </div>
 </section>
 
-    <section class="programs">
-        <div class="programs__container container">
-            <div class="programs__top">
-                <h2 class="programs__title title">Другие наши программы</h2>
-                <div class="programs__navigation custom-navigation">
-                    <button type="button" class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_prev"></button>
-                    <button type="button" class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_next"></button>
-                </div>
+    <section class="programs ">
+    <div class="programs__container container">
+        <div class="programs__top">
+            <h2 class="programs__title title">Другие наши программы</h2>
+            <div class="programs__navigation custom-navigation">
+                <button type="button"
+                    class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_prev"></button>
+                <button type="button"
+                    class="programs__navigation-btn custom-navigation__btn custom-navigation__btn_next"></button>
             </div>
-            <div class="programs__swiper swiper">
-                <div class="swiper-wrapper">
-                    <div class="programs__slide swiper-slide p-card">
-                        <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
-                        <h4 class="p-card__title"></h4>
-                    </div>
-                    <div class="programs__slide swiper-slide p-card">
-                        <img loading="lazy" src="./img/programs/2.webp" alt="" class="p-card__image">
-                        <h4 class="p-card__title">Займ под&#160;авто</h4>
-                    </div>
-                    <div class="programs__slide swiper-slide p-card">
-                        <img loading="lazy" src="./img/programs/3.webp" alt="" class="p-card__image">
-                        <h4 class="p-card__title">Займ под&#160;залог ПТС</h4>
-                    </div>
-                    <div class="programs__slide swiper-slide p-card">
-                        <img loading="lazy" src="./img/programs/4.webp" alt="" class="p-card__image">
-                        <h4 class="p-card__title">Рефинансирование</h4>
-                    </div>
-                    <div class="programs__slide swiper-slide p-card">
-                        <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
-                        <h4 class="p-card__title"></h4>
-                    </div>
-                </div>
-            </div>
-            <p class="programs__desc">
-                Работаем с&#160;физическими и&#160;юридическими лицами. Возможен кредит без&#160;залога и&#160;без&#160;сдачи авто. Машина остается у&#160;вас или&#160;стоит на&#160;стоянке.
-            </p>
         </div>
-    </section>
+        <div class="programs__swiper swiper">
+            <div class="swiper-wrapper">
+                <div class="programs__slide swiper-slide p-card">
+                    <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
+                    <h4 class="p-card__title"></h4>
+                </div>
+                <div class="programs__slide swiper-slide p-card">
+                    <img loading="lazy" src="./img/programs/2.webp" alt="" class="p-card__image">
+                    <h4 class="p-card__title">Займ под&#160;авто</h4>
+                </div>
+                <div class="programs__slide swiper-slide p-card">
+                    <img loading="lazy" src="./img/programs/3.webp" alt="" class="p-card__image">
+                    <h4 class="p-card__title">Займ под&#160;залог ПТС</h4>
+                </div>
+                <div class="programs__slide swiper-slide p-card">
+                    <img loading="lazy" src="./img/programs/4.webp" alt="" class="p-card__image">
+                    <h4 class="p-card__title">Рефинансирование</h4>
+                </div>
+                <div class="programs__slide swiper-slide p-card">
+                    <img loading="lazy" src="./img/programs/1.webp" alt="" class="p-card__image">
+                    <h4 class="p-card__title"></h4>
+                </div>
+            </div>
+        </div>
+        <p class="programs__desc">
+            Работаем с&#160;физическими и&#160;юридическими лицами. Возможен кредит без&#160;залога и&#160;без&#160;сдачи авто. Машина остается у
+            вас или&#160;стоит на&#160;стоянке.
+        </p>
+    </div>
+</section>
 
     <section class="articles ">
   <div class="articles__body container">
@@ -1171,18 +1174,18 @@
   </div>
 </section>
 
-    <section class="map ">
+    <section class="map tabs ">
   <div class="map__body container">
     <div class="map__head">
       <h2 class="map__title">ВФП на&#160;карте</h2>
-      <div class="map__buttons">
-        <button type="button" class="map__button active" data-map-tab="office"><span>В&#160;офисе</span></button>
-        <button type="button" class="map__button" data-map-tab="visit">
-          <span>Выезд менеджера</span>
-        </button>
+      <div class="map__navigation tabs__navigation tabs-navigation">
+        <div class="tabs-navigation__buttons">
+          <button type="button" class="tabs-navigation__button active">Деньги под&#160;ПТС</button>
+          <button type="button" class="tabs-navigation__button">Займ под&#160;авто</button>
+        </div>
       </div>
     </div>
-    <div class="map-box" data-map-content="office">
+    <div class="map-box tabs__tab map__tab active">
       <div class="map-box__info">
         <div class="map-box__top">
           <div class="map-box__item">
@@ -1215,9 +1218,11 @@
           </a>
         </div>
       </div>
-      <div class="map-box__canvas"></div>
+      <div class="map-box__canvas">
+        <img src="./img/map.svg" alt="">
+      </div>
     </div>
-    <div class="form-section modal-callback" data-map-content="visit" style="display: none;">
+    <div class="form-section tabs__tab map__tab modal-callback">
       <h2 class="form-section__title">
         Закажите услугу выездное обслуживание
       </h2>
@@ -1556,7 +1561,7 @@
     </div>
 </div>
 
-<script src="js/common.js?v=1784599649310"></script>
+<script src="js/common.js?v=1784656254100"></script>
 </body>
 
 </html>

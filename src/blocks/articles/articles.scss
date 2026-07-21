@@ -7,8 +7,16 @@
 	padding-bottom: 48px;
 	overflow: hidden;
 
+	&_in-container {
+		padding: 0;
+	}
+
 	@include media("<=sm") {
 		padding: 40px 0;
+
+		&_in-container {
+			padding: 0;
+		}
 	}
 
 	@include media("<=xs") {

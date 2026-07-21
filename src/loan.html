@@ -1,0 +1,518 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+
+    @@include("page-top.html")
+
+    <section class="loan-hero">
+        <div class="loan-hero__container container">
+            <div class="loan-hero__info">
+                <h2 class="loan-hero__title title">
+                    Займ под залог автомобиля и ПТС*
+                </h2>
+                <div class="loan-hero__text">
+                    <p>
+                        С любой кредитной историей
+                    </p>
+                    <p>
+                        Авто остается у Вас
+                    </p>
+                    <p>
+                        Без справок о доходе
+                    </p>
+                    <p>
+                        Оцениваем авто, исходя из рыночной стоимости
+                    </p>
+                    <p>
+                        Оформление сделки за 30 минут
+                    </p>
+                    <p>
+                        Индивидуальный подход к клиенту
+                    </p>
+                </div>
+                <button type="button" class="loan-hero__button button button-blue">
+                    Отправить заявку
+                </button>
+            </div>
+            <div class="loan-hero__image">
+                <img loading="lazy" src="./img/loan-hero-image.webp" alt="">
+            </div>
+        </div>
+    </section>
+
+    @@include("calc.html")
+
+    <section class="account">
+        <div class="account__container container">
+            <div class="account__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-calendar.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Подобрать оптимальный срок <br> кредитования
+                        </h4>
+                        <p class="a-card__text">
+                            Чем больше период, тем меньше ежемесячный платеж. Найдите подходящий вариант
+                        </p>
+                    </div>
+                    <div class="a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-wallet.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Скорректировать размер займа
+                        </h4>
+                        <p class="a-card__text">
+                            Попробуйте выставить среднее число, скорректируйте под свои возможности, исходя
+                            из полученного ежемесячного платежа
+                        </p>
+                    </div>
+                </div>
+                <div class="account__pagination custom-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="insurance insurance_loan tabs">
+        <div class="insurance__container container">
+            <div class="insurance__top">
+                <h2 class="insurance__title title">Условия займа под залог авто</h2>
+                <div class="insurance__navigation tabs__navigation tabs-navigation">
+                    <div class="tabs-navigation__buttons">
+                        <button type="button" class="tabs-navigation__button active">Условия</button>
+                        <button type="button" class="tabs-navigation__button">Способы получения</button>
+                        <button type="button" class="tabs-navigation__button">Способы погашения</button>
+                        <button type="button" class="tabs-navigation__button">Требования</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insurance__tabs">
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance active">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+            <div class="insurance__text text-more">
+                <div class="text-more__content">
+                    <div class="text-more__main">
+                        <p>
+                            Страхование жизни, здоровья, имущества, транспортных средств – вот наиболее востребованные
+                            услуги, которыми пользуется большинство наших соотечественников.
+                            Благодаря налаженным партнерским связям с лучшими страховыми компаниями, у нас есть
+                            возможность подобрать для Вас наиболее выгодные услуги, которые помогут Вам защитить себя от
+                            непредвиденных событий в жизни.
+                        </p>
+                    </div>
+                    <div class="text-more__other">
+                        <p>
+                            Страхование жизни, здоровья, имущества, транспортных средств – вот наиболее востребованные
+                            услуги, которыми пользуется большинство наших соотечественников.
+                            Благодаря налаженным партнерским связям с лучшими страховыми компаниями, у нас есть
+                            возможность подобрать для Вас наиболее выгодные услуги, которые помогут Вам защитить себя от
+                            непредвиденных событий в жизни.
+                        </p>
+                    </div>
+                </div>
+                <button class="text-more__button">
+                    <span>Читать больше</span>
+                    <span>Скрыть больше</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="insurance insurance_loan tabs">
+        <div class="insurance__container container">
+            <div class="insurance__top">
+                <h2 class="insurance__title title">Получи деньги под <br> ПТС* в Москве</h2>
+                <div class="insurance__navigation tabs__navigation tabs-navigation">
+                    <div class="tabs-navigation__buttons">
+                        <button type="button" class="tabs-navigation__button active">Условия</button>
+                        <button type="button" class="tabs-navigation__button">Способы получения</button>
+                        <button type="button" class="tabs-navigation__button">Способы погашения</button>
+                        <button type="button" class="tabs-navigation__button">Требования</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insurance__tabs">
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance active">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="insurance__tab tabs__tab loan-card loan-card_insurance">
+                    <div class="loan-card__image">
+                        <img loading="lazy" src="./img/loan-card.webp" alt="">
+                    </div>
+                    <div class="loan-card__content">
+                        <p class="loan-card__desc">Авто остается в собственности у владельца</p>
+                        <h4 class="loan-card__title title">Среди предлагаемых нами услуг:</h4>
+                        <ul class="loan-card__list">
+                            <li>ОСАГО, КАСКО, страхование транспортных средств и имущественной ответственности</li>
+                            <li>Страхование от несчастных случаев и болезней</li>
+                            <li>Страхование недвижимости</li>
+                            <li>Для бизнеса: страхование оборудования, грузов, страхование ответственности за нарушение
+                                договорных обязательств, страхование при перевозке и иное</li>
+                        </ul>
+                        <button class="loan-card__button button button-blue">Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+            <div class="insurance__text text-more">
+                <div class="text-more__content">
+                    <div class="text-more__main">
+                        <p>
+                            Страхование жизни, здоровья, имущества, транспортных средств – вот наиболее востребованные
+                            услуги, которыми пользуется большинство наших соотечественников.
+                            Благодаря налаженным партнерским связям с лучшими страховыми компаниями, у нас есть
+                            возможность подобрать для Вас наиболее выгодные услуги, которые помогут Вам защитить себя от
+                            непредвиденных событий в жизни.
+                        </p>
+                    </div>
+                    <div class="text-more__other">
+                        <p>
+                            Страхование жизни, здоровья, имущества, транспортных средств – вот наиболее востребованные
+                            услуги, которыми пользуется большинство наших соотечественников.
+                            Благодаря налаженным партнерским связям с лучшими страховыми компаниями, у нас есть
+                            возможность подобрать для Вас наиболее выгодные услуги, которые помогут Вам защитить себя от
+                            непредвиденных событий в жизни.
+                        </p>
+                    </div>
+                </div>
+                <button class="text-more__button">
+                    <span>Читать больше</span>
+                    <span>Скрыть больше</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="chooses">
+        <div class="chooses__container container">
+            <h2 class="chooses__title title">
+                Почему выбирают нас
+            </h2>
+            <div class="chooses__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="chooses__card a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                    <div class="chooses__card a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                    <div class="chooses__card a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                    <div class="chooses__card a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                    <div class="chooses__card a-card swiper-slide">
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                        <h4 class="a-card__title">
+                            Размер ежемесячного платежа
+                        </h4>
+                        <p class="a-card__text">
+                            Введите в соответствующие ячейки данные и нажмите «Получить деньги»
+                        </p>
+                    </div>
+                </div>
+                <div class="chooses__pagination custom-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="loanreq loanreq_loan">
+        <div class="loanreq__container container">
+            <div class="loan-card">
+                <div class="loan-card__image">
+                    <img loading="lazy" src="./img/loan-card.webp" alt="">
+                </div>
+                <div class="loan-card__content">
+                    <h4 class="loan-card__title title">Внимательное отношение <br> к клиентам</h4>
+                    <div class="loan-card__text">
+                        <p>
+                            Ваш Финансовый Партнер ориентирован на лучшие в отрасли показатели качества обслуживания
+                            клиентов, технологии и эффективность.
+                        </p>
+                        <p>
+                            Наша основная задача – дать вам возможность получить деньги, финансирование или защиту от
+                            непредвиденных событий тогда, когда это нужно. И сделать это на удобных для вас условиях.
+                        </p>
+                    </div>
+                    <ul class="loan-card__list">
+                        <li>Четкость и оперативность работы сотрудников</li>
+                        <li>Высокое качество обслуживания</li>
+                        <li>Используем самые актуальные технологии</li>
+                        <li>Индивидуальный подход к каждому клиенту</li>
+                    </ul>
+                    <button class="loan-card__button button button-blue">Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="loanreq loanreq_loan">
+        <div class="loanreq__container container">
+            <div class="loan-card">
+                <div class="loan-card__image">
+                    <img loading="lazy" src="./img/loan-card.webp" alt="">
+                </div>
+                <div class="loan-card__content">
+                    <h4 class="loan-card__title title">Внимательное отношение <br> к клиентам</h4>
+                    <div class="loan-card__text">
+                        <p>
+                            Ваш Финансовый Партнер ориентирован на лучшие в отрасли показатели качества обслуживания
+                            клиентов, технологии и эффективность.
+                        </p>
+                        <p>
+                            Наша основная задача – дать вам возможность получить деньги, финансирование или защиту от
+                            непредвиденных событий тогда, когда это нужно. И сделать это на удобных для вас условиях.
+                        </p>
+                    </div>
+                    <ul class="loan-card__list">
+                        <li>Четкость и оперативность работы сотрудников</li>
+                        <li>Высокое качество обслуживания</li>
+                        <li>Используем самые актуальные технологии</li>
+                        <li>Индивидуальный подход к каждому клиенту</li>
+                    </ul>
+                    <button class="loan-card__button button button-blue">Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="account account_loan">
+        <div class="account__container container">
+            <div class="account__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="a-card a-card_alt swiper-slide">
+                        <p class="a-card__text">
+                            Абсолютную прозрачность, надежность и безопасность сделки
+                        </p>
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                    </div>
+                    <div class="a-card a-card_alt swiper-slide">
+                        <p class="a-card__text">
+                            Неразглашение персональной информации третьим лицам
+                        </p>
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                    </div>
+                    <div class="a-card a-card_alt swiper-slide">
+                        <p class="a-card__text">
+                            Конфиденциальность вашего обращения к нам
+                        </p>
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                    </div>
+                    <div class="a-card a-card_alt swiper-slide">
+                        <p class="a-card__text">
+                            Полную сохранность и страхование вашей техники
+                        </p>
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                    </div>
+                    <div class="a-card a-card_alt swiper-slide">
+                        <p class="a-card__text">
+                            Конфиденциальность вашего обращения к нам
+                        </p>
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                    </div>
+                    <div class="a-card a-card_alt swiper-slide">
+                        <p class="a-card__text">
+                            Полную сохранность и страхование вашей техники
+                        </p>
+                        <img loading="lazy" src="./img/icons/icon-chart.svg" alt="" class="a-card__icon">
+                    </div>
+                </div>
+                <div class="account__pagination custom-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="callback">
+        <div class="callback__container container">
+            <div class="callback__image">
+                <img loading="lazy" src="./img/callback-image.webp" alt="">
+            </div>
+            <div class="callback__content">
+                <h2 class="callback__title title">
+                    Не можете приехать в офис? Мы приедем к Вам!
+                </h2>
+                <p class="callback__text">
+                    Если по какой-то причине Вы не можете приехать к нам в офис, у нас есть выездное обслуживание. Оставьте заявку сейчас и мы свяжемся с Вами для уточнения деталей.
+                </p>
+                <div class="callback__buttons">
+                    <button class="callback__button button button-blue">Оставить заявку</button>
+                    <button class="callback__button button button-trans">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sections-container">
+        @@include("articles.html", {
+        class: "articles_in-container"
+        })
+
+        @@include("special.html", {
+        class: "special_in-container"
+        })
+    </div>
+
+    @@include("reviews.html")
+
+    @@include("faq.html")
+
+    @@include("howtoget.html")
+
+    @@include("programs.html")
+
+    @@include("map.html")
+
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})

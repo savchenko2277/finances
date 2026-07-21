@@ -132,10 +132,18 @@
 		overflow: hidden;
 		max-width: 564px;
 		aspect-ratio: 1/0.67;
+		position: relative;
 		filter: invert(0.92) hue-rotate(180deg);
 
 		@include media("<=md") {
 			max-width: none;
+		}
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

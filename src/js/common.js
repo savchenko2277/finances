@@ -57,9 +57,10 @@ function initSwiper() {
 
 	let servicesSwiper = null;
 	let accountSwiper = null;
+	let choosesSwiper = null;
 
 	// Если мобилка И слайдер еще не создан
-	if (isMobile && !servicesSwiper && !accountSwiper) {
+	if (isMobile && !servicesSwiper && !accountSwiper && !choosesSwiper) {
 		servicesSwiper = new Swiper(".services-section__grid", {
 			slidesPerView: "auto",
 			spaceBetween: 15,
@@ -76,15 +77,28 @@ function initSwiper() {
 				el: ".account__pagination",
 			},
 		});
+		accountSwiper = new Swiper(".chooses__swiper", {
+			modules: [Pagination],
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 16,
+
+			pagination: {
+				el: ".chooses__pagination",
+			},
+		});
 	}
 
-	else if (!isMobile && servicesSwiper) {
+	else if (!isMobile && servicesSwiper && choosesSwiper && accountSwiper) {
 
 		servicesSwiper.destroy(true, true);
 		servicesSwiper = null;
 
 		accountSwiper.destroy(true, true);
 		accountSwiper = null;
+
+		choosesSwiper.destroy(true, true);
+		choosesSwiper = null;
 	}
 
 	const programsSwiper = new Swiper(".programs__swiper", {

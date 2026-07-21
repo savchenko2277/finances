@@ -3,6 +3,22 @@
 .account {
 	$self: &;
 
+	&_loan {
+		.a-card {
+			min-height: 160px;
+		}
+		#{$self}__swiper {
+			.swiper-wrapper {
+				@include media(">xs") {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr) !important;
+					gap: 32px;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
 	&_about {
 		#{$self}__swiper {
 			.swiper-wrapper {

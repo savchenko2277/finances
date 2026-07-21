@@ -4,7 +4,10 @@
 	overflow: hidden;
 	
 	.swiper {
-		overflow: visible;
+		
+		@include media("<=xs") {
+			overflow: visible;
+		}
 	}
 
 	&__body {}

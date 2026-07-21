@@ -1,15 +1,15 @@
-<section class="map @@if(this.class){@@class}">
+<section class="map tabs @@if(this.class){@@class}">
   <div class="map__body container">
     <div class="map__head">
       <h2 class="map__title">ВФП на карте</h2>
-      <div class="map__buttons">
-        <button type="button" class="map__button active" data-map-tab="office"><span>В офисе</span></button>
-        <button type="button" class="map__button" data-map-tab="visit">
-          <span>Выезд менеджера</span>
-        </button>
+      <div class="map__navigation tabs__navigation tabs-navigation">
+        <div class="tabs-navigation__buttons">
+          <button type="button" class="tabs-navigation__button active">Деньги под ПТС</button>
+          <button type="button" class="tabs-navigation__button">Займ под авто</button>
+        </div>
       </div>
     </div>
-    <div class="map-box" data-map-content="office">
+    <div class="map-box tabs__tab map__tab active">
       <div class="map-box__info">
         <div class="map-box__top">
           <div class="map-box__item">
@@ -42,9 +42,11 @@
           </a>
         </div>
       </div>
-      <div class="map-box__canvas"></div>
+      <div class="map-box__canvas">
+        <img src="./img/map.svg" alt="">
+      </div>
     </div>
-    <div class="form-section modal-callback" data-map-content="visit" style="display: none;">
+    <div class="form-section tabs__tab map__tab modal-callback">
       <h2 class="form-section__title">
         Закажите услугу выездное обслуживание
       </h2>

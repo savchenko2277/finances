@@ -4,6 +4,19 @@
 
 	&__body {}
 
+	&__navigation {
+		width: 100%;
+		max-width: 565px;
+	}
+	
+	&__tab {
+		display: none;
+
+		&.active {
+			display: flex;
+		}
+	}
+
 	&__head {
 		display: flex;
 		align-items: center;
