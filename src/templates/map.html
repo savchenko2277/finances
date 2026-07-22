@@ -1,6 +1,6 @@
 <section class="map tabs @@if(this.class){@@class}">
-  <div class="map__body container">
-    <div class="map__head">
+  <div class="map__body">
+    <div class="map__head container">
       <h2 class="map__title">ВФП на карте</h2>
       <div class="map__navigation tabs__navigation tabs-navigation">
         <div class="tabs-navigation__buttons">
@@ -9,76 +9,103 @@
         </div>
       </div>
     </div>
-    <div class="map-box tabs__tab map__tab active">
-      <div class="map-box__info">
-        <div class="map-box__top">
-          <div class="map-box__item">
-            <h4 class="map-box__title">Офис в Москве (ЮВАО)</h4>
-            <a href="" class="map-box__address">г. Москва, проспект Рязанский, дом 10, строение 18, этаж 10,
-              кабинет 6</a>
-            <div class="map-box__flex">
-              <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
-              <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+    <div class="map__tabs">
+      <div class="map-box tabs__tab map__tab active">
+        <div class="map-box__info">
+          <div class="map-box__top">
+            <div class="map-box__item">
+              <h4 class="map-box__title">Офис в Москве (ЮВАО)</h4>
+              <a href="" class="map-box__address">г. Москва, проспект Рязанский, дом 10, строение 18, этаж 10,
+                кабинет 6</a>
+              <div class="map-box__flex">
+                <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
+                <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+              </div>
             </div>
-          </div>
 
-          <div class="map-box__item">
-            <h4 class="map-box__title">Офис в Химках</h4>
-            <a href="" class="map-box__address">г. Химки, ул. Панфилова, д. 37, этаж 4, офис 14</a>
-            <div class="map-box__flex">
-              <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
-              <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+            <div class="map-box__item">
+              <h4 class="map-box__title">Офис в Химках</h4>
+              <a href="" class="map-box__address">г. Химки, ул. Панфилова, д. 37, этаж 4, офис 14</a>
+              <div class="map-box__flex">
+                <a href="tel:88003512295" class="map-box__link">8 (800) 351 22 95</a>
+                <a href="mailto:info@mail.ru" class="map-box__link">info@mail.ru</a>
+              </div>
             </div>
           </div>
+          <div class="map-box__buttons">
+            <a href="#" class="social-item">
+              <span>TG</span>
+              <img src="./img/icons/telegram.svg" alt="">
+            </a>
+            <a href="#" class="social-item">
+              <span>MAX</span>
+              <img src="./img/icons/max.svg" alt="">
+            </a>
+          </div>
         </div>
-        <div class="map-box__buttons">
-          <a href="#" class="map-box__icon-button">
-            <span>MAX</span>
-            <img loading="lazy" src="img/footer/max.svg" alt="" />
-          </a>
-          <a href="#" class="map-box__icon-button">
-            <span>TG</span>
-            <img loading="lazy" src="img/footer/tg.svg" alt="" />
-          </a>
+        <div class="map-box__canvas">
+          <img src="./img/map.svg" alt="">
         </div>
       </div>
-      <div class="map-box__canvas">
-        <img src="./img/map.svg" alt="">
+      <div class="form-section tabs__tab map__tab modal-callback">
+        <div class="form-section__success success-section">
+            <div class="success-section__content">
+                <img loading="lazy" src="./img/icons/succes.webp" alt="" class="success-section__icon">
+                <div class="success-section__info">
+                    <h2 class="success-section__title title">
+                        Спасибо! Данные успешно отправлены
+                    </h2>
+                    <p class="success-section__desc">
+                        Наш менеджер свяжется с вами в ближайшее время
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h2 class="form-section__title">
+          Закажите услугу выездное обслуживание
+        </h2>
+        <p class="form-section__desc">
+          Наш менеджер свяжется с вами в ближайшее время
+        </p>
+        <form class="modal-callback__form">
+          <label class="modal-callback__label custom-label">
+            <h4 class="custom-label__title">Номер телефона</h4>
+            <div class="custom-input">
+              <input required placeholder="+7" type="tel">
+            </div>
+            <p class="custom-label__error">
+              Пример текста ошибки
+            </p>
+          </label>
+          <label class="modal-callback__label custom-label">
+            <h4 class="custom-label__title">Как к вам обращаться?</h4>
+            <div class="custom-input">
+              <input placeholder="Имя" type="text">
+            </div>
+            <p class="custom-label__error">
+              Пример текста ошибки
+            </p>
+          </label>
+          <button type="submit" class="modal-callback__button button button-blue">Оставить заявку</button>
+          <div class="modal-callback__agrees">
+            <label class="custom-agree modal-callback__agree">
+              <input type="checkbox" class="custom-agree__input custom-checkbox">
+              <p class="custom-agree__text">
+                Я даю согласие на <a href="#">обработку персональных данных</a>. <br> Подтверждаю ознакомление с <a
+                  href="#">пользовательским соглашением</a>
+              </p>
+            </label>
+            <label class="custom-agree modal-callback__agree">
+              <input type="checkbox" class="custom-agree__input custom-checkbox">
+              <p class="custom-agree__text">
+                Я согласен(на) на информирование о продуктах, <br> сервисах, услугах и акциях и передачу соответствующих
+                данных лицам, указанным в перечне
+              </p>
+            </label>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="form-section tabs__tab map__tab modal-callback">
-      <h2 class="form-section__title">
-        Закажите услугу выездное обслуживание
-      </h2>
-      <p class="form-section__desc">
-        Наш менеджер свяжется с вами в ближайшее время
-      </p>
-      <form class="modal-callback__form">
-        <label class="modal-callback__label">
-          <h4 class="modal-callback__label-title">Номер телефона <span>*</span></h4>
-          <input placeholder="+7" type="tel" class="modal-callback__input">
-        </label>
-        <label class="modal-callback__label">
-          <h4 class="modal-callback__label-title">Как к вам обращаться</h4>
-          <input type="text" placeholder="Иван Иванов" class="modal-callback__input">
-        </label>
-        <button class="modal-callback__button">Оставить заявку</button>
-        <div class="modal-callback__agrees">
-          <label class="modal-callback__agree">
-            <input type="checkbox" class="modal-callback__agree-input">
-            <p class="modal-callback__agree-text">
-              Я даю согласие на обработку персональных данных. Подтверждаю ознакомление с пользовательским соглашением
-            </p>
-          </label>
-          <label class="modal-callback__agree">
-            <input type="checkbox" class="modal-callback__agree-input" checked>
-            <p class="modal-callback__agree-text">
-              Я согласен(на) на информирование о продуктах, сервисах, услугах и акциях и передачу соответствующих данных
-              лицам, указанным в перечне
-            </p>
-          </label>
-        </div>
-      </form>
-    </div>
+
   </div>
 </section>

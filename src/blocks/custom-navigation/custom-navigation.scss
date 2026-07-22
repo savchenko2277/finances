@@ -19,6 +19,10 @@
 		transition: all $transition;
 		position: relative;
 
+		&.swiper-button-lock {
+			display: none;
+		}
+
 		&::after {
 				content: '';
 				position: absolute;

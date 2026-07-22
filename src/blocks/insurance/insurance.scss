@@ -2,11 +2,12 @@
 
 .insurance {
 	$self: &;
-	
+
 	&_loan {
 		#{$self}__tabs {
 			margin-bottom: fluid(48px, 32px);
 		}
+
 		#{$self}__title {
 			margin-bottom: 0;
 		}
@@ -33,9 +34,11 @@
 		min-height: 571px;
 
 		.loan-card {
+
 			&__content {
 				justify-content: center;
 			}
+
 			&__button {
 				margin-top: 0;
 			}
@@ -46,9 +49,7 @@
 		}
 	}
 
-	&__container {
-
-	}
+	&__container {}
 
 	&__title {
 		font-weight: 600;
@@ -60,8 +61,6 @@
 		margin-bottom: fluid(48px, 32px);
 	}
 
-	&__text {
-
-	}
+	&__text {}
 
 }

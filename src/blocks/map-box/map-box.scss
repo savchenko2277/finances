@@ -14,11 +14,10 @@
 	}
 
 	@include media("<=xs") {
-		padding: 24px;
-	}
-
-	@include media(">=xlg") {
-		margin: 0 -40px;
+		padding: 0;
+		background: transparent;
+		border-radius: 0;
+		border: none;
 	}
 
 	&__info {
@@ -83,7 +82,8 @@
 	}
 
 	&__buttons {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
 		flex-wrap: wrap;
 		max-width: 450px;
@@ -144,6 +144,13 @@
 			inset: 0;
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
+		}
+
+		@include media("<=xs") {
+			max-width: 100%;
+			height: 460px;
+			aspect-ratio: auto;
 		}
 	}
 }

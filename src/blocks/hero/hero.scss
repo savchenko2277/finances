@@ -4,7 +4,7 @@
 	position: relative;
 	font-weight: 500;
 	border-radius: 0 0 24px 24px;
-	overflow: hidden;
+	overflow: visible;
 
 	&__pagination {
 		position: absolute;
@@ -36,13 +36,17 @@
 			cursor: pointer;
 		}
 
-		@include media("<=xxlg") {
+		@include media("<=xxxlg") {
 			padding: 60px;
 		}
 
-		@include media("<=lg") {
+		@include media("<=xxlg") {
 			display: none;
 		}
+	}
+
+	&__swiper.swiper {
+		overflow: visible;
 	}
 
 	&__slide.swiper-slide {
@@ -50,6 +54,35 @@
 		align-items: center;
 		min-height: 680px;
 		position: relative;
+		overflow: visible;
+		opacity: 0;
+		transition: opacity $transition;
+
+		&.swiper-slide-active {
+			opacity: 1;
+			&::after {
+				transform: translateY(0%) rotate(180deg);
+				opacity: 1;
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			background: linear-gradient(273.47deg, var(--first-shadow-color) 7.01%, #000000 41.73%, var(--second-shadow-color) 76.17%);
+			width: 100%;
+			height: 185px;
+			z-index: -1;
+			filter: blur(100px);
+			transform: translateY(-100%) rotate(180deg);
+			transition: all $transition;
+
+			@include media("<=xs") {
+				display: none;
+			}
+		}
 
 		@include media("<=xs") {
 			&:before {
@@ -134,6 +167,8 @@
 		top: 0;
 		left: 0;
 		z-index: 1;
+		border-radius: 0 0 24px 24px;
+		overflow: hidden;
 
 		@include media("<=xs") {
 			height: 60%;

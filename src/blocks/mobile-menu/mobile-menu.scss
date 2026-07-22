@@ -9,6 +9,8 @@
 	max-height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
+	background: #0E1216CC;
+	backdrop-filter: blur(40px);
 	transition:
 		opacity 0.35s ease,
 		visibility 0.35s ease;
@@ -16,52 +18,75 @@
 	&.is-active {
 		opacity: 1;
 		visibility: visible;
+	}
 
-		.mobile-menu__body {
-			transform: translateY(0);
-			opacity: 1;
+	@include media("<=xs") {
+		background: $colorNeutral7;
+	}
+
+	&__top {
+		display: grid;
+		grid-template-columns: auto 266px;
+		justify-content: space-between;
+		margin-bottom: fluid(48px, 24px);
+		gap: 24px;
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
 		}
 	}
 
-	&__overlay {
-		position: absolute;
-		inset: 0;
-		background: rgba(10, 10, 18, 0.92);
-		backdrop-filter: blur(16px);
+	&__columns {
+		display: grid;
+		grid-template-columns: auto 266px;
+		justify-content: space-between;
+		gap: 16px;
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
+		}
 	}
 
-	&__body {
+	&__side {
+		display: flex;
+		flex-direction: column;
+		gap: 48px;
+	}
+
+	&__navigation {
+		width: fit-content;
+		overflow-x: auto;
+		height: fit-content;
+	}
+
+	&__container {
 		position: relative;
 		z-index: 1;
 		display: grid;
-		grid-template-columns: 1fr 266px;
-
-		padding: 41px;
-		transform: translateY(20px);
-		opacity: 0;
-		transition: transform 0.35s ease 0.1s,
-			opacity 0.35s ease 0.1s;
-
+		grid-template-columns: 100%;
+		padding: 40px;
 		background: #0e1216;
-
 		border: 1px solid #3b4650;
 		border-radius: 16px;
 		width: min(1240px, calc(100% - 16px * 2));
 		margin: 0 auto;
 		margin-top: 96px;
 
-		@include media("<=lg") {
-			grid-template-columns: 1fr;
-			gap: 32px;
-			padding: 16px;
-			margin-left: 0;
-			margin-right: 0;
-			width: 100%;
+		@include media("<=xs") {
+			padding: 0;
+			border-radius: 0;
+			border: none;
+			background: none;
+			padding-bottom: 16px;
 		}
 	}
 
 	&__item {
-		&_nav {}
+		&_nav {
+			display: grid;
+			grid-template-columns: 100%;
+			height: fit-content;
+		}
 	}
 
 	&__close {
@@ -159,16 +184,13 @@
 
 	&__panel {
 		display: none;
-		gap: 31px;
-		opacity: 0;
+		gap: fluid(32px, 16px);
 		transform: translateY(10px);
-		transition:
-			opacity 0.25s ease,
-			transform 0.25s ease;
 
-		&.is-active {
+		&.active {
 			display: grid;
 			grid-template-columns: repeat(3, auto);
+			animation: 0.35s fadeIn forwards linear;
 
 			@include media("<=lg") {
 				grid-template-columns: repeat(2, auto);
@@ -178,7 +200,6 @@
 				grid-template-columns: 100%;
 			}
 
-			opacity: 1;
 			transform: translateY(0);
 		}
 	}
@@ -188,10 +209,24 @@
 		flex-direction: column;
 		gap: 20px;
 
+		&_mobile {
+			display: none;
+
+			@include media("<=xs") {
+				display: flex;
+			}
+		}
+
 		&>p {
 			font-size: 18px;
 			line-height: 26px;
 			color: #ffffff;
+		}
+
+		@include media("<=xs") {
+			padding: 16px 20px 20px 20px;
+			background: $colorNeutral6;
+			border-radius: 12px;
 		}
 	}
 
@@ -202,7 +237,7 @@
 	}
 
 	&__link {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
 		font-size: 1rem;
 		gap: 12px;
@@ -216,7 +251,24 @@
 		span {
 			font-size: 16px;
 			line-height: 22px;
-			color: #ffffff;
+			color: $colorNeutral3;
+
+			@include media("<=xs") {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				flex: 1 1 auto;
+				&::after {
+					content: '';
+					display: block;
+					width: 24px;
+					height: 24px;
+					background: url("../img/icons/arrow-right.svg");
+					background-size: cover;
+					opacity: 0.5;
+				}
+			}
 		}
 	}
 }

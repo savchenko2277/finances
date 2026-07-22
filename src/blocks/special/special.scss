@@ -5,6 +5,7 @@
 	padding-bottom: 96px;
 	background: rgba(30, 37, 44, 1);
 	border-radius: 0 0 24px 24px;
+	overflow: hidden;
 
 	&_in-container {
 		padding: 0;
@@ -18,25 +19,60 @@
 		}
 	}
 
-	&__body {
+	&__container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
+	&__logos {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: start;
+		align-items: center;
+		max-width: 100%;
+		overflow-x: visible;
+	}
+
 	&__logos-row {
 		display: flex;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: center;
 		gap: 8px;
 		margin-bottom: 16px;
+
+		@include media("<=md") {
+			padding-right: 8px;
+			animation: 5s animationLogos infinite linear;
+		}
+
+		&:nth-child(1) {
+			
+		}
+
+		&:nth-child(2) {
+			display: none;
+
+			@include media("<=md") {
+				display: flex;
+			}
+		}
 
 		img {
 			font-size: 96px;
 			flex: 0 0 1em;
 			width: 1em;
 			height: 1em;
+		}
+
+		@keyframes animationLogos {
+			from {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(-100%);
+			}
 		}
 	}
 

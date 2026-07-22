@@ -1,8 +1,17 @@
 <div class="calc @@if(this.class){@@class}">
     <div class="calc__body container">
-        <div class="calc__success">
-            <h3>Спасибо! Данные успешно отправлены</h3>
-            <p>Наш менеджер свяжется с вами в ближайшее время</p>
+        <div class="calc__success success-section">
+            <div class="success-section__content">
+                <img loading="lazy" src="./img/icons/succes.webp" alt="" class="success-section__icon">
+                <div class="success-section__info">
+                    <h2 class="success-section__title title">
+                        Спасибо! Данные успешно отправлены
+                    </h2>
+                    <p class="success-section__desc">
+                        Наш менеджер свяжется с вами в ближайшее время
+                    </p>
+                </div>
+            </div>
         </div>
         <form class="calc__form" action="send.php" method="POST">
             <div class="calc__hero">
@@ -77,21 +86,19 @@
                     </div>
                 </div>
             </div>
-            <div class="calc__footer">
-                <div class="calc__footer-item">
-                    <input type="checkbox" name="consent_personal" required />
-                    <div>
-                        <p>Я даю согласие на обработку персональных данных.</p>
-                        <p>Подтверждаю ознакомление с пользовательским соглашением</p>
-                    </div>
-                </div>
-                <div class="calc__footer-item">
-                    <input type="checkbox" name="consent_agreement" required />
-                    <div>
-                        <p>Я даю согласие на обработку персональных данных.</p>
-                        <p>Подтверждаю ознакомление с пользовательским соглашением</p>
-                    </div>
-                </div>
+            <div class="calc__bottom">
+                <label class="custom-agree calc__agree">
+                    <input type="checkbox" class="custom-agree__input custom-checkbox">
+                    <p class="custom-agree__text">
+                        Я даю согласие на <a href="#">обработку персональных данных</a>. <br> Подтверждаю ознакомление с <a href="#">пользовательским соглашением</a>
+                    </p>
+                </label>
+                <label class="custom-agree calc__agree">
+                    <input type="checkbox" class="custom-agree__input custom-checkbox">
+                    <p class="custom-agree__text">
+                       Я согласен(на) на информирование о продуктах, <br> сервисах, услугах и акциях и передачу соответствующих данных лицам, указанным в перечне
+                    </p>
+                </label>
             </div>
         </form>
     </div>

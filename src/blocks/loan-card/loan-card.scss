@@ -9,20 +9,101 @@
 	background: $colorNeutral6;
 	gap: 32px;
 
+	&_reverse {
+		#{$self}__content {
+			padding-right: 0;
+			padding-left: 24px;
+
+			@include media(">xs") {
+				order: -1;
+			}
+
+			@include media("<=xs") {
+				padding: 24px 16px;
+			}
+		}
+	}
+
 	&_insurance {
 		grid-template-columns: 473px 1fr;
 
 		#{$self}__list {
 			margin-bottom: fluid(48px, 24px);
 		}
-		#{$self}__button{
+
+		#{$self}__button {
 			margin-top: auto;
+		}
+	}
+
+	&_swiper {
+		#{$self}__content {
+			display: grid;
+			grid-template-columns: 100%;
 		}
 	}
 
 	@include media("<=xs") {
 		grid-template-columns: 100%;
 		gap: 0;
+	}
+
+	&__swiper.swiper {
+		width: 100%;
+		max-width: 100%;
+		padding-bottom: 20px;
+		margin-bottom: 32px;
+		position: relative;
+	}
+
+	&__pagination {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__navigation.custom-navigation {
+		position: absolute;
+		bottom: 36px;
+		right: 16px;
+		z-index: 2;
+
+		.custom-navigation__btn {
+			background: $colorNeutral4;
+			width: 36px;
+			height: 36px;
+		}
+
+		@include media("<=xs") {
+			display: none;
+		}
+	}
+
+	&__slide {
+		background: $colorNeutral5;
+		padding: fluid(24px, 16px) fluid(24px, 16px) fluid(24px, 20px) fluid(24px, 16px);
+		border-radius: 12px;
+		padding-bottom: 78px;
+
+		@include media("<=xs") {
+			padding-bottom: fluid(24px, 20px);
+		}
+	}
+
+	&__slide-title {
+		font-size: fluid(28px, 20px);
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	&__slide-list {
+		padding-left: 24px;
+
+		li {
+			list-style: disc;
+			color: $colorNeutral3;
+		}
 	}
 
 	&__desc {
@@ -51,6 +132,29 @@
 		}
 	}
 
+	&__slide-text {
+		color: $colorNeutral3;
+	}
+
+	&__slides {
+		display: flex;
+		flex-direction: column;
+		gap: fluid(32px, 24px);
+		margin-bottom: fluid(32px, 24px);
+
+		.loan-card__slide {
+			padding-bottom: fluid(24px, 20px);
+		}
+	}
+
+	&__text-more {
+		margin-bottom: fluid(32px, 24px);
+
+		&::after {
+			background: linear-gradient(0deg, #1E252C 26.53%, rgba(30, 37, 44, 0) 100%);
+		}
+	}
+
 	&__comment {
 		margin-bottom: fluid(48px, 24px);
 		font-size: 12px;
@@ -58,6 +162,7 @@
 		background: $colorNeutral5;
 		border-radius: 12px;
 		color: $colorNeutral3;
+		width: fit-content;
 	}
 
 	&__text {
@@ -115,7 +220,7 @@
 		gap: 4px;
 		color: $colorNeutral2;
 		padding-left: 24px;
-		
+
 		li {
 			list-style-type: disc;
 		}
@@ -125,8 +230,17 @@
 		}
 	}
 
+	&:has(ol) ol.loan-card__list {
+		list-style-type: decimal;
+
+		li {
+			list-style-type: decimal;
+		}
+	}
+
 	&__button {
 		margin-top: 24px;
+		height: fit-content;
 	}
 
 }

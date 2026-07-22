@@ -22,7 +22,7 @@
 	}
 
 	input,
-	&__value {
+	&__value, textarea {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -44,6 +44,12 @@
 			box-shadow: inset 0 0 0 1px $colorBrand3;
 		}
 
+	}
+
+	textarea {
+		padding: 16px 24px;
+		min-height: 120px;
+		border-radius: 24px;
 	}
 
 	&__value {

@@ -23,26 +23,29 @@
 			justify-content: center;
 		}
 
-		margin-bottom: 48px;
+		margin-bottom: fluid(48px, 24px);
 	}
 
 	&__title {
-		display: inline-flex;
+		display: block;
 		gap: 16px;
 		align-items: center;
 
 		img {
-			font-size: 24px;
-			width: 1em;
-			height: 1em;
-			flex: 0 0 1em;
+			width: 32px;
+			height: 32px;
+			flex: 0 0 auto;
+			display: inline-block;
+			margin-right: 16px;
+			line-height: 1.2;
+			transform: translateY(4px);
 		}
 
 		span {
 			font-weight: 600;
 			font-size: 36px;
 
-			line-height: 40px;
+			line-height: 1.2;
 			letter-spacing: -0.01em;
 			color: #ffffff;
 		}

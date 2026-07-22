@@ -1,8 +1,12 @@
 @use 'lib' as *;
 
 .advantages {
-	
-	&__body {}
+
+	&__title {
+		font-size: 36px;
+		font-weight: 600;
+		margin-bottom: fluid(48px, 24px);
+	}
 
 	&__grid {
 		display: grid;
@@ -49,19 +53,6 @@
 			grid-row: span 1;
 			grid-column: span 2;
 			order: 10;
-		}
-	}
-
-	&__hero {
-		h2 {
-			margin-bottom: 48px;
-			font-weight: 600;
-			font-size: 36px;
-
-			line-height: 40px;
-			letter-spacing: -0.01em;
-
-			color: #ffffff;
 		}
 	}
 

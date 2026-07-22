@@ -1,6 +1,8 @@
 @use 'lib' as *;
 
 .faq-spoilers {
+	$self: &;
+
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -11,42 +13,41 @@
 	}
 
 	&__item {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-rows: max-content 0fr;
 		background: #3b4650;
 		border-radius: 12px;
 		transition: all $transition;
 
-		&_active {
-			padding-bottom: 20px;
+		&.active {
+			grid-template-rows: max-content 1fr;
 
-			.faq-spoilers {
-				&__button {
-					&:after {
-						background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 12C20 12.5542 19.5885 13 19.0769 13H4.92308C4.41346 13 4 12.5525 4 12.0004C4 11.45 4.41346 11 4.92308 11H19.0769C19.5885 11 20 11.45 20 12Z' fill='white'/%3E%3C/svg%3E");
-					}
-				}
+			#{$self}__button::after {
+				background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 12C20 12.5542 19.5885 13 19.0769 13H4.92308C4.41346 13 4 12.5525 4 12.0004C4 11.45 4.41346 11 4.92308 11H19.0769C19.5885 11 20 11.45 20 12Z' fill='white'/%3E%3C/svg%3E");
+			}
+
+			#{$self}__content {
+				padding-bottom: 20px;
 			}
 		}
 	}
 
 	&__button {
-		padding: 20px;
+		padding: fluid(20px, 16px);
 		padding-right: 52px;
 		position: relative;
 		text-align: left;
 
 		span {
-			font-size: 18px;
-
-			line-height: 26px;
+			font-size: fluid(18px, 16px);
+			line-height: 1.5;
 			color: #ffffff;
 		}
 
 		&:after {
 			content: "";
 			position: absolute;
-			right: 20px;
+			right: fluid(20px, 16px);
 			top: 50%;
 			transform: translateY(-50%);
 			width: 24px;
@@ -60,10 +61,10 @@
 	}
 
 	&__content {
+		overflow: hidden;
 		font-size: 14px;
-
-		line-height: 20px;
 		color: #ffffff;
-		padding: 0 20px;
+		padding: 0 16px 0px 16px;
+		transition: all $transition;
 	}
 }

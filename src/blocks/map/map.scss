@@ -8,26 +8,43 @@
 		width: 100%;
 		max-width: 565px;
 	}
-	
+
+	&__tabs {
+		width: min(1240px, calc(100% - 16px * 2));
+		margin: 0 auto;
+	}
+
 	&__tab {
 		display: none;
+
+		&.modal-callback.form-section {
+			display: none;
+
+			&.active {
+				display: flex;
+			}
+		}
 
 		&.active {
 			display: flex;
 		}
 	}
 
-	&__head {
+	&__head.container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		margin-bottom: 48px;
+		margin-bottom: fluid(48px, 24px);
 		gap: 16px;
 
 		@include media("<=sm") {
 			flex-direction: column;
 			align-items: stretch;
+		}
+
+		@include media("<=xs") {
+			margin-bottom: 24px;
 		}
 	}
 

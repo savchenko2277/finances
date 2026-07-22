@@ -1,0 +1,63 @@
+@use 'lib' as *;
+
+.success-section {
+	$self: &;
+
+	@include flex-center;
+
+	position: relative;
+	overflow: hidden;
+	border-radius: 16px;
+	background: $colorNeutral7;
+
+	&::after {
+		content: '';
+		
+		position: absolute;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		background: url("../img/success-bg.webp");
+		background-size: cover;
+		background-repeat: no-repeat;
+		transform: translateX(-50%);
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: 129px minmax(auto, 469px);
+		align-items: center;
+		gap: 32px;
+		position: relative;
+		z-index: 1;
+		padding: 16px;
+
+		@include media("<=xs") {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			text-align: center;
+		}
+	}
+
+	&__icon {
+
+	}
+
+	&__info {
+
+	}
+
+	&__title {
+		line-height: 1.2;
+		font-size: fluid(36px, 28px);
+		font-weight: 600;
+		margin-bottom: 12px;
+	}
+
+	&__desc {
+		font-size: fluid(18px, 14px);
+	}
+
+}

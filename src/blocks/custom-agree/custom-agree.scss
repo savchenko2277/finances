@@ -1,0 +1,27 @@
+@use 'lib' as *;
+
+.custom-agree {
+	$self: &;
+
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	gap: 12px;
+	cursor: pointer;
+
+	&__input {
+		flex: 0 0 auto;
+		margin-top: 4px;
+	}
+
+	&__text {
+		font-size: 12px;
+		color: $colorNeutral4;
+
+		a {
+			position: relative;
+			border-bottom: 1px solid $colorNeutral4;
+		}
+	}
+
+}

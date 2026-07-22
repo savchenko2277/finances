@@ -4,10 +4,14 @@
 	display: flex;
 	gap: 8px;
 	max-width: 762px;
-	font-size: 1rem;
+	margin-top: auto;
 
 	@include media("<=lg") {
 		flex-wrap: wrap;
+	}
+
+	@include media("<=xs") {
+		display: none;
 	}
 	
 	&__address {

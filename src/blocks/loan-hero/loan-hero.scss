@@ -13,9 +13,7 @@
 		}
 	}
 
-	&__info {
-
-	}
+	&__info {}
 
 	&__title {
 		font-size: fluid(46px, 36px);
@@ -32,21 +30,20 @@
 		font-size: fluid(18px, 14px);
 	}
 
-	&__button {
-
-	}
+	&__button {}
 
 	&__image {
 		height: 100%;
 		position: relative;
-		border-radius: 40px;
-		overflow: hidden;
 
 		img {
 			position: absolute;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			border-radius: 40px;
+			overflow: hidden;
+			z-index: 1;
 		}
 
 		@include media("<=sm") {
@@ -54,6 +51,23 @@
 			width: 100%;
 			height: auto;
 			aspect-ratio: 342 / 202;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: linear-gradient(273.47deg, #CE6F64 7.01%, #000000 41.73%, #264783 76.17%);
+			width: 720px;
+			height: 60px;
+			filter: blur(120px);
+			z-index: 0;
+
+			@include media("<=xs") {
+				display: none;
+			}
 		}
 	}
 

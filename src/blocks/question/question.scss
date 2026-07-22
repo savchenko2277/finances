@@ -10,6 +10,9 @@
 	border: 1px solid #3b4650;
 	border-radius: 16px;
 
+	width: min(1240px, calc(100% - 16px * 2));
+	margin: 0 auto;
+
 	@include media("<=xs") {
 		padding: 0;
 		border: none;
@@ -73,43 +76,6 @@
 				color: #e9f0f5;
 
 			}
-		}
-	}
-
-	&__button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 20px 56px;
-		gap: 8px;
-		min-height: 60px;
-		background: #005fa8;
-		border-radius: 999px;
-		transition: all $transition;
-
-		@media (any-hover: hover) {
-			&:hover {
-				opacity: 0.8;
-			}
-		}
-
-		@include media("<=xs") {
-			width: 100%;
-		}
-
-		img {
-			font-size: 20px;
-			width: 1em;
-			height: 1em;
-			flex: 0 0 1em;
-		}
-
-		span {
-			font-weight: 500;
-			font-size: 18px;
-
-			line-height: 20px;
-			color: #ffffff;
 		}
 	}
 }

@@ -1,55 +1,26 @@
-import { throttle } from "./libs/utils";
+// Service Imports
 import "./polyfills.js";
 import "./blocks.js";
 
+// Throttle Function
+import { throttle } from "./libs/utils";
+
 // Swiper
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
 
+// Tabs
 import { driveTabs } from "../js/libs/driveTabs";
 
-// Функции
+// Inputmask
+import Inputmask from "inputmask";
 
-// Анимация slideUp / slideDown для аккордеона
-const _slide = {
-	up(element, duration = 300) {
-		element.style.display = "block";
-		element.style.overflow = "hidden";
-		const height = element.scrollHeight;
-		element.style.transition = `height ${duration}ms ease`;
-		element.style.height = height + "px";
-		element.getBoundingClientRect();
-		element.style.height = "0px";
-		element.addEventListener("transitionend", function handler() {
-			element.removeEventListener("transitionend", handler);
-			element.style.display = "none";
-			element.style.height = "";
-			element.style.overflow = "";
-			element.style.transition = "";
-		});
-	},
-	down(element, duration = 300) {
-		element.style.display = "block";
-		element.style.overflow = "hidden";
-		element.style.height = "0px";
-		element.getBoundingClientRect();
-		const height = element.scrollHeight;
-		element.style.transition = `height ${duration}ms ease`;
-		element.style.height = height + "px";
-		element.addEventListener("transitionend", function handler() {
-			element.removeEventListener("transitionend", handler);
-			element.style.height = "";
-			element.style.overflow = "";
-			element.style.transition = "";
-		});
-	},
-};
-
+// Functions
 const setScrollbarWidth = () => {
 	document.documentElement.style.setProperty('--sw', `${window.innerWidth - document.documentElement.clientWidth}px`);
 }
 
-function initSwiper() {
+const initSwiper = () => {
 	const buttonsClient = document.querySelectorAll(".client__tab-btn");
 	const buttonsReviews = document.querySelectorAll(".reviews__button");
 	const buttonsArticles = document.querySelectorAll(".articles__button");
@@ -191,13 +162,13 @@ function initSwiper() {
 	});
 
 
-	new Swiper(".swiper-client", {
+	new Swiper(".client__swiper", {
 		modules: [Navigation],
 		loop: false,
 		spaceBetween: 32,
 		navigation: {
-			prevEl: buttonsClient[0],
-			nextEl: buttonsClient[1],
+			prevEl: document.querySelector(".client .custom-navigation__btn_prev"),
+			nextEl: document.querySelector(".client .custom-navigation__btn_next"),
 		},
 		breakpoints: {
 			0: {
@@ -221,8 +192,13 @@ function initSwiper() {
 	});
 
 	new Swiper(".hero__swiper", {
-		modules: [Navigation, Pagination],
+		modules: [Navigation, Pagination, EffectFade, Autoplay],
 		loop: true,
+		effect: "fade",
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
 		pagination: {
 			el: ".hero__pagination",
 		},
@@ -244,9 +220,61 @@ function initSwiper() {
 			prevEl: ".custom-navigation__btn_prev",
 		},
 	});
+
+	new Swiper(".insurance .loan-card__swiper", {
+		modules: [Navigation, Pagination],
+		loop: true,
+		spaceBetween: 16,
+		autoHeight: true,
+		pagination: {
+			el: ".loan-card__pagination",
+		},
+		navigation: {
+			nextEl: ".custom-navigation__btn_next",
+			prevEl: ".custom-navigation__btn_prev",
+		},
+		breakpoints: {
+			640: {
+				autoHeight: false
+			}
+		}
+	});
+
+	new Swiper(".loanreq_swiper .loan-card__swiper", {
+		modules: [Navigation, Pagination],
+		loop: true,
+		spaceBetween: 16,
+		autoHeight: true,
+		pagination: {
+			el: ".loan-card__pagination",
+		},
+		navigation: {
+			nextEl: ".custom-navigation__btn_next",
+			prevEl: ".custom-navigation__btn_prev",
+		},
+		breakpoints: {
+			640: {
+				autoHeight: false
+			}
+		}
+	});
+
+	new Swiper(".loanreq_swiper-autoheight .loan-card__swiper", {
+		modules: [Navigation, Pagination],
+		loop: true,
+		spaceBetween: 16,
+		autoHeight: true,
+		pagination: {
+			el: ".loan-card__pagination",
+		},
+		navigation: {
+			nextEl: ".custom-navigation__btn_next",
+			prevEl: ".custom-navigation__btn_prev",
+		}
+	});
 }
 
-const setHeader = () => {
+const initHeader = () => {
 	const header = document.querySelector(".header");
 	if (!header) return;
 
@@ -257,6 +285,12 @@ const setHeader = () => {
 		header.classList.toggle("is-active");
 		burger.classList.toggle("is-active");
 		mobileMenu.classList.toggle("is-active");
+
+		if(header.classList.contains("is-active")) {
+			document.body.classList.add("scroll-lock");
+		} else {
+			document.body.classList.remove("scroll-lock");
+		}
 	})
 }
 
@@ -269,24 +303,12 @@ const initTabs = () => {
 			container: el,
 			controls: ".tabs__navigation .tabs-navigation__button",
 			selects: ".tabs__tab",
-			cls: 'active',
-			onInit() {
-				console.log(this);
-			},
-			onClick(i) {
-				console.log(this, i);
-			},
-			onTab(set, i) {
-				console.log(this, set, i);
-			},
-			onTick(i) {
-				console.log(this, i);
-			},
+			cls: 'active'
 		});
 	})
 }
 
-const setTextMore = () => {
+const initTextMore = () => {
 	const containers = document.querySelectorAll(".text-more")
 
 	containers.forEach(el => {
@@ -299,41 +321,80 @@ const setTextMore = () => {
 	})
 }
 
+const initAccordeons = () => {
+	const containers = document.querySelectorAll(".accordeons")
+
+	containers.forEach(container => {
+		const items = container.querySelectorAll(".accordeons__item")
+
+		items.forEach(item => {
+			const button = item.querySelector(".accordeons__item-button")
+			if (!button) return
+
+			button.addEventListener("click", () => {
+				if (item.classList.contains("active")) {
+					item.classList.remove("active")
+					return
+				}
+
+				items.forEach(el => el.classList.remove("active"))
+				item.classList.add("active")
+			})
+		})
+	})
+}
+
+const initPhoneMask = (container = document) => {
+	Inputmask({
+		mask: "+7 (999) 999-99-99",
+		showMaskOnHover: false,
+	}).mask(container.querySelectorAll('input[type="tel"]'));
+};
+
+const initModals = () => {
+	const modals = document.querySelectorAll('.modal');
+
+	document.addEventListener('click', (e) => {
+		const trigger = e.target.closest('[data-modal-open]');
+		if (!trigger) return;
+
+		const modalClass = trigger.dataset.modalOpen;
+		const modal = document.querySelector(`.modal.${modalClass}`);
+		if (modal) {
+			modal.classList.add('active');
+			document.body.classList.add("scroll-lock");
+			initPhoneMask(modal);
+		}
+	});
+
+	modals.forEach((modal) => {
+		modal.addEventListener('click', (e) => {
+
+			if (e.target.closest('.modal__close')) {
+				modal.classList.remove('active');
+				document.body.classList.remove("scroll-lock");
+				return;
+			}
+
+			if (!e.target.closest('.modal__container')) {
+				modal.classList.remove('active');
+				document.body.classList.remove("scroll-lock");
+			}
+		});
+	});
+};
+
+// Init functions
 document.addEventListener("DOMContentLoaded", () => {
 	setScrollbarWidth();
 	initSwiper();
-	setHeader();
+	initHeader();
 	initTabs();
-	setTextMore();
+	initTextMore();
+	initAccordeons();
+	initModals();
+	initPhoneMask();
 
-	document
-		.querySelectorAll(".faq-spoilers__item")
-		.forEach((item) => (item.lastElementChild.style.display = "none"));
-
-	addEventListener("click", (event) => {
-		const item = event.target.closest(".faq-spoilers__item");
-		if (!item) return;
-
-		const button = item.firstElementChild;
-		const content = item.lastElementChild;
-
-		if (content.classList.contains("slide")) return;
-
-		if (item.classList.contains("faq-spoilers__item_active")) {
-			item.parentElement._openedSpoiler = null;
-			item.classList.remove("faq-spoilers__item_active");
-			_slide.up(content);
-		} else {
-			if (item.parentElement._openedSpoiler) {
-				item.parentElement._openedSpoiler.classList.remove(
-					"faq-spoilers__item_active",
-				);
-				_slide.up(item.parentElement._openedSpoiler.lastElementChild);
-			}
-
-			item.classList.add("faq-spoilers__item_active");
-			item.parentElement._openedSpoiler = item;
-			_slide.down(content);
-		}
-	});
+	console.log("Cайт разработан командой onespace.team");
+	console.log("Developed by 16th team");
 })

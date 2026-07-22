@@ -38,12 +38,7 @@
 		align-items: center;
 		gap: 16px;
 		flex-wrap: wrap;
-
-		@include media("<=sm") {
-			justify-content: center;
-		}
-
-		margin-bottom: 48px;
+		margin-bottom: fluid(48px, 24px);
 	}
 
 	&__title {
@@ -55,10 +50,7 @@
 		color: #ffffff;
 	}
 
-	&__buttons {
-		display: inline-flex;
-		gap: 16px;
-
+	&__navigation {
 		@include media("<=sm") {
 			display: none;
 		}
@@ -70,16 +62,8 @@
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
-
-		@include media("<=sm") {
-			min-width: 340px;
-			min-height: 60px;
-		}
-
-		@include media("<=sm") {
-			min-width: 0;
-			width: 100%;
-		}
+		min-width: 340px;
+		min-height: 60px;
 
 		span {
 			font-weight: 500;
@@ -91,12 +75,8 @@
 	}
 
 	&__swiper.swiper {
-		margin-bottom: 24px;
+		margin-bottom: fluid(24px, 16px);
 		max-width: 100%;
 		width: 100%;
-
-		@include media("<=xs") {
-			margin-bottom: 36px;
-		}
 	}
 }

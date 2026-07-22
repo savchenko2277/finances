@@ -10,34 +10,48 @@
             </p>
             <form class="modal-callback__form">
                 <div class="modal-callback__labels">
-                    <label class="modal-callback__label">
-                        <h4 class="modal-callback__label-title">Номер телефона <span>*</span></h4>
-                        <input placeholder="+7" type="tel" class="modal-callback__input">
-                    </label>
-                    <label class="modal-callback__label">
-                        <h4 class="modal-callback__label-title">Как к вам обращаться</h4>
-                        <input type="text" placeholder="Иван Иванов" class="modal-callback__input">
-                    </label>
-                    <label class="modal-callback__label">
-                        <h4 class="modal-callback__label-title">Ваш вопрос</h4>
-                        <textarea placeholder="Сообщение" class="modal-callback__textarea"></textarea>
-                    </label>
-                </div>
-                <button class="modal-callback__button">Оставить заявку</button>
-                <div class="modal-callback__agrees">
-                    <label class="modal-callback__agree">
-                        <input type="checkbox" class="modal-callback__agree-input">
-                        <p class="modal-callback__agree-text">
-                            Я даю согласие на обработку персональных данных. Подтверждаю ознакомление с пользовательским
-                            соглашением
+                    <label class="modal-callback__label custom-label">
+                        <h4 class="custom-label__title">Номер телефона</h4>
+                        <div class="custom-input">
+                            <input required placeholder="+7" type="tel">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
                         </p>
                     </label>
-                    <label class="modal-callback__agree">
-                        <input type="checkbox" class="modal-callback__agree-input" checked>
-                        <p class="modal-callback__agree-text">
-                            Я согласен(на) на информирование о продуктах, сервисах, услугах и акциях и передачу
-                            соответствующих данных
-                            лицам, указанным в перечне
+                    <label class="modal-callback__label custom-label">
+                        <h4 class="custom-label__title">Как к вам обращаться?</h4>
+                        <div class="custom-input">
+                            <input placeholder="Имя" type="text">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                    <label class="modal-callback__label custom-label">
+                        <h4 class="custom-label__title">Ваш вопрос</h4>
+                        <div class="custom-input">
+                            <textarea placeholder="Сообщение"></textarea>
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                </div>
+                <button class="modal-callback__button button button-blue">Оставить заявку</button>
+                <div class="modal-callback__agrees">
+                    <label class="custom-agree calc__agree">
+                        <input type="checkbox" class="custom-agree__input custom-checkbox">
+                        <p class="custom-agree__text">
+                            Я даю согласие на <a href="#">обработку персональных данных</a>. <br> Подтверждаю
+                            ознакомление с <a href="#">пользовательским соглашением</a>
+                        </p>
+                    </label>
+                    <label class="custom-agree calc__agree">
+                        <input type="checkbox" class="custom-agree__input custom-checkbox">
+                        <p class="custom-agree__text">
+                            Я даю согласие на <a href="#">обработку персональных данных</a>. <br> Подтверждаю
+                            ознакомление с <a href="#">пользовательским соглашением</a>
                         </p>
                     </label>
                 </div>
@@ -46,7 +60,7 @@
     </div>
 </div>
 
-<div class="modal modal_callback">
+<div class="modal modal_question">
     <button type="button" class="modal__close"></button>
     <div class="modal__container">
         <div class="modal-callback">
@@ -58,34 +72,48 @@
             </p>
             <form class="modal-callback__form">
                 <div class="modal-callback__labels">
-                    <label class="modal-callback__label">
-                        <h4 class="modal-callback__label-title">Номер телефона <span>*</span></h4>
-                        <input placeholder="+7" type="tel" class="modal-callback__input">
-                    </label>
-                    <label class="modal-callback__label">
-                        <h4 class="modal-callback__label-title">Как к вам обращаться</h4>
-                        <input type="text" placeholder="Иван Иванов" class="modal-callback__input">
-                    </label>
-                    <label class="modal-callback__label">
-                        <h4 class="modal-callback__label-title">Ваш вопрос</h4>
-                        <textarea placeholder="Сообщение" class="modal-callback__textarea"></textarea>
-                    </label>
-                </div>
-                <button class="modal-callback__button">Оставить заявку</button>
-                <div class="modal-callback__agrees">
-                    <label class="modal-callback__agree">
-                        <input type="checkbox" class="modal-callback__agree-input">
-                        <p class="modal-callback__agree-text">
-                            Я даю согласие на обработку персональных данных. Подтверждаю ознакомление с пользовательским
-                            соглашением
+                    <label class="modal-callback__label custom-label">
+                        <h4 class="custom-label__title">Номер телефона</h4>
+                        <div class="custom-input">
+                            <input required placeholder="+7" type="tel">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
                         </p>
                     </label>
-                    <label class="modal-callback__agree">
-                        <input type="checkbox" class="modal-callback__agree-input" checked>
-                        <p class="modal-callback__agree-text">
-                            Я согласен(на) на информирование о продуктах, сервисах, услугах и акциях и передачу
-                            соответствующих данных
-                            лицам, указанным в перечне
+                    <label class="modal-callback__label custom-label">
+                        <h4 class="custom-label__title">Как к вам обращаться?</h4>
+                        <div class="custom-input">
+                            <input placeholder="Имя" type="text">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                    <label class="modal-callback__label custom-label">
+                        <h4 class="custom-label__title">Ваш вопрос</h4>
+                        <div class="custom-input">
+                            <textarea placeholder="Сообщение"></textarea>
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                </div>
+                <button class="modal-callback__button button button-blue">Оставить заявку</button>
+                <div class="modal-callback__agrees">
+                    <label class="custom-agree calc__agree">
+                        <input type="checkbox" class="custom-agree__input custom-checkbox">
+                        <p class="custom-agree__text">
+                            Я даю согласие на <a href="#">обработку персональных данных</a>. <br> Подтверждаю
+                            ознакомление с <a href="#">пользовательским соглашением</a>
+                        </p>
+                    </label>
+                    <label class="custom-agree calc__agree">
+                        <input type="checkbox" class="custom-agree__input custom-checkbox">
+                        <p class="custom-agree__text">
+                            Я даю согласие на <a href="#">обработку персональных данных</a>. <br> Подтверждаю
+                            ознакомление с <a href="#">пользовательским соглашением</a>
                         </p>
                     </label>
                 </div>

@@ -6,6 +6,22 @@
 	position: relative;
 	z-index: 2;
 
+	&::after {
+		content: '';
+		position: absolute;
+		top: 60%;
+		left: 45%;
+		background: linear-gradient(273.47deg, #CE6F64 7.01%, #000000 41.73%, #264783 76.17%);
+		width: 720px;
+		height: 60px;
+		filter: blur(100px);
+		z-index: -1;
+
+		@include media("<=xs") {
+			display: none;
+		}
+	}
+
 	&__title {
 		font-size: fluid(46px, 36px);
 		font-weight: 600;
@@ -67,7 +83,7 @@
 		border-radius: 12px;
 		padding: 8px 8px 16px 8px;
 
-		
+
 	}
 
 	&__item-image {

@@ -5,11 +5,6 @@
 	flex-direction: column;
 	gap: 49px;
 
-	@include media("<=lg") {
-		order: -1;
-		gap: 16px;
-	}
-
 	&__button {
 		padding: 16px 24px;
 		background: #1e252c;
@@ -38,14 +33,16 @@
 		}
 	}
 
-	&__grid {
-		grid-column: 1fr;
+	&__items {
 		display: grid;
+		grid-template-columns: 100%;
 		gap: 32px;
+		height: fit-content;
 
-		@include media("<=lg") {
-			gap: 16px;
+		@include media("<=md") {
+			order: -1;
 			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
 		}
 	}
 
@@ -95,6 +92,11 @@
 
 		@include media("<=lg") {
 			aspect-ratio: 1/1;
+		}
+
+		@include media("<=xs") {
+			border: 1px solid $colorNeutral5;
+			padding: 12px 20px;
 		}
 	}
 }

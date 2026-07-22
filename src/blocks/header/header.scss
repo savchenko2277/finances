@@ -15,10 +15,18 @@
 	}
 
 	&.is-active {
-		#{$self}__button-chat {
+		#{$self}__navigation {
 			opacity: 0;
 			visibility: hidden;
 			pointer-events: none;
+		}
+
+		@include media("<=xs") {
+			#{$self}__button-chat {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
 		}
 	}
 
@@ -34,6 +42,7 @@
 				&:nth-child(1) {
 					display: none;
 				}
+
 				&:nth-child(2) {
 					display: block;
 				}
@@ -169,6 +178,24 @@
 		font-family: "Google Sans";
 		font-size: 16px;
 		color: #e9f0f5;
+
+		span {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 4px;
+
+			&::after {
+				content: '';
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url("../img/icons/arrow-down-light.svg");
+				background-size: cover;
+				opacity: 0.5;
+				transition: all $transition;
+			}
+		}
 	}
 
 	&__navigation {
@@ -176,6 +203,7 @@
 		flex-direction: row;
 		align-items: center;
 		gap: 32px;
+		transition: all $transition;
 
 		@include media("<=lg") {
 			display: none;
@@ -185,6 +213,21 @@
 	&__item-parent {
 		position: relative;
 		flex-shrink: 0;
+
+		&:hover {
+			#{$self}__item {
+				span::after {
+					transform: rotate(180deg);
+					opacity: 1;
+				}
+			}
+
+			#{$self}__item-dropdown {
+				opacity: 1;
+				visibility: visible;
+				transform: translateX(-50%) translateY(0);
+			}
+		}
 	}
 
 	&__item-dropdown {
@@ -192,28 +235,38 @@
 		top: calc(100% + 8px);
 		left: 50%;
 		transform: translateX(-50%) translateY(-8px);
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		padding: 8px 0;
-		min-width: 220px;
-		background: rgba(30, 30, 35, 0.95);
-		backdrop-filter: blur(12px);
+		padding: 20px;
+		background: $colorNeutral6;
 		border: 1px solid rgba(255, 255, 255, 0.12);
 		border-radius: 12px;
 		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 		opacity: 0;
 		visibility: hidden;
-		transition:
-			opacity 0.25s ease,
-			visibility 0.25s ease,
-			transform 0.25s ease;
+		transition: all $transition;
 		z-index: 10;
+		width: fit-content;
+	}
 
-		&.is-active {
-			opacity: 1;
-			visibility: visible;
-			transform: translateX(-50%) translateY(0);
+	&__item-dropdown-lists {
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+
+			li {
+				font-size: 14px;
+				color: $colorNeutral3;
+				text-wrap: nowrap;
+				transition: all $transition;
+
+				&:hover {
+					opacity: 0.5;
+				}
+			}
 		}
 	}
 
