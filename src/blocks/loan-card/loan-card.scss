@@ -9,6 +9,12 @@
 	background: $colorNeutral6;
 	gap: 32px;
 
+	&_audit {
+		.a-card {
+			background: $colorNeutral5;
+		}
+	}
+
 	&_reverse {
 		#{$self}__content {
 			padding-right: 0;
@@ -46,6 +52,37 @@
 	@include media("<=xs") {
 		grid-template-columns: 100%;
 		gap: 0;
+	}
+
+	*:has(.loan-card__about-text) {
+		.loan-card__list {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__adv.swiper {
+		.swiper-wrapper {
+			@include media(">xs") {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 16px;
+			}
+		}
+	}
+
+	&__adv-item.swiper-slide {
+		background: $colorNeutral5;
+		min-height: 140px;
+		padding: 16px;
+		border-radius: 12px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	&__adv-icon {
+		align-self: flex-end;
 	}
 
 	&__swiper.swiper {

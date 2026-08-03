@@ -7,6 +7,7 @@
 		.a-card {
 			min-height: 160px;
 		}
+
 		#{$self}__swiper {
 			.swiper-wrapper {
 				@include media(">xs") {
@@ -73,7 +74,32 @@
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
+	}
 
+	&_cards {
+		#{$self}__swiper {
+			.swiper-wrapper {
+				@include media(">xs") {
+
+					display: grid;
+					grid-template-columns: repeat(6, 1fr);
+					gap: 32px;
+
+					.a-card {
+						grid-column: span 2;
+
+						&:nth-last-child(1),
+						&:nth-last-child(2) {
+							grid-column: span 3;
+						}
+
+						@include media("<=md") {
+							grid-column: span 3;
+						}
+					}
+				}
+			}
+		}
 	}
 
 }

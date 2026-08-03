@@ -1,0 +1,52 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+
+    @@include("page-top.html")
+
+    <section class="payment">
+        <div class="payment__container container">
+            <form class="payment__form">
+                <h2 class="payment__title">
+                    Оплата договоров
+                </h2>
+                <div class="payment__labels">
+                    <label class="payment__label custom-label">
+                        <h4 class="custom-label__title">ФИО</h4>
+                        <div class="custom-input">
+                            <input required placeholder="Иванов Иван Иванович" type="text">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                    <label class="payment__label custom-label">
+                        <h4 class="custom-label__title">Сумма</h4>
+                        <div class="custom-input">
+                            <input required placeholder="Введите сумму" type="text">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                    <label class="payment__label custom-label">
+                        <h4 class="custom-label__title">Номер договора</h4>
+                        <div class="custom-input">
+                            <input required placeholder="Введите номер договора" type="text">
+                        </div>
+                        <p class="custom-label__error">
+                            Пример текста ошибки
+                        </p>
+                    </label>
+                </div>
+                <button class="payment__button button button-blue">Оплатить</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})

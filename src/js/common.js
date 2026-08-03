@@ -29,6 +29,7 @@ const initSwiper = () => {
 	let servicesSwiper = null;
 	let accountSwiper = null;
 	let choosesSwiper = null;
+	let loanreqAuditSwiper = null;
 
 	// Если мобилка И слайдер еще не создан
 	if (isMobile && !servicesSwiper && !accountSwiper && !choosesSwiper) {
@@ -58,6 +59,19 @@ const initSwiper = () => {
 				el: ".chooses__pagination",
 			},
 		});
+		loanreqAuditSwiper = new Swiper(".loanreq_swiper-audit .loan-card__swiper", {
+			modules: [Navigation, Pagination],
+			loop: true,
+			spaceBetween: 16,
+			autoHeight: true,
+			pagination: {
+				el: ".loan-card__pagination",
+			},
+			navigation: {
+				nextEl: ".custom-navigation__btn_next",
+				prevEl: ".custom-navigation__btn_prev",
+			},
+		});
 	}
 
 	else if (!isMobile && servicesSwiper && choosesSwiper && accountSwiper) {
@@ -70,6 +84,11 @@ const initSwiper = () => {
 
 		choosesSwiper.destroy(true, true);
 		choosesSwiper = null;
+
+		if (loanreqAuditSwiper) {
+			loanreqAuditSwiper.destroy(true, true);
+			loanreqAuditSwiper = null;
+		}
 	}
 
 	const programsSwiper = new Swiper(".programs__swiper", {

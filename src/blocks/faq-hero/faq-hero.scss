@@ -1,0 +1,71 @@
+@use 'lib' as *;
+
+.faq-hero {
+	$self: &;
+
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -160px;
+		left: 50%;
+		width: 1300px;
+		height: 800px;
+		background: url("../img/faq-blur.webp");
+		background-size: cover;
+		background-position: 50% 200px;
+		transform: translateX(-50%);
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: fluid(32px, 24px);
+		align-items: end;
+		position: relative;
+		z-index: 1;
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 10px;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: fluid(46px, 36px);
+		margin-bottom: 20px;
+
+		@include media("<=xs") {
+			margin-bottom: 24px;
+			font-weight: 600;
+		}
+	}
+
+	&__desc {
+		color: $colorNeutral2;
+	}
+
+	&__info {
+
+	}
+
+	&__text {
+		padding: 16px;
+		background: $colorNeutral6;
+		font-size: 12px;
+		color: $colorNeutral3;
+		border-radius: 12px;
+
+		a {
+			border-bottom: 1px solid $colorNeutral3;
+		}
+	}
+
+}

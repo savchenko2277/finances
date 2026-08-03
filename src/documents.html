@@ -1,0 +1,40 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+    
+    @@include("page-top.html")
+
+    <section class="documents">
+        <div class="documents__container container">
+            <h1 class="documents__title">
+                Документы
+            </h1>
+            <div class="documents__items">
+                <a href="#" class="documents__item">
+                    <img src="./img/icons/pdf.svg" alt="" class="documents__item-icon">
+                    <p class="documents__item-text">
+                        Согласие на обработку персональных данных
+                    </p>
+                </a>
+                <a href="#" class="documents__item">
+                    <img src="./img/icons/pdf.svg" alt="" class="documents__item-icon">
+                    <p class="documents__item-text">
+                        Политика конфиденциальности интернет-сайта
+                    </p>
+                </a>
+                <a href="#" class="documents__item">
+                    <img src="./img/icons/pdf.svg" alt="" class="documents__item-icon">
+                    <p class="documents__item-text">
+                        Политика обработки персональных данных
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})

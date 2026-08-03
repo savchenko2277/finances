@@ -3,6 +3,12 @@
 .loanreq {
 	overflow: hidden;
 
+	&_audit {
+		.loan-card {
+			margin-bottom: fluid(48px, 32px);
+		}
+	}
+
 	&_about {
 		.loan-card {
 			min-height: 590px;

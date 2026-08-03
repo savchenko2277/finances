@@ -1,0 +1,67 @@
+@use 'lib' as *;
+
+.documents {
+	$self: &;
+
+	position: relative;
+	z-index: 2;
+
+	&__container {
+
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: fluid(46px, 36px);
+		margin-bottom: fluid(40px, 24px);
+		line-height: 1;
+
+		@include media("<=xs") {
+			font-weight: 600;
+		}
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 12px;
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: row;
+		align-items: start;
+		gap: 16px;
+		padding: 16px 24px;
+		background: $colorNeutral6;
+		border-radius: 12px;
+		transition: all $transition;
+
+		&:hover {
+			background: $colorNeutral5;
+		}
+
+		&:active {
+			background: $colorNeutral4;
+		}
+	}
+
+	&__item-icon {
+		width: 22px;
+		height: 22px;
+	}
+
+	&__item-text {
+		font-size: 14px;
+
+	}
+
+}

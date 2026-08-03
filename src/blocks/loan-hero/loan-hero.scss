@@ -3,10 +3,48 @@
 .loan-hero {
 	$self: &;
 
+	&_second {
+
+		#{$self}__image {
+			min-height: 400px;
+
+			@include media("<=xs") {
+				min-height: 0;
+			}
+		}
+
+	}
+
+	&_audit {
+		#{$self}__title {
+			font-size: 36px;
+		}
+	}
+
+	&_third {
+		#{$self}__image {
+			min-height: 400px;
+
+			@include media("<=xs") {
+				min-height: 0;
+			}
+		}
+
+		#{$self}__text {
+			grid-column: 1 / span 2;
+			margin-top: fluid(88px, 48px);
+
+			@include media("<=sm") {
+				grid-column: 1 / span 1;
+			}
+		}
+	}
+
 	&__container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 32px;
+		align-items: center;
 
 		@include media("<=sm") {
 			grid-template-columns: 100%;
@@ -28,6 +66,8 @@
 		gap: fluid(8px, 4px);
 		margin-bottom: 28px;
 		font-size: fluid(18px, 14px);
+		font-family: "Inter";
+		line-height: 190%;
 	}
 
 	&__button {}

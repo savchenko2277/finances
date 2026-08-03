@@ -1,0 +1,73 @@
+@use 'lib' as *;
+
+.details {
+	$self: &;
+
+	position: relative;
+	z-index: 2;
+
+	&__container {
+
+	}
+
+	&__title {
+		font-size: fluid(46px, 36px);
+		margin-bottom: 20px;
+
+		@include media("<=xs") {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__text {
+		font-size: fluid(18px, 14px);
+		font-family: "Inter", sans-serif;
+		margin-bottom: fluid(32px, 24px);
+	}
+
+	&__items {
+		padding: 16px;
+		border-radius: 12px;
+		background: #1E252C;
+
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__item {
+		border-radius: 12px;
+		padding: 16px 16px 20px;
+		background: #3B4650;
+		position: relative;
+	}
+
+	&__item-title {
+		font-weight: 500;
+		font-size: 18px;
+		margin-bottom: 12px;
+	}
+
+	&__item-btn {
+		position: absolute;
+		bottom: 20px;
+		right: 16px;
+		width: 24px;
+		height: 24px;
+
+		background: url("../img/icons/copy.svg");
+		background-size: cover;
+	}
+
+	&__item-content {
+		display: flex;
+		flex-direction: column;
+		padding-right: 36px;
+
+		a {
+			width: fit-content;
+			text-decoration: underline;
+		}
+	}
+
+}

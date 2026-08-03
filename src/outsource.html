@@ -1,0 +1,119 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+
+    @@include("page-top.html")
+
+    <section class="loan-hero loan-hero_third">
+        <div class="loan-hero__container container">
+            <div class="loan-hero__info">
+                <h2 class="loan-hero__title title">
+                    Профессиональный аутсорсинг бухгалтерских услуг в Москве «под ключ»
+                </h2>
+                <button type="button" class="loan-hero__button button button-blue">
+                    Отправить заявку
+                </button>
+            </div>
+            <div class="loan-hero__image">
+                <img loading="lazy" src="./img/ab-hero.webp" alt="">
+            </div>
+            <div class="loan-hero__text text-more">
+                <div class="text-more__content">
+                    <div class="text-more__main">
+                        <p>
+                            Страхование жизни, здоровья, имущества, транспортных средств – вот наиболее востребованные
+                            услуги, которыми пользуется большинство наших соотечественников.
+                            Благодаря налаженным партнерским связям с лучшими страховыми компаниями, у нас есть
+                            возможность подобрать для Вас наиболее выгодные услуги, которые помогут Вам защитить себя от
+                            непредвиденных событий в жизни.
+                        </p>
+                    </div>
+                    <div class="text-more__other">
+                        <p>
+                            Страхование жизни, здоровья, имущества, транспортных средств – вот наиболее востребованные
+                            услуги, которыми пользуется большинство наших соотечественников.
+                            Благодаря налаженным партнерским связям с лучшими страховыми компаниями, у нас есть
+                            возможность подобрать для Вас наиболее выгодные услуги, которые помогут Вам защитить себя от
+                            непредвиденных событий в жизни.
+                        </p>
+                    </div>
+                </div>
+                <button class="text-more__button">
+                    <span>Читать больше</span>
+                    <span>Скрыть больше</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages-card">
+        <div class="advantages-card__container container">
+            <h2 class="advantages-card__title title">
+                Преимущества бухгалтерского аутсорсинга
+            </h2>
+            <div class="advantages-card__card loan-card loan-card_advantages">
+                <div class="loan-card__image">
+                    <img loading="lazy" src="./img/loan-card.webp" alt="">
+                </div>
+                <div class="loan-card__content">
+                    <h4 class="loan-card__title title">Документы для займа <br> под залог</h4>
+                    <ul class="loan-card__list">
+                        <li>Минимальные расходы на качественное ведение бухгалтерии,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                        <li>Гарантия качества предоставляемых услуг,</li>
+                    </ul>
+                    <p class="loan-card__about-text">
+                        Поэтому услуги аутсорсинга бухгалтерии столь популярны.
+                    </p>
+                    <button type="button" data-modal-open="modal_callback"
+                        class="loan-card__button button button-blue">Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages-card advantages-card_second">
+        <div class="advantages-card__container container">
+            <h2 class="advantages-card__title title">
+                Цена услуг бухгалтерского аутсорсинга
+            </h2>
+            <p class="advantages-card__text">
+                Стоимость сопровождения клиентской бухгалтерии зависит от разных индивидуальных факторов. На это влияет
+                количество задействованных сотрудников, сложность, объём работ и многие другие. Менеджеры рассчитают
+                оптимальную стоимость услуг.
+            </p>
+            <div class="advantages-card__card loan-card loan-card_insurance loan-card_advantages">
+                <div class="loan-card__image">
+                    <img loading="lazy" src="./img/loan-card.webp" alt="">
+                </div>
+                <div class="loan-card__content">
+                    <h4 class="loan-card__title title">Стоимость бухгалтерского аутсорсинга</h4>
+                    <div class="loan-card__text">
+                        <p>
+                            Расценки на сопровождение бухгалтерии вашей компании подбираются индивидуально. Узнать
+                            точную стоимость помогут наши менеджеры – обратитесь через форму обратной связи.
+                        </p>
+                    </div>
+                    <button type="button" data-modal-open="modal_callback"
+                        class="loan-card__button button button-blue">Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include("articles.html")
+
+    @@include("map.html")
+
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})

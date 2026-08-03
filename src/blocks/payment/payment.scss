@@ -1,0 +1,42 @@
+@use 'lib' as *;
+
+.payment {
+	$self: &;
+
+	&__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	&__form {
+		max-width: 564px;
+		width: 100%;
+		padding: 32px 24px fluid(60px, 32px) 24px;
+		background: $colorNeutral6;
+		border-radius: 24px;
+	}
+
+	&__title {
+		font-size: 28px;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	&__labels {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__label {
+
+	}
+
+	&__button.button {
+		width: 100%;
+		max-width: 100%;
+	}
+
+}

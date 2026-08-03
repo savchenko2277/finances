@@ -1,0 +1,33 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+<main class="main main_page">
+    
+    @@include("page-top.html")
+
+    <section class="faq-hero">
+        <div class="faq-hero__container container">
+            <div class="faq-hero__content">
+                <h1 class="faq-hero__title">
+                    Вопросы и ответы
+                </h1>
+                <p class="faq-hero__desc">
+                    В данном разделе приведены ответы на часто задаваемые вопросы наших клиентов.
+                </p>
+            </div>
+            <div class="faq-hero__info">
+                <p class="faq-hero__text">
+                    Если вы не нашли ответ на свой вопрос – свяжитесь с нашим специалистом через форму обратной связи или по телефону <a href="tel:+7 (499) 455-13-40">+7 (499) 455-13-40</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    @@include("faq.html", {
+        class: "faq_in-page"
+    })
+</main>
+
+@@include("_bottom.html", {
+class: "footer_main"
+})

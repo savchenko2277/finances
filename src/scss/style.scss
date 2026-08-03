@@ -20,6 +20,10 @@
 @include font-face("GoogleSans-Medium", "Google Sans", 500);
 @include font-face("GoogleSans-SemiBold", "Google Sans", 600);
 @include font-face("GoogleSans-Bold", "Google Sans", 700);
+@include font-face("Inter_18pt-Light", "Inter", 300);
+@include font-face("Inter_18pt-Regular", "Inter", 400);
+@include font-face("Inter_18pt-Medium", "Inter", 500);
+@include font-face("Inter_18pt-Bold", "Inter", 700);
 
 body, html {
 	background-color: $colorNeutral7;
