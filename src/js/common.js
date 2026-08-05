@@ -403,6 +403,42 @@ const initModals = () => {
 	});
 };
 
+const setArticleSripts = () => {
+	const container = document.querySelector(".article");
+	if(!container) return;
+
+	const share = container.querySelector(".article__share");
+	const shareBtn = share.querySelector(".article__share-button");
+
+	const navigationLinks = container.querySelectorAll(".article__navigation-list-item a");
+	const articleBlocks = container.querySelectorAll(".article__block");
+
+	navigationLinks.forEach((link, index) => {
+		link.addEventListener("click", (e) => {
+			e.preventDefault();
+			if (!articleBlocks[index]) return;
+
+			const header = document.querySelector(".header");
+			const headerHeight = header ? header.offsetHeight : 0;
+			const offset = headerHeight + 24;
+			const blockTop = articleBlocks[index].getBoundingClientRect().top + window.pageYOffset;
+
+			window.scrollTo({
+				top: blockTop - offset,
+				behavior: "smooth"
+			});
+		});
+	});
+
+	document.addEventListener("click", (e) => {
+		if(e.target.closest(`.${shareBtn.className}`)) {
+			share.classList.toggle("active");
+		} else {
+			share.classList.remove("active");
+		}
+	})
+}
+
 // Init functions
 document.addEventListener("DOMContentLoaded", () => {
 	setScrollbarWidth();
@@ -413,6 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initAccordeons();
 	initModals();
 	initPhoneMask();
+	setArticleSripts();
 
 	console.log("Cайт разработан командой onespace.team");
 	console.log("Developed by 16th team");

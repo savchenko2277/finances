@@ -60,6 +60,44 @@
 	}
 }
 
+.button-grey {
+	background: $colorNeutral5;
+
+	&:hover {
+		background: none;
+	}
+
+	&:disabled {
+		background: $colorNeutral5;
+		color: $colorNeutral4;
+	}
+
+	&.button-arrow {
+
+		span {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 8px;
+		}
+
+		span::after {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: url("../img/icons/arrow-right.svg");
+			background-size: contain;
+		}
+
+		&:disabled {
+			span::after {
+				opacity: 0.3;
+			}
+		}
+	}
+}
+
 .button-calc {
 	width: 44px;
 	height: 44px;
