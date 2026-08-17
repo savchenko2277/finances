@@ -40,6 +40,10 @@ body, html {
 body.scroll-lock {
 	overflow: hidden;
 	padding-right: var(--sw);
+
+	header {
+		padding-right: var(--sw);
+	}
 }
 
 .footer {

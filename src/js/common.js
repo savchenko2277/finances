@@ -15,6 +15,9 @@ import { driveTabs } from "../js/libs/driveTabs";
 // Inputmask
 import Inputmask from "inputmask";
 
+// Stories
+import { makeStories } from "./libs/makeStories";
+
 // Functions
 const setScrollbarWidth = () => {
 	document.documentElement.style.setProperty('--sw', `${window.innerWidth - document.documentElement.clientWidth}px`);
@@ -311,6 +314,36 @@ const initHeader = () => {
 			document.body.classList.remove("scroll-lock");
 		}
 	})
+
+	const toggleScrollClass = () => {
+		header.classList.toggle("is-scroll", window.scrollY > 0);
+	};
+
+	toggleScrollClass();
+	window.addEventListener("scroll", toggleScrollClass, { passive: true });
+
+	const socialsWrapper = header.querySelector(".header__socials-wrapper");
+	const socialsTrigger = header.querySelector(".header__button-chat");
+
+	if (socialsWrapper && socialsTrigger) {
+		socialsTrigger.addEventListener("click", (e) => {
+			e.stopPropagation();
+			socialsWrapper.classList.toggle("active");
+		});
+
+		document.addEventListener("click", (e) => {
+			if (!socialsWrapper.classList.contains("active")) return;
+			if (!e.target.closest(".header__socials-wrapper")) {
+				socialsWrapper.classList.remove("active");
+			}
+		});
+
+		document.addEventListener("keydown", (e) => {
+			if ((e.key === "Escape" || e.key === "Esc") && socialsWrapper.classList.contains("active")) {
+				socialsWrapper.classList.remove("active");
+			}
+		});
+	}
 }
 
 const initTabs = () => {
@@ -368,6 +401,19 @@ const initPhoneMask = (container = document) => {
 		mask: "+7 (999) 999-99-99",
 		showMaskOnHover: false,
 	}).mask(container.querySelectorAll('input[type="tel"]'));
+};
+
+const initStories = () => {
+	const stories = makeStories();
+	if (!stories) return;
+
+	document.addEventListener("click", (e) => {
+		const trigger = e.target.closest("[data-stories-open]");
+		if (!trigger) return;
+
+		const index = parseInt(trigger.dataset.storiesOpen, 10) || 0;
+		stories.open(index);
+	});
 };
 
 const initModals = () => {
@@ -448,6 +494,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initTextMore();
 	initAccordeons();
 	initModals();
+	initStories();
 	initPhoneMask();
 	setArticleSripts();
 

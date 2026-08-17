@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/style.css?v=1785893252909">
-    <link rel="stylesheet" href="css/swiper.css?v=1785893252909">
+    <link rel="stylesheet" href="css/style.css?v=1787005938556">
+    <link rel="stylesheet" href="css/swiper.css?v=1787005938556">
     <title></title>
 </head>
 <body id="home">
@@ -113,9 +113,27 @@
             <a href="#" class="header__item">Оплата онлайн</a>
         </div>
         <div class="header__down">
-            <button class="header__down-button header__button-chat">
-                <img src="./img/icons/ask.svg" alt="" />
-            </button>
+            <div class="header__socials-wrapper">
+                <div class="header__socials-buttons">
+                    <button class="header__down-button header__button-chat">
+                        <img loading="lazy" src="./img/icons/ask.svg" alt="" />
+                    </button>
+                     <button class="header__socials-chat">
+                        <img loading="lazy" src="./img/icons/manager.webp" alt="" />
+                    </button>
+                </div>
+                <div class="header__socials-items">
+                    <a href="#" class="header__socials-item">
+                        <img loading="lazy" src="./img/icons/tg-big.svg" alt="">
+                    </a>
+                    <a href="#" class="header__socials-item">
+                        <img loading="lazy" src="./img/icons/max-big.svg" alt="">
+                    </a>
+                    <a href="#" class="header__socials-item">
+                        <img loading="lazy" src="./img/icons/phone-big.svg" alt="">
+                    </a>
+                </div>
+            </div>
             <button class="header__down-button header__burger">
                 <div class="header__burger-icon">
                     <img src="./img/icons/menu.svg" alt="" />
@@ -949,7 +967,39 @@
     </div>
 </div>
 
-<script src="js/common.js?v=1785893252909"></script>
+<div data-stories-delay="5000" class="modal-stories ">
+    <button type="button" class="modal-stories__close"></button>
+    <div class="modal-stories__navigation custom-navigation">
+        <button type="button"
+          class="modal-stories__navigation-btn custom-navigation__btn custom-navigation__btn_prev"></button>
+        <button type="button"
+          class="modal-stories__navigation-btn custom-navigation__btn custom-navigation__btn_next"></button>
+      </div>
+    <div class="modal-stories__items">
+        <div class="modal-stories__top">
+            <div class="modal-stories__pagination"></div>
+            <p class="modal-stories__name">
+                Отзыв от&#160;<span>Марии</span>
+            </p>
+        </div>
+        <div class="modal-stories__wrapper">
+            <div data-stories-name="Марии" class="modal-stories__item active">
+                <video preload="none" muted playsinline disablepictureinpicture data-src="./img/video-review.webm"></video>
+            </div>
+            <div data-stories-name="Константина" class="modal-stories__item">
+                <video preload="none" muted playsinline disablepictureinpicture data-src="./img/video-review.webm"></video>
+            </div>
+            <div data-stories-name="Давида" class="modal-stories__item">
+                <video preload="none" muted playsinline disablepictureinpicture data-src="./img/video-review.webm"></video>
+            </div>
+            <span class="modal-stories__play"></span>
+            <span class="modal-stories__spinner"></span>
+        </div>
+        <a href="#" class="modal-stories__link button button-light">Оставить заявку</a>
+    </div>
+</div>
+
+<script src="js/common.js?v=1787005938556"></script>
 </body>
 
 </html>
