@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/style.css?v=1787005938556">
-    <link rel="stylesheet" href="css/swiper.css?v=1787005938556">
+    <link rel="stylesheet" href="css/style.css?v=1787080515978">
+    <link rel="stylesheet" href="css/swiper.css?v=1787080515978">
     <title></title>
 </head>
 <body id="home">
 <header class="header">
     <div class="header__body container">
-        <a href="/" class="header__logo"><img src="./img/icons/logo.svg" /></a>
+        <a href="/" class="header__logo header__logo_pc"><img src="./img/icons/logo.svg" /></a>
+        <a href="/" class="header__logo header__logo_mobile"><img src="./img/logo-mobile.svg" /></a>
         <div class="header__navigation">
             <div class="header__item-parent">
                 <button type="button" class="header__item">
@@ -118,7 +119,7 @@
                     <button class="header__down-button header__button-chat">
                         <img loading="lazy" src="./img/icons/ask.svg" alt="" />
                     </button>
-                     <button class="header__socials-chat">
+                    <button class="header__socials-chat">
                         <img loading="lazy" src="./img/icons/manager.webp" alt="" />
                     </button>
                 </div>
@@ -149,12 +150,22 @@
         <div class="mobile-menu__container tabs">
             <div class="mobile-menu__top">
                 <div class="mobile-menu__navigation tabs__navigation tabs-navigation">
-                    <div class="tabs-navigation__buttons">
-                        <button type="button" class="tabs-navigation__button active">Займы</button>
-                        <button type="button" class="tabs-navigation__button">Финансовые услуги</button>
-                        <button type="button" class="tabs-navigation__button">Обслуживание с&#160;выездом</button>
-                        <button type="button" class="tabs-navigation__button">Оплата</button>
-                        <button type="button" class="tabs-navigation__button">О&#160;компании</button>
+                    <div class="tabs-navigation__group">
+                        <div class="tabs-navigation__buttons">
+                            <button type="button" class="tabs-navigation__button active">Займы</button>
+                            <button type="button" class="tabs-navigation__button">Финансовые услуги</button>
+                            <button type="button" class="tabs-navigation__button">О&#160;компании</button>
+                        </div>
+                    </div>
+                    <div class="tabs-navigation__group">
+                        <div class="tabs-navigation__buttons">
+                            <button type="button" class="tabs-navigation__button">Обслуживание с&#160;выездом</button>
+                        </div>
+                    </div>
+                    <div class="tabs-navigation__group">
+                        <div class="tabs-navigation__buttons">
+                            <button type="button" class="tabs-navigation__button">Оплата</button>
+                        </div>
                     </div>
                 </div>
                 <button disabled class="mobile-menu-sidebar__button" type="button">
@@ -587,8 +598,11 @@
     <div class="footer__body container">
         <div class="footer-main">
             <div class="footer-main__info">
-                <a href="/" class="footer-main__logo">
+                <a href="/" class="footer-main__logo footer-main__logo_pc">
                     <img loading="lazy" src="img/icons/logo.svg" alt="" />
+                </a>
+                <a href="/" class="footer-main__logo footer-main__logo_mobile">
+                    <img loading="lazy" src="img/logo-f-m.svg" alt="" />
                 </a>
                 <div class="footer-main__map-item">
                     <a href="#" class="yandex-review">
@@ -655,11 +669,19 @@
                         <span>Оставить заявку</span>
                     </a>
                 </div>
+
+                <div class="footer-main-box__office">
+                    <h4>Офис</h4>
+                    <p>г. Москва, проспект Рязанский, д.&#160;37, этаж 4, офис 14</p>
+                </div>
             </div>
         </div>
         <div class="footer-nav">
             <div class="footer-nav__item">
-                <h3>Займы</h3>
+                <button type="button" class="footer-nav__item-title">
+                    <span>Займы</span>
+                    <span class="footer-nav__item-icon"></span>
+                </button>
                 <ul>
                     <li><a href="#">Займ под&#160;залог авто</a></li>
                     <li><a href="#">Автоломбард</a></li>
@@ -672,7 +694,10 @@
                 </ul>
             </div>
             <div class="footer-nav__item">
-                <h3>Услуги</h3>
+                <button type="button" class="footer-nav__item-title">
+                    <span>Услуги</span>
+                    <span class="footer-nav__item-icon"></span>
+                </button>
                 <ul>
                     <li><a href="#">Автокредитование</a></li>
                     <li><a href="#">Калькулятор</a></li>
@@ -682,14 +707,18 @@
                 </ul>
             </div>
             <div class="footer-nav__item">
-                <h3>Обслуживание с&#160;выездом</h3>
-                <ul>
-                    <li><a href="#">Выездное оформление займа</a></li>
-                    <li><a href="#">Выезд специалиста</a></li>
-                </ul>
+                <a href="#" class="footer-nav__item-title">
+                    <span>Обслуживание с&#160;выездом</span>
+                </a>
+                <a href="#" class="footer-nav__item-title">
+                    <span>Оплата</span>
+                </a>
             </div>
             <div class="footer-nav__item">
-                <h3>О&#160;нас</h3>
+                <button type="button" class="footer-nav__item-title">
+                    <span>О&#160;нас</span>
+                    <span class="footer-nav__item-icon"></span>
+                </button>
                 <ul>
                     <li><a href="#">О&#160;компании</a></li>
                     <li><a href="#">Вопросы и&#160;ответы</a></li>
@@ -699,14 +728,6 @@
                     <li><a href="#">Сотрудничество</a></li>
                     <li><a href="#">Статьи о&#160;займах</a></li>
                     <li><a href="#">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav__item">
-                <h3>Оплата</h3>
-                <ul>
-                    <li><a href="#">Онлайн-оплата</a></li>
-                    <li><a href="#">Способы оплаты</a></li>
-                    <li><a href="#">Реквизиты для&#160;оплаты</a></li>
                 </ul>
             </div>
         </div>
@@ -944,7 +965,7 @@
     </div>
 </div>
 
-<script src="js/common.js?v=1787005938556"></script>
+<script src="js/common.js?v=1787080515978"></script>
 </body>
 
 </html>

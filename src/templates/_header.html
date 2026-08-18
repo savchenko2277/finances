@@ -1,6 +1,7 @@
 <header class="header">
     <div class="header__body container">
-        <a href="/" class="header__logo"><img src="./img/icons/logo.svg" /></a>
+        <a href="/" class="header__logo header__logo_pc"><img src="./img/icons/logo.svg" /></a>
+        <a href="/" class="header__logo header__logo_mobile"><img src="./img/logo-mobile.svg" /></a>
         <div class="header__navigation">
             <div class="header__item-parent">
                 <button type="button" class="header__item">
@@ -107,7 +108,7 @@
                     <button class="header__down-button header__button-chat">
                         <img loading="lazy" src="./img/icons/ask.svg" alt="" />
                     </button>
-                     <button class="header__socials-chat">
+                    <button class="header__socials-chat">
                         <img loading="lazy" src="./img/icons/manager.webp" alt="" />
                     </button>
                 </div>
@@ -138,12 +139,22 @@
         <div class="mobile-menu__container tabs">
             <div class="mobile-menu__top">
                 <div class="mobile-menu__navigation tabs__navigation tabs-navigation">
-                    <div class="tabs-navigation__buttons">
-                        <button type="button" class="tabs-navigation__button active">Займы</button>
-                        <button type="button" class="tabs-navigation__button">Финансовые услуги</button>
-                        <button type="button" class="tabs-navigation__button">Обслуживание с выездом</button>
-                        <button type="button" class="tabs-navigation__button">Оплата</button>
-                        <button type="button" class="tabs-navigation__button">О компании</button>
+                    <div class="tabs-navigation__group">
+                        <div class="tabs-navigation__buttons">
+                            <button type="button" class="tabs-navigation__button active">Займы</button>
+                            <button type="button" class="tabs-navigation__button">Финансовые услуги</button>
+                            <button type="button" class="tabs-navigation__button">О компании</button>
+                        </div>
+                    </div>
+                    <div class="tabs-navigation__group">
+                        <div class="tabs-navigation__buttons">
+                            <button type="button" class="tabs-navigation__button">Обслуживание с выездом</button>
+                        </div>
+                    </div>
+                    <div class="tabs-navigation__group">
+                        <div class="tabs-navigation__buttons">
+                            <button type="button" class="tabs-navigation__button">Оплата</button>
+                        </div>
                     </div>
                 </div>
                 <button disabled class="mobile-menu-sidebar__button" type="button">

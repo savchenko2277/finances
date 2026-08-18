@@ -178,7 +178,7 @@
     width: 164px;
     height: 264px;
 
-    @include media("<=xs") {
+    @include media("<=lg") {
         width: 90px;
         height: 140px;
         bottom: 16px;
@@ -188,6 +188,7 @@
         // backdrop-filter: none;
         padding: 0;
         z-index: 99;
+        border-radius: 12px;
     }
 
     &.is-open {
@@ -199,6 +200,11 @@
         .modal-stories__navigation {
             opacity: 1;
             visibility: visible;
+            pointer-events: none;
+        }
+
+        .modal-stories__navigation-btn {
+            pointer-events: all;
         }
 
         .modal-stories__close {
@@ -223,7 +229,7 @@
             touch-action: pan-y;
         }
 
-        @include media("<=xs") {
+        @include media("<=lg") {
             padding: 92px 16px 16px 16px;
 
             .modal-stories__wrapper {
@@ -257,6 +263,14 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+
+        .modal-stories__wrapper {
+            cursor: pointer;
+        }
+
+        .modal-stories__item.active {
+            pointer-events: auto;
+        }
     }
 
     &__navigation.custom-navigation {
@@ -274,7 +288,7 @@
         opacity: 0;
 
         &-btn {
-            pointer-events: auto;
+            pointer-events: none;
         }
 
         @include media("<=lg") {
@@ -320,7 +334,6 @@
         border-radius: 12px;
         overflow: hidden;
         border: 1px solid $colorNeutral4;
-        cursor: pointer;
 
         @include media("<=xs") {
             border: 1px solid $colorNeutral2;
@@ -399,7 +412,6 @@
         &.active {
             opacity: 1;
             visibility: visible;
-            pointer-events: auto;
         }
 
         video {

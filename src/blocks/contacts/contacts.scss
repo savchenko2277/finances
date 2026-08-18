@@ -93,7 +93,9 @@
 		margin-bottom: 20px;
 	}
 
-	&__item-info {}
+	&__item-info {
+		padding: 0 8px;
+	}
 
 	&__item-desc {
 		font-size: 12px;
@@ -107,10 +109,10 @@
 
 	&__item-contacts {
 		display: flex;
-		flex-direction: row;
-		align-items: center;
+		flex-direction: column;
 		justify-content: space-between;
 		gap: 8px;
+		padding: 0 8px;
 	}
 
 	&__item-contact {
@@ -131,7 +133,7 @@
 		border-radius: 8px;
 		overflow: hidden;
 		width: 100%;
-		height: 380px;
+		height: 100%;
 
 		img {
 			height: 100%;

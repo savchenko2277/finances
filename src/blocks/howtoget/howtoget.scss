@@ -25,9 +25,11 @@
 		@include media("<=xs") {
 			display: flex;
 			flex-direction: column;
+			flex: 0 0 auto;
 			gap: 12px;
 			margin-bottom: 24px;
 			margin-right: 12px;
+			min-width: 48px;
 		}
 	}
 
@@ -37,6 +39,7 @@
 		align-items: center;
 		gap: 12px;
 		width: fit-content;
+		flex: 0 0 auto;
 
 		img {
 			width: 48px;
@@ -78,6 +81,7 @@
 			grid-template-columns: 1fr;
 			grid-column: span 9;
 			margin-bottom: 24px;
+			gap: 16px;
 		}
 	}
 
@@ -112,7 +116,7 @@
 		align-items: flex-start;
 
 		@include media("<=xs") {
-			max-width: none;
+			max-width: 100%;
 			min-height: 93px;
 			border-radius: 16px;
 			aspect-ratio: auto;
@@ -146,6 +150,11 @@
 			line-height: 28px;
 
 			color: #ffffff;
+
+			@include media("<=xs") {
+				font-size: 16px;
+				line-height: 1;
+			}
 		}
 
 		p {
@@ -153,6 +162,10 @@
 
 			line-height: 20px;
 			color: #ffffff;
+
+			@include media("<=xs") {
+				font-size: 12px;
+			}
 		}
 	}
 

@@ -249,6 +249,10 @@
 		line-height: 1.2;
 		margin-bottom: 20px;
 		font-weight: 600;
+
+		@include media("<=xs") {
+			font-size: 36px;
+		}
 	}
 
 	&__list {
@@ -257,6 +261,7 @@
 		gap: 4px;
 		color: $colorNeutral2;
 		padding-left: 24px;
+		margin-bottom: 24px;
 
 		li {
 			list-style-type: disc;
@@ -276,7 +281,7 @@
 	}
 
 	&__button {
-		margin-top: 24px;
+		margin-top: auto;
 		height: fit-content;
 	}
 

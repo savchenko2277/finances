@@ -31,20 +31,31 @@
 		display: grid;
 		grid-template-columns: minmax(auto, 564px) 366px;
 		justify-content: space-between;
-		align-items: center;
 		gap: 24px;
+		padding-right: 100px;
+
+		@include media("<=lg") {
+			padding-right: 0;
+		}
 
 		@include media("<=sm") {
 			grid-template-columns: 100%;
 		}
 	}
 
-	&__info {}
+	&__info {
+		padding-top: 100px;
+
+		@include media("<sm") {
+			padding-top: 0;
+		}
+	}
 
 	&__title {
 		font-weight: 600;
 		font-size: fluid(46px, 36px);
 		margin-bottom: 20px;
+		line-height: 1;
 
 		@include media("<=xs") {
 			margin-bottom: 24px;
@@ -59,7 +70,6 @@
 		width: 100%;
 		position: relative;
 		padding-bottom: 20px;
-
 
 	}
 

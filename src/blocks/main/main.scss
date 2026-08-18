@@ -8,6 +8,10 @@
 	flex-direction: column;
 	gap: fluid(120px, 80px);
 
+	&_documents {
+		overflow: visible;
+	}
+
 	&_main {
 		margin-bottom: -220px;
 

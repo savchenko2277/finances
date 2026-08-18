@@ -33,6 +33,11 @@
 		padding: 8px;
 		border-radius: 12px;
 		padding-bottom: 40px;
+		transition: all $transition;
+
+		&:hover {
+			background: #5A6772;
+		}
 	}
 
 	&__item-image {

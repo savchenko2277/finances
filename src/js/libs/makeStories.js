@@ -65,6 +65,7 @@ export const makeStories = (options = {}) => {
 	let timer = null;
 	let raf = null;
 	let soundOn = true;
+	let playId = 0;
 
 	/* ---------- спиннер ---------- */
 	const setSpinner = (state) => spinner?.classList.toggle(config.spinnerClass, state);
@@ -267,6 +268,7 @@ export const makeStories = (options = {}) => {
 	const play = async () => {
 		clearLoop();
 
+		const id = ++playId;
 		const item = items[current];
 		const video = item?.querySelector('video');
 
@@ -274,7 +276,8 @@ export const makeStories = (options = {}) => {
 			setSpinner(true);
 			const ok = await loadVideo(video);
 
-			if (current !== items.indexOf(item)) return;
+			// устаревший вызов — не запускаем видео
+			if (id !== playId) return;
 
 			setSpinner(false);
 
@@ -282,6 +285,12 @@ export const makeStories = (options = {}) => {
 				animateByTimer(video);
 				return;
 			}
+
+			// гарантируем, что играет только текущее видео
+			items.forEach((it) => {
+				const other = it.querySelector('video');
+				if (other && other !== video) other.pause();
+			});
 
 			video.muted = !soundOn;
 			video.playsInline = true;
@@ -511,11 +520,25 @@ export const makeStories = (options = {}) => {
 	};
 
 	/* ---------- авто-открытие по data-stories-delay ---------- */
+	const preloadFirstVideo = () => {
+		const firstVideo = items[0]?.querySelector('video');
+
+		if (!firstVideo?.dataset?.src) {
+			return Promise.resolve(false);
+		}
+
+		return loadVideo(firstVideo).catch(() => false);
+	};
+
 	const initAutoOpen = () => {
 		const delay = parseInt(root.dataset.storiesDelay, 10);
 
 		if (!Number.isNaN(delay) && delay >= 0) {
-			setTimeout(openThumbnail, delay);
+			const ready = preloadFirstVideo();
+			const timer = new Promise((resolve) => setTimeout(resolve, delay));
+
+			// показываем миниатюру только когда прошёл таймер И первое видео прогрузилось
+			Promise.all([ready, timer]).then(openThumbnail);
 			return;
 		}
 

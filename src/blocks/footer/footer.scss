@@ -5,7 +5,7 @@
 	padding-bottom: 60px;
 	overflow: hidden;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 
 	@include media("<=sm") {
 		padding: 24px 0;
@@ -81,6 +81,26 @@
 		img {
 			height: 48px;
 			max-width: 100%;
+		}
+
+		&_mobile {
+			display: none;
+
+			img {
+				width: 130px;
+				object-fit: contain;
+				height: auto;
+			}
+
+			@include media("<=xs") {
+				display: block;
+			}
+		}
+
+		&_pc {
+			@include media("<=xs") {
+				display: none;
+			}
 		}
 	}
 
@@ -164,6 +184,27 @@
 	@include media("<=xs") {
 		padding: 0;
 		max-width: 100%;
+	}
+
+	&__office {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+
+		@include media(">xs") {
+			display: none;
+		}
+		
+		h4 {
+			color: $colorNeutral4;
+			font-size: 12px;
+			margin-bottom: 4px;
+		}
+
+		p {
+			font-size: 16px;
+		}
 	}
 
 	&__top {
@@ -318,6 +359,8 @@
 }
 
 .footer-nav {
+	$self: &;
+
 	padding: 64px 0;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -335,19 +378,14 @@
 	@include media("<=xs") {
 		grid-template-columns: 1fr;
 		font-size: 0.9rem;
-		padding: 24px 0;
+		gap: 0;
+		padding: 0;
 	}
 
 	&__item {
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-
-		h3 {
-			font-size: 16px;
-			line-height: 22px;
-			color: #ffffff;
-		}
 
 		ul {
 			display: flex;
@@ -359,6 +397,72 @@
 				line-height: 20px;
 				color: #a9b6c3;
 			}
+		}
+
+		@include media("<=xs") {
+			gap: 0;
+			display: grid;
+			grid-template-rows: max-content 0fr;
+			transition: all $transition;
+
+			ul {
+				overflow: hidden;
+
+			}
+
+			&.active {
+				grid-template-rows: max-content 1fr;
+				padding-bottom: 24px;
+
+				#{$self}__item-icon {
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+
+	&__item-icon {
+		width: 24px;
+		height: 24px;
+		opacity: 0.4;
+		transform: rotate(180deg);
+	}
+
+	&__item-title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		width: 100%;
+		padding: 0;
+		background: none;
+		border: 0;
+		text-align: left;
+		cursor: default;
+
+		font-size: 16px;
+		line-height: 22px;
+		color: #ffffff;
+
+		@include media("<=xs") {
+			padding: 16px 0;
+			border-top: 1px solid $colorNeutral6;
+			cursor: pointer;
+		}
+	}
+
+	&__item-icon {
+		display: none;
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		background-color: $colorNeutral0;
+		transition: transform $transition;
+		-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 8l6 6-1.41 1.41L12 10.83l-4.59 4.58L6 14z'/%3E%3C/svg%3E") center / contain no-repeat;
+		mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 8l6 6-1.41 1.41L12 10.83l-4.59 4.58L6 14z'/%3E%3C/svg%3E") center / contain no-repeat;
+
+		@include media("<=xs") {
+			display: block;
 		}
 	}
 }

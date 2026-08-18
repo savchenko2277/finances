@@ -23,6 +23,40 @@ const setScrollbarWidth = () => {
 	document.documentElement.style.setProperty('--sw', `${window.innerWidth - document.documentElement.clientWidth}px`);
 }
 
+const initAutoZoom = () => {
+	const designWidth = 1728; // нативная ширина макета (zoom = 1)
+	const minWidth = 1100; // нижняя граница пропорционального масштабирования
+	const minScale = minWidth / designWidth;
+	const html = document.documentElement;
+	let ticking = false;
+
+	const calcScale = (width) => {
+		if (width >= designWidth) return 1;
+		if (width <= minWidth) return 1;
+		return width / designWidth;
+	};
+
+	const apply = () => {
+		ticking = false;
+
+		// Сбрасываем zoom и принудительно замеряем реальную ширину вьюпорта.
+		// clientWidth форсирует пересчёт layout, поэтому значение не зависит
+		// от предыдущего zoom и работает одинаково в Chrome/Safari.
+		html.style.zoom = "1";
+		const width = html.clientWidth;
+
+		html.style.zoom = String(calcScale(width));
+	};
+
+	apply();
+
+	window.addEventListener("resize", () => {
+		if (ticking) return;
+		ticking = true;
+		requestAnimationFrame(apply);
+	});
+};
+
 const initSwiper = () => {
 	const buttonsClient = document.querySelectorAll(".client__tab-btn");
 	const buttonsReviews = document.querySelectorAll(".reviews__button");
@@ -416,6 +450,28 @@ const initStories = () => {
 	});
 };
 
+const initFooterAccordeon = () => {
+	const container = document.querySelector(".footer-nav");
+	if (!container) return;
+
+	const items = container.querySelectorAll(".footer-nav__item");
+
+	items.forEach((item) => {
+		const title = item.querySelector(".footer-nav__item-title");
+		if (!title) return;
+
+		title.addEventListener("click", () => {
+			// аккордеон работает только на xs (когда ul скрыт в разметке)
+			if (window.innerWidth > 640) return;
+
+			const isOpen = item.classList.contains("active");
+
+			items.forEach((other) => other.classList.remove("active"));
+			!isOpen && item.classList.add("active");
+		});
+	});
+};
+
 const initModals = () => {
 	const modals = document.querySelectorAll('.modal');
 
@@ -488,12 +544,14 @@ const setArticleSripts = () => {
 // Init functions
 document.addEventListener("DOMContentLoaded", () => {
 	setScrollbarWidth();
+	initAutoZoom();
 	initSwiper();
 	initHeader();
 	initTabs();
 	initTextMore();
 	initAccordeons();
 	initModals();
+	initFooterAccordeon();
 	initStories();
 	initPhoneMask();
 	setArticleSripts();

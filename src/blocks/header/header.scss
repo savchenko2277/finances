@@ -112,9 +112,11 @@
 			#{$self}__socials-items {
 				opacity: 1;
 			}
+
 			#{$self}__socials-chat {
 				display: block;
 			}
+
 			#{$self}__down-button {
 				display: none;
 			}
@@ -171,9 +173,34 @@
 	}
 
 	&__logo {
-		width: 154px;
-		height: auto;
-		object-fit: contain;
+
+		&_pc {
+			width: 154px;
+			height: auto;
+			
+			img {
+				object-fit: contain;
+			}
+		}
+
+		&_mobile {
+			display: none;
+			width: 46px;
+			
+			img {
+				object-fit: contain;
+			}
+		}
+
+		@include media("<=xs") {
+			&_pc {
+				display: none;
+			}
+
+			&_mobile {
+				display: block;
+			}
+		}
 	}
 
 	&__down {
